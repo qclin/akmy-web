@@ -5,6 +5,7 @@ $('#list-2d').click(() => {
 
 $('ul').click((e) => {
 	$(e.target.children).show()
+	$(e.target).siblings('ul').children().hide()
 })
 
 function randomDisplaceItem(){
@@ -16,9 +17,15 @@ function randomDisplaceItem(){
 	});
 }
 
+$('.optionLinks').click(function(e){
+	$(this).addClass('selectedLink')
+	$("#IMG_"+this.id).addClass('selectedProject')
+});
 
-$('select > option').hover(function(){
-	$(this).val()
-})
-$('li').hover(function(e){
+$('.optionLinks').mouseover(function(e){
+	$("#IMG_"+this.id).addClass('highlightSelection')
+});
+
+$('.optionLinks').mouseleave(function(e){
+	$("#IMG_"+this.id).removeClass('highlightSelection')
 });
