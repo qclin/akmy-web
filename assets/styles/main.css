@@ -28,7 +28,7 @@ ul{
     height: 20px;
     margin-right: 8em;
 }
-ul div{
+.navDropdownBox{
   display: none;
   border: solid 1px grey;
   background: white;
