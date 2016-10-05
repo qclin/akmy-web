@@ -7,82 +7,186 @@
   <link rel="stylesheet" href="./assets/styles/mobile.css" />
   <title>AKMY</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script type="text/javascript" src="./assets/scripts/modernizr.js"> </script>
+  <script type="text/javascript" src="./assets/scripts/dynamicpage.js"> </script>
+
 </head>
 <body>
+<div id="page-wrap">
+  <nav>
+    <ul id="2d"> ~2d~
+      <div>
+       <li class="optionLinks" id="boffo">
+         <a href="./views/2d/boffo.html"> 1. BOFFO </a>
+       </li>
+       <li class="optionLinks" id="shells">
+         <a href="./views/2d/shells.html"> 2. Shells </a>
+       </li>
+       <li class="optionLinks" id="screenshot">
+         <a href="./views/2d/screenshot.html"> 3. Screenshot Tale </a>
+       </li>
+       <li class="optionLinks" id="scans">
+         <a href="./views/2d/objectScans.html"> 4. Object Scans Scanned </a>
+       </li>
+      </div>
+    </ul>
 
-<ul id="2d"> ~2d~
-  <div>
-   <li class="optionLinks" id="boffo">
-     <a href="#boffo"> 1. BOFFO </a>
-   </li>
-   <li class="optionLinks" id="shells">
-     <a href="#shells"> 2. Shells </a>
-   </li>
-   <li class="optionLinks" id="screenshot">
-     <a href="#screenshot"> 3. Screenshot Tale </a>
-   </li>
-   <li class="optionLinks" id="scans">
-     <a href="#scans"> 4. Object Scans Scanned </a>
-   </li>
+    <ul id="3d"> ~3d~
+      <div>
+       <li class="optionLinks" id="fruits">
+         <a href="">  1. Fruits </a>
+       </li>
+       <li class="optionLinks" id="recall">
+         <a href="">  2. Recall Food </a>
+       </li>
+       <li class="optionLinks" id="corridor">
+         <a href="">  3. Corridor </a>
+       </li>
+       <li class="optionLinks" id="reCorridor">
+         <a href="">  4. re-Corridor </a>
+       </li>
+       <li class="optionLinks" id="bathHouse">
+         <a href="">  5. Bath House </a>
+       </li>
+      <div>
+    </ul>
+    <ul id="fabrication">  ~ fabrication ~
+      <div>
+       <li class="optionLinks" id="bathHouse">
+         <a href=""> 1. Bath House  </a>
+       </li>
+       <li class="optionLinks" id="groupShow">
+         <a href=""> 2. Group Show  </a>
+       </li>
+       <li class="optionLinks" id="monthMaking">
+         <a href=""> 3. A Month in Making  </a>
+       </li>
+       <li class="optionLinks" id="berggren">
+         <a href=""> 4. Berggren  </a>
+       </li>
+       <li class="optionLinks" id="reCorridor">
+         <a href=""> 4. re-Corridor  </a>
+       </li>
+     </div>
+    </ul>
+    <ul id="3dModels">   ~ 3d models ~
+      <div>
+       <li class="optionLinks" id="fruits">
+         <a href=""> 1. Fruits </a>
+       </li>
+       <li class="optionLinks" id="food">
+         <a href=""> 2. Food  </a>
+       </li>
+       <li class="optionLinks" id="corridor">
+         <a href=""> 3. Corridor </a>
+       </li>
+       <li class="optionLinks" id="recorridor">
+         <a href=""> 4. re-Corridor  </a>
+       </li>
+       <li class="optionLinks" id="tablecloth">
+         <a href=""> 5. Table Cloth </a>
+       </li>
+     </div>
+    </ul>
+    <ul id="who">  WHO
+      <div>
+        <li class="optionLinks" id="twitter">
+          <a href=""> Twitter  </a>
+        </li>
+        <li class="optionLinks" id="tumblr">
+          <a href=""> Tumblr  </a>
+        </li>
+        <li class="optionLinks" id="instagram">
+          <a href=""> Instagram  </a>
+        </li>
+      </div>
+    </ul>
+  </nav>
+
+    <section id="content-wrapper">
+      <div id="content">
+        <div class="preview-wrapper" id="preview-2d">
+          <span id="IMG_boffo">
+            <img src="./assets/images/fujifilm/FH000003.JPG"> </img>
+          </span>
+          <span  id="IMG_shells">
+            <img src="./assets/images/fujifilm/FH000031.JPG"> </img>
+          </span>
+          <span  id="IMG_screenshot">
+            <img src="./assets/images/fujifilm/FH000005.JPG"> </img>
+          </span>
+          <span  id="IMG_scans">
+            <img src="./assets/images/fujifilm/FH000032.JPG"> </img>
+          </span>
+          <span >
+            <img src="./assets/images/fujifilm/FH000016.JPG"> </img>
+          </span>
+        </div>
+        <div class="preview-wrapper" id="preview-3d">
+          <span id="IMG_fruits">
+            <img src="./assets/images/scans/22_TAMAGO1.jpg"> </img>
+          </span>
+          <span  id="IMG_recall">
+            <img src="./assets/images/scans/23_laser_base_1.jpg"> </img>
+          </span>
+          <span  id="IMG_corridor">
+            <img src="./assets/images/scans/23_Stairs_v2.jpg"> </img>
+          </span>
+          <span  id="IMG_reCorridor">
+            <img src="./assets/images/scans/24_projection_1.jpg"> </img>
+          </span>
+          <span id="IMG_bathHouse">
+            <img src="./assets/images/fujifilm/FH000031 2.JPG"> </img>
+          </span>
+        </div>
+        <div class="preview-wrapper" id="preview-fabrication">
+          <span id="IMG_bathHouse">
+            <img src="./assets/images/fujifilm/FH000003.JPG"> </img>
+          </span>
+          <span  id="IMG_groupShow">
+            <img src="./assets/images/fujifilm/FH000031.JPG"> </img>
+          </span>
+          <span  id="IMG_monthMaking">
+            <img src="./assets/images/fujifilm/FH000005.JPG"> </img>
+          </span>
+          <span  id="IMG_berggren">
+            <img src="./assets/images/fujifilm/FH000032.JPG"> </img>
+          </span>
+          <span id="IMG_reCorridor">
+            <img src="./assets/images/fujifilm/FH000016.JPG"> </img>
+          </span>
+        </div>
+        <div class="preview-wrapper" id="preview-3dModels">
+          <span id="IMG_fruits">
+            <img src="./assets/images/fujifilm/FH000003.JPG"> </img>
+          </span>
+          <span  id="IMG_recall">
+            <img src="./assets/images/fujifilm/FH000031.JPG"> </img>
+          </span>
+          <span  id="IMG_corridor">
+            <img src="./assets/images/fujifilm/FH000005.JPG"> </img>
+          </span>
+          <span  id="IMG_reCorridor">
+            <img src="./assets/images/fujifilm/FH000032.JPG"> </img>
+          </span>
+          <span id="IMG_bathHouse">
+            <img src="./assets/images/fujifilm/FH000016.JPG"> </img>
+          </span>
+        </div>
+        <div class="preview-wrapper" id="preview-who">
+          <span id="IMG_twitter">
+            <img src="./assets/images/fujifilm/FH000003.JPG"> </img>
+          </span>
+          <span  id="IMG_tumblr">
+            <img src="./assets/images/fujifilm/FH000031.JPG"> </img>
+          </span>
+          <span  id="IMG_instagram">
+            <img src="./assets/images/fujifilm/FH000005.JPG"> </img>
+          </span>
+        </div>
+      </div>
+    </section>
   </div>
-</ul>
-
-<ul id="3d"> ~3d~
-  <div>
-   <li value="fruits"> 1. Fruits </li>
-   <li value="recall"> 2. Recall Food </li>
-   <li value="corridor"> 3. Corridor </li>
-   <li value="recorridor"> 4. re-Corridor </li>
-   <li value="bathhouse"> 5. Bath House </li>
-  <div>
-</ul>
-
-<ul id="3dModels">   ~3d models ~
-  <div>
-   <li value="fruits">1. Fruits</li>
-   <li value="food">2. Food </li>
-   <li value="corridor">3. Corridor</li>
-   <li value="recorridor">4. re-Corridor </li>
-   <li value="tablecloth">5. Table Cloth</li>
- </div>
-</ul>
-
-
-<ul id="fabrications">   ~ fabrications ~
-  <div>
-   <li value="">Saab</li>
-   <li value="">Mercedes</li>
-   <li value="">Audi</li>
- </div>
-</ul>
-
-<ul id="who">  WHO
-  <div>
-   <li value=""> WHO </li>
-   <li value="">Saab</li>
-   <li value="mercedes">Mercedes</li>
-   <li value="audi">Audi</li>
-  </div>
-</ul>
-
-
-<div id="preview-2d">
-  <span id="IMG_boffo" class="highlightSelection">
-    <img src="./assets/images/fujifilm/FH000003.JPG"> </img>
-  </span>
-  <span  id="IMG_shells">
-    <img src="./assets/images/fujifilm/FH000031.JPG"> </img>
-  </span>
-  <span  id="IMG_screenshot">
-    <img src="./assets/images/fujifilm/FH000005.JPG"> </img>
-  </span>
-  <span  id="IMG_scans">
-    <img src="./assets/images/fujifilm/FH000032.JPG"> </img>
-  </span>
-  <span >
-    <img src="./assets/images/fujifilm/FH000016.JPG"> </img>
-  </span>
-</div>
-<script type="text/javascript" src="./assets/scripts/main.js"> </script>
+  <script type="text/javascript" src="./assets/scripts/main.js"> </script>
 </body>
 </html>
