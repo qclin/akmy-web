@@ -1,6 +1,8 @@
-$('#list-2d').click(() => {
-	$('#preview-2d').show()
-	randomDisplaceItem()
+$('ul').click((e) => {
+	$previewID = '#preview-'+e.target.id
+	$($previewID).show()
+	// $('#preview-2d').show()
+	randomDisplaceItem($previewID)
 })
 
 $('ul').click((e) => {
@@ -8,9 +10,13 @@ $('ul').click((e) => {
 	$(e.target).siblings('ul').children().hide()
 })
 
-function randomDisplaceItem(){
+$('li').hover(function(e){
+	$('#highlightGlow').insertAfter($('#IMG_'+e.target.id));
+})
+
+function randomDisplaceItem(previewID){
 	var position = 1
-	$('#preview-2d').children('img').each(function(index, element){
+	$(previewID).children('span').each(function(index, element){
 		var placeStyle = 'imageOverlay position'+position
 		$(this).addClass(placeStyle)
 		position ++

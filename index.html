@@ -1,18 +1,16 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html>
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./assets/styles/main.css" />
+  <link rel="stylesheet" href="./assets/styles/mobile.css" />
   <title>AKMY</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 </head>
 <body>
-<span class="tooltip" data-tooltip="Hallo ich bins">
-<input type="text" placeholder="Lorem ipsum dolorem" required="" title=""/>
-</span>
 
-
-<ul id="list-2d"> ~2d~
+<ul id="2d"> ~2d~
   <div>
    <li class="optionLinks" id="boffo">
      <a href="#boffo"> 1. BOFFO </a>
@@ -29,7 +27,7 @@
   </div>
 </ul>
 
-<ul id="list-3d"> ~3d~
+<ul id="3d"> ~3d~
   <div>
    <li value="fruits"> 1. Fruits </li>
    <li value="recall"> 2. Recall Food </li>
@@ -39,7 +37,7 @@
   <div>
 </ul>
 
-<ul id="list-3dModels">   ~3d models ~
+<ul id="3dModels">   ~3d models ~
   <div>
    <li value="fruits">1. Fruits</li>
    <li value="food">2. Food </li>
@@ -50,7 +48,7 @@
 </ul>
 
 
-<ul id="list-fabrications">   ~ fabrications ~
+<ul id="fabrications">   ~ fabrications ~
   <div>
    <li value="">Saab</li>
    <li value="">Mercedes</li>
@@ -58,7 +56,7 @@
  </div>
 </ul>
 
-<ul id="list-who">  WHO
+<ul id="who">  WHO
   <div>
    <li value=""> WHO </li>
    <li value="">Saab</li>
@@ -69,13 +67,24 @@
 
 
 <div id="preview-2d">
-	<img id="IMG_boffo" src="./assets/images/fujifilm/FH000003.JPG"> </img>
-	<img id="IMG_shells" src="./assets/images/fujifilm/FH000031.JPG"> </img>
-	<img id="IMG_screenshot" src="./assets/images/fujifilm/FH000005.JPG"> </img>
-	<img id="IMG_scans" src="./assets/images/fujifilm/FH000032.JPG"> </img>
-	<img src="./assets/images/fujifilm/FH000016.JPG"> </img>
-</div>
+  <span id="IMG_boffo">
+    <img class="previewImages" src="./assets/images/fujifilm/FH000003.JPG"> </img>
+  </span>
+  <span  id="IMG_shells">
+    <img class="previewImages" src="./assets/images/fujifilm/FH000031.JPG"> </img>
+  </span>
+  <span  id="IMG_screenshot">
+    <img class="previewImages"src="./assets/images/fujifilm/FH000005.JPG"> </img>
+  </span>
+  <span  id="IMG_scans">
+    <img class="previewImages" src="./assets/images/fujifilm/FH000032.JPG"> </img>
+  </span>
+  <span >
+    <img src="./assets/images/fujifilm/FH000016.JPG"> </img>
+  </span>
 
+</div>
+<span id="highlightGlow"> </span>
  <script type="text/javascript" src="./assets/scripts/main.js"> </script>
 </body>
 </html>

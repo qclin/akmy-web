@@ -6,6 +6,8 @@ select:before{
 }
 
 ul{
+    display: inline-block;
+    vertical-align: top;
     background: rgb(243,243,243);
     -webkit-appearance: menulist;
     box-sizing: border-box;
@@ -13,7 +15,6 @@ ul{
     white-space: pre;
     -webkit-rtl-ordering: logical;
     color: black;
-    background-color: white;
     cursor: default;
     border-width: 1px;
     border-style: solid;
@@ -25,7 +26,7 @@ ul{
     -webkit-writing-mode: horizontal-tb;
     width: 120px;
     height: 20px;
-    z-index: 3;
+    margin-right: 8em;
 }
 ul div{
   display: none;
@@ -38,42 +39,56 @@ ul div{
   left: 5px;
   position: relative;
   top: -20px;
-  z-index: 2;
   overflow: auto;
 }
 li{
+  cursor: pointer;
   list-style: none;
 }
 #preview-2d{
   display: none;
 }
 
-#preview-2d > img {
-  width: 30%;
+#preview-2d > span > img {
+  width: 50%;
 }
 .highlightSelection{
   filter: none !important;
   -webkit-filter: none !important;
   z-index: 10;
+  opacity: 1;
 }
-.highlightSelection::after{
-  content: '';
-  /*background:linear-gradient(rgba(248,231,28,0),rgba(248,231,28,1));*/
-  /*opacity:.25;*/
+.highlightSelection:after{
+  content: ' ';
+  opacity:1;
   background: #F8E71C;
-  width: 100%;
+  top: -50px;
+  left: -50px;
+  position: absolute;
+  width: 35%;
   height: 100%;
+  border-radius: 50%;
+  z-index: -5;
+  -webkit-filter: blur(15px);
+  -moz-filter: blur(15px);
+  -o-filter: blur(15px);
+  -ms-filter: blur(15px);
+  filter: blur(15px);
+}
+#highlightGlow{
+  background: #F8E71C;
+  width: 100px;
+  height: 100px;
   top: 50px;
   right: 50px;
-  position: absolute;
-  width: 100%;
-  height: 100%;
+  position: relative;
   border-radius: 50px;
 }
 li{
   display: block;
   float: left;
   width: 100%;
+  cursor: pointer;
 }
 li a{
   text-decoration: none;
@@ -89,6 +104,7 @@ li:hover{
   position: absolute;
   -webkit-filter: grayscale(80%) opacity(50%); /* Chrome, Safari, Opera */
   filter: grayscale(80%) opacity(50%);
+  z-index: -2;
 }
 
 .position1{
