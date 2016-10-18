@@ -3,14 +3,14 @@ $(document).on('click', 'span.img-Ctrl', function(e) {
   var direction = e.target.dataset.value
   var imgList = $('.project-content').find('div')
   var maxIndex = imgList.length-1
-  $(imgList).eq(current).css("z-index", "1")
+  $(imgList).eq(current).removeClass('foreground')
   if(direction=="left"){
     if(current == 0){
       current = maxIndex
     }else{
       current -= 1
     }
-    $(imgList).eq(current).css("z-index", "10")
+    $(imgList).eq(current).addClass('foreground')
   }
   if(direction=="right"){
     if(current == maxIndex){
@@ -18,13 +18,13 @@ $(document).on('click', 'span.img-Ctrl', function(e) {
     }else{
       current += 1
     }
-    $(imgList).eq(current).css("z-index", "10")
+    $(imgList).eq(current).addClass('foreground')
 
   }
 });
 
 
-$(document).on('click', 'input[type=range]', function(e){
+$(document).on('change', 'input[type=range]', function(e){
   var sliderValue = e.target.value
-  $('.project-content').find('div').eq(0).css({transform: 'scale(.'+sliderValue+')'})
+  $('.project-content').find('div.foreground').css({transform: 'scale(.'+sliderValue+')'})
 })

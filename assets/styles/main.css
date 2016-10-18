@@ -4,8 +4,10 @@ select {
 select:before{
   background-image: -webkit-linear-gradient(top,#fff,hsla(0,0%,100%,0));
 }
+#content-wrapper{
+  margin-top: 10em;
+}
 #content.project-wrapper{
-  top: 150px;
   position: relative;
 }
 ul{

@@ -8,5 +8,9 @@ $("nav").load("./views/components/nav.html");
 // });
 
 $(document).on('change', '[type=checkbox]', function(e) {
-  console.log($(this), e.target.value)
+  if($(this).is(':checked')){
+    $('.text-Box-'+e.target.value).show()
+  }else{
+    $('.text-Box-'+e.target.value).hide()
+  }
 });

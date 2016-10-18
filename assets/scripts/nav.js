@@ -1,5 +1,4 @@
 $('ul').click((e) => {
-	console.log("hoge____ CLICKED only")
   // after pushState show preview
   history.pushState(null, null, '/');
 	$("#content").load("./views/components/preview.html #preview-"+e.target.id, function(){
