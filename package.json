@@ -1,0 +1,20 @@
+{
+  "name": "akmy",
+  "version": "1.0.0",
+  "description": "[image filters](http://www.w3schools.com/cssref/playit.asp?filename=playcss_filter&preval=blur)",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qclin/akmy-web.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/qclin/akmy-web/issues"
+  },
+  "homepage": "https://github.com/qclin/akmy-web#readme"
+}

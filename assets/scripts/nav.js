@@ -1,23 +1,23 @@
+$('ul').click((e) => {
+	console.log("hoge____ CLICKED only")
+  // after pushState show preview
+  history.pushState(null, null, '/');
+	$("#content").load("./views/components/preview.html #preview-"+e.target.id, function(){
+		$previewID = '#preview-'+e.target.id
+		generateImageSizePostion($previewID)
+	});
+	// $($previewID).siblings($('.preview')).hide()
+	// $($previewID).show()
+	// randomDisplaceItem($previewID)
+})
+$('ul').click((e) => {
+	$(e.target.children).show()
+	$(e.target).siblings('ul').children().hide()
+})
 
-// $('nav').on('click', 'ul', (e) => {
-// 	$previewID = '#preview-'+e.target.id
-// 	$($previewID).siblings($('.preview')).hide()
-// 	$($previewID).show()
-// 	// randomDisplaceItem($previewID)
-// 	generateImageSizePostion($previewID)
-// 	$(e.target.children).show()
-// 	$(e.target).siblings('ul').children().hide()
-// });
-//
-// $('nav').on('hover', 'li', (e) => {
-// 	var projectId = $(this).data('projectId')
-// 	console.log('___ hovering___', projectId)
-// 	$('#highlightGlow').insertAfter($('#IMG_'+projectId));
-// })
-
-
-/* randomize postion - method 1 use CSS styling with preset positons 1-6 by matching selection index,
-short-coming index1 will always have class position1 */
+$('li').hover(function(e){
+	$('#highlightGlow').insertAfter($('#IMG_'+e.target.id));
+})
 
 function randomDisplaceItem(previewID){
 	var position = 1

@@ -4,7 +4,10 @@ select {
 select:before{
   background-image: -webkit-linear-gradient(top,#fff,hsla(0,0%,100%,0));
 }
-
+#content.project-wrapper{
+  top: 150px;
+  position: relative;
+}
 ul{
     display: inline-block;
     vertical-align: top;
@@ -39,14 +42,15 @@ ul{
   top: -20px;
   overflow: auto;
   width: 165px;
+  z-index: -2;
 }
 li{
   cursor: pointer;
   list-style: none;
 }
 .preview-wrapper{
-  display: none;
   margin-top: 10em;
+  z-index: -5;
 }
 .preview-wrapper > span{
   width: 100%;
