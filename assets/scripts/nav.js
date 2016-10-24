@@ -1,17 +1,24 @@
-$('ul').click((e) => {
-  // after pushState show preview
-  history.pushState(null, null, '/');
+var projectType = location.pathname.split('/')[1]
+var projectName = location.pathname.split('/')[2]
+var projectTypeList = ["2d", "3d", "facbrication", "3dmodels"]
+
+if(projectTypeList.indexOf(projectType) > -1 ){
+  $('#'+projectType).find('.navDropdownBox').show()
+  $('#'+projectName).addClass('selectedLink')
+}
+
+$('nav ul').click((e) => {
+  $(e.target.children).show()
+  $(e.target).siblings('ul').children().hide()
 	$("#content").load("./views/components/preview.html #preview-"+e.target.id, function(){
 		$previewID = '#preview-'+e.target.id
 		generateImageSizePostion($previewID)
 	});
-	// $($previewID).siblings($('.preview')).hide()
-	// $($previewID).show()
-	// randomDisplaceItem($previewID)
-})
-$('ul').click((e) => {
-	$(e.target.children).show()
-	$(e.target).siblings('ul').children().hide()
+});
+$('body').on('hover', 'li', (e) => {
+	var projectId = $(this).data('projectId')
+	console.log('___ hovering___', projectId)
+	$('#highlightGlow').insertAfter($('#IMG_'+projectId));
 })
 
 $('li').hover(function(e){

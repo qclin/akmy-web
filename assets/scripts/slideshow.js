@@ -26,5 +26,5 @@ $(document).on('click', 'span.img-Ctrl', function(e) {
 
 $(document).on('change', 'input[type=range]', function(e){
   var sliderValue = e.target.value
-  $('.project-content').find('div.foreground').css({transform: 'scale(.'+sliderValue+')'})
+  $('.project-content').find('div.foreground').css({transform: 'scale('+sliderValue/100+')'})
 })

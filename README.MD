@@ -26,11 +26,25 @@ ul{
 [SVG filter primitive][https://developer.mozilla.org/en/docs/Web/SVG/Element/feTurbulence]
 
 
+
+#S3 cloud image storage
+[batch fetching](http://stackoverflow.com/questions/32702431/display-images-fetched-from-s3)
+
 #Todo
 
 ## Create db
  - sqlite3 schema
  - seed file
+ 1. Export the Excel file to CSV format
+ 2. Use the .import command:
+  >
+    sqlite> .separator "|"
+    sqlite> .import excel_export.csv table_name
 
 ## create routing
  - jade templates
+
+
+# Commands for starting DB
+
+> sqlite3 db/akmy-web.db < db/schema.sql

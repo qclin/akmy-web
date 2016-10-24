@@ -1,0 +1,31 @@
+section#content-wrapper
+  #content.project-wrapper
+    link(href='/styles/project.css', rel='stylesheet')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js')
+    include ../partials/nav.jade
+    header
+      h1   1. #{name}
+      form(action='demo_form.asp')
+        input(type='checkbox', name='', value='who')
+        |  for who?
+        input(type='checkbox', name='', value='role')
+        |  role
+        input(type='checkbox', name='', value='info')
+        |  description
+        input(type='checkbox', name='', value='links')
+        |  external links
+    section#content-Boffo.project-content
+      each imageUrl in imageUrlList
+        div
+          img(src="#{imageUrl}")
+          svg.cross
+            line(x1='0', y1='100%', x2='100%', y2='0')
+            line(x1='0', y1='0', x2='100%', y2='100%')
+    section.info-Wrapper
+      .text-Box-who  AI, ID, PSD 
+      .text-Box-role  Graphic Designer 
+      .text-Box-info
+        | these posters were designed for a purpose, they were passed around and hung up and passed on and thrown away, some these posters were designed for a purpose, they were passed around and hung up and passed on and thrown away, somethese posters were designed for a purpose, they were passed around and hung up and passed
+      .text-Box-links www.boffo-ny.org 
+    include ../partials/slideCtrl.jade
+    script(type='text/javascript', src='/scripts/infoCheck.js')

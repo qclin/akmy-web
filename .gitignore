@@ -1,2 +1,4 @@
 WEBZ.sketch
 node_modules/
+.aws-config.json
+s3bucketPolicy

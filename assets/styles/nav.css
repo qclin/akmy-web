@@ -1,0 +1,60 @@
+nav{
+  height: 20%;
+}
+ul{
+    display: inline-block;
+    vertical-align: top;
+    background: rgb(243,243,243);
+    -webkit-appearance: menulist;
+    box-sizing: border-box;
+    align-items: center;
+    white-space: pre;
+    -webkit-rtl-ordering: logical;
+    color: black;
+    cursor: default;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 5px;
+    text-rendering: auto;
+    display: inline-block;
+    text-align: start;
+    font: 11px BlinkMacSystemFont;
+    -webkit-writing-mode: horizontal-tb;
+    width: 120px;
+    height: 20px;
+    margin-right: 8em;
+}
+ul:last-of-type{
+  margin-right: 0;
+}
+.navDropdownBox{
+  display: none;
+  border: solid 1px grey;
+  background: white;
+  border-radius: 5px;
+  box-shadow: inset 0 0 2px grey;
+  left: 5px;
+  position: relative;
+  overflow: auto;
+  width: 165px;
+  z-index: -2;
+}
+li{
+  cursor: pointer;
+  list-style: none;
+  display: block;
+  float: left;
+  width: 100%;
+  line-height: 22px;
+  padding: 4px;
+}
+li a{
+  text-decoration: none;
+  color: black;
+}
+.selectedLink{
+  background: gold;
+}
+li:hover{
+  background: gold;
+}

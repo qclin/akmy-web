@@ -16,5 +16,15 @@
   "bugs": {
     "url": "https://github.com/qclin/akmy-web/issues"
   },
-  "homepage": "https://github.com/qclin/akmy-web#readme"
+  "homepage": "https://github.com/qclin/akmy-web#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-livereload": "^3.8.1",
+    "gulp-sass": "^2.3.2",
+    "q": "^1.4.1",
+    "sqlite3": "^3.1.6"
+  },
+  "dependencies": {
+    "sqlite3": "^3.1.6"
+  }
 }

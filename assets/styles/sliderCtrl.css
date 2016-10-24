@@ -1,0 +1,26 @@
+.img-Ctrl{
+  color: blue;
+  font-size: 60px;
+  position: fixed;
+  margin-top: 3em;
+  cursor: pointer;
+  z-index: 10;
+}
+
+#left-arrow{
+  left: 1em;
+}
+
+#right-arrow{
+  right: 1em;
+}
+#img-Slider{
+  bottom: 2em;
+  position: fixed;
+  width: 100%;
+  text-align: center;
+  z-index: 10;
+}
+#ctrl-Wrapper{
+  height: calc(100vh - 30%);
+}
