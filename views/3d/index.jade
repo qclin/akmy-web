@@ -16,7 +16,7 @@ section#content-wrapper
       if info.links
         input(type='checkbox', name='', value='links')
         |  external links
-  section#content-Boffo.project-content
+  section.project-content
     each imageUrl in imageUrlList
       div
         img(src="#{imageUrl}")
@@ -33,3 +33,7 @@ section#content-wrapper
           a(href=link) #{link}
   include ../partials/slideCtrl.jade
   script(type='text/javascript', src='/scripts/infoCheck.js')
+if info.links
+  footer
+      each link in info.links
+        a(href=link).ext-links #{link}

@@ -1,3 +1,34 @@
+#home-link{
+  font-size: 24px;
+  font-family: "Times New Roman", Georgia, Serif;
+  font-style: italic;
+  color: #0000FF;
+  text-decoration: none;
+  margin-top: 1em;
+  font-weight: 400;
+}
+#home-link:after{
+  content: ' ';
+  background: #F8E71C;
+  top: -10px;
+  left: -21px;
+  position: absolute;
+  width: 10%;
+  height: 8%;
+  border-radius: 50%;
+  display: block;
+  z-index: -5;
+  -webkit-filter: blur(15px);
+  -moz-filter: blur(15px);
+  -o-filter: blur(15px);
+  -ms-filter: blur(15px);
+  filter: blur(15px);
+  -webkit-transform: rotate(-35deg);
+  -moz-transform: rotate(-35deg);
+  -o-transform: rotate(-35deg);
+  -ms-transform: rotate(-35deg);
+  transform: rotate(-35deg);
+}
 nav{
   height: 20%;
 }
