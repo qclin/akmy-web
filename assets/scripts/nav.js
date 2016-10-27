@@ -15,13 +15,14 @@ $('nav ul').click((e) => {
 		generateImageSizePostion($previewID)
 	});
 });
-$('body').on('hover', 'li', (e) => {
+$('nav').on('hover', 'li', (e) => {
 	var projectId = $(this).data('projectId')
 	console.log('___ hovering___', projectId)
 	$('#highlightGlow').insertAfter($('#IMG_'+projectId));
 })
 
 $('li').hover(function(e){
+  console.log("li hovering__ ", e.target.id)
 	$('#highlightGlow').insertAfter($('#IMG_'+e.target.id));
 })
 

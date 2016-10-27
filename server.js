@@ -68,10 +68,11 @@ app.get('/model/:project', function(req, res){
 	})
 });
 
-app.listen(3344);
-console.log('Listening on port 3344');
+app.listen(8080);
+console.log('Listening on port 8080');
 
 function getProjectInfo(table, requestRoute){
+
 	var deferred =Q.defer();
 	db.get("SELECT * FROM "+table+" WHERE route = ?", requestRoute, function(err, row){
 		if(err){

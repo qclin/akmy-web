@@ -13,8 +13,9 @@ section#content-wrapper
       |  software
       input(type='checkbox', name='', value='info')
       |  description
-      input(type='checkbox', name='', value='links')
-      |  external links
+      if info.links
+        input(type='checkbox', name='', value='links')
+        |  external links
   section#content-Boffo.project-content
     each imageUrl in imageUrlList
       div
@@ -26,8 +27,9 @@ section#content-wrapper
     .infoBox.text-role  #{info.role}
     .infoBox.text-software  #{info.software}
     .infoBox.text-info #{info.description}
-    .infoBox.text-links
-      each link in info.links
-        a(href=link) #{link}
+    if info.links
+      .infoBox.text-links
+        each link in info.links
+          a(href=link) #{link}
   include ../partials/slideCtrl.jade
   script(type='text/javascript', src='/scripts/infoCheck.js')

@@ -41,6 +41,9 @@ ul{
     sqlite> .separator "|"
     sqlite> .import excel_export.csv table_name
 
+escaping ' in sql query with ''
+http://www.orafaq.com/faq/how_does_one_escape_special_characters_when_writing_sql_queries
+
 ## create routing
  - jade templates
 

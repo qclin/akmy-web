@@ -1,10 +1,7 @@
 DROP TABLE IF EXISTS dimension2;
-DROP TABLE IF EXISTS dimension3;
-DROP TABLE IF EXISTS Fabrications;
-DROP TABLE IF EXISTS Models;
 
 CREATE TABLE dimension2(
-  id INTEGER,
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
   name TEXT,
   route TEXT,
   who TEXT,
@@ -13,9 +10,11 @@ CREATE TABLE dimension2(
   description TEXT,
   links TEXT
 );
+
+DROP TABLE IF EXISTS dimension3;
 
 CREATE TABLE dimension3(
-  id INTEGER,
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
   name TEXT,
   route TEXT,
   who TEXT,
@@ -24,9 +23,11 @@ CREATE TABLE dimension3(
   description TEXT,
   links TEXT
 );
+
+DROP TABLE IF EXISTS Fabrications;
 
 CREATE TABLE Fabrications(
-  id INTEGER,
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
   name TEXT,
   route TEXT,
   who TEXT,
@@ -36,8 +37,10 @@ CREATE TABLE Fabrications(
   links TEXT
 );
 
+DROP TABLE IF EXISTS Models;
+
 CREATE TABLE Models(
-  id INTEGER,
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
   name TEXT,
   route TEXT,
   who TEXT,
