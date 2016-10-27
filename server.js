@@ -30,7 +30,7 @@ app.get('/2d/:project', function(req, res){
 				res.render('2d/index.jade', {imageUrlList, info: databaseRow})
 			})
 		}
-	})
+	});
 });
 
 
@@ -42,7 +42,7 @@ app.get('/3d/:project', function(req, res){
 				res.render('3d/index.jade', {imageUrlList, info: databaseRow})
 			})
 		}
-	})
+	});
 });
 
 
@@ -54,7 +54,7 @@ app.get('/fabrication/:project', function(req, res){
 				res.render('fabrcations/index.jade', {imageUrlList, info: databaseRow})
 			})
 		}
-	})
+	});
 });
 
 app.get('/model/:project', function(req, res){
@@ -65,7 +65,7 @@ app.get('/model/:project', function(req, res){
 				res.render('models/index.jade', {imageUrlList, info: databaseRow})
 			})
 		}
-	})
+	});
 });
 
 app.listen(8080);
