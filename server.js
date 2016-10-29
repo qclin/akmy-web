@@ -26,7 +26,7 @@ app.get('/2d/:project', function(req, res){
 		if(databaseRow){
 			databaseRow.links = databaseRow.links.split(' ')
 			getProjectImgS3(databaseRow.route).then((imageUrlList) => {
-				imageUrlList = imageUrlList.filter(Boolean)
+				imageUrlList = imageUrlList.filter(Boolean).sort(urlByIndex)
 				res.render('2d/index.jade', {imageUrlList, info: databaseRow})
 			})
 		}
@@ -37,8 +37,8 @@ app.get('/2d/:project', function(req, res){
 app.get('/3d/:project', function(req, res){
 	getProjectInfo("dimension3", req.url).then((databaseRow) => {
 		if(databaseRow){
-			getProjectImgS3(databaseRow.route).then((imageUrlList) =>{
-				imageUrlList = imageUrlList.filter(Boolean).sort(imageUrlByIndex)
+			getProjectImgS3(databaseRow.route).then((signedUrlList) =>{
+				var imageUrlList = signedUrlList.filter(Boolean).sort(urlByIndex)
 				res.render('3d/index.jade', {imageUrlList, info: databaseRow})
 			})
 		}
@@ -50,8 +50,8 @@ app.get('/fabrication/:project', function(req, res){
 	getProjectInfo("Fabrications", req.url).then((databaseRow) => {
 		if(databaseRow){
 			getProjectImgS3(databaseRow.route).then((imageUrlList) =>{
-				imageUrlList = imageUrlList.filter(Boolean)
-				res.render('fabrcations/index.jade', {imageUrlList, info: databaseRow})
+				imageUrlList = imageUrlList.filter(Boolean).sort(urlByIndex)
+				res.render('fabrications/index.jade', {imageUrlList, info: databaseRow})
 			})
 		}
 	});
@@ -61,7 +61,7 @@ app.get('/model/:project', function(req, res){
 	getProjectInfo("Models", req.url).then((databaseRow) => {
 		if(databaseRow){
 			getProjectImgS3(databaseRow.route).then((imageUrlList) =>{
-				imageUrlList = imageUrlList.filter(Boolean)
+				imageUrlList = imageUrlList.filter(Boolean).sort(urlByIndex)
 				res.render('models/index.jade', {imageUrlList, info: databaseRow})
 			})
 		}
@@ -111,7 +111,7 @@ function getProjectImgS3(projectPath){
 
 
 
-function imageUrlByIndex(a, b){
+function urlByIndex(a, b){
 	var aa = parseInt(a.substring(a.lastIndexOf("/") + 1, a.indexOf("_")));
 	var bb = parseInt(b.substring(b.lastIndexOf("/") + 1, b.indexOf("_")));
 	return aa < bb ? -1 : (aa > bb ? 1 : 0);

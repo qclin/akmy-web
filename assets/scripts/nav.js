@@ -7,24 +7,24 @@ if(projectTypeList.indexOf(projectType) > -1 ){
   $('#'+projectName).addClass('selectedLink')
 }
 
-$('nav ul').click((e) => {
-  $(e.target.children).show()
-  $(e.target).siblings('ul').children().hide()
-	$("#content").load("./views/components/preview.html #preview-"+e.target.id, function(){
-		$previewID = '#preview-'+e.target.id
-		generateImageSizePostion($previewID)
-	});
+$('.label').click((e) => {
+  $(e.target).next().show()
+  $(e.target).parent().siblings().children('.navDropdownBox').hide()
+  if(location.pathname == "/"){
+    $("#content").load("./views/components/preview.html #preview-"+$(e.target).parent().attr('id'), function(){
+      $previewID = '#preview-'+$(e.target).parent().attr('id');
+      generateImageSizePostion($previewID)
+    });
+  }
 });
-$('nav').on('hover', 'li', (e) => {
-	var projectId = $(this).data('projectId')
-	console.log('___ hovering___', projectId)
-	$('#highlightGlow').insertAfter($('#IMG_'+projectId));
-})
 
 $('li').hover(function(e){
-  console.log("li hovering__ ", e.target.id)
-	$('#highlightGlow').insertAfter($('#IMG_'+e.target.id));
-})
+  if(location.pathname == "/"){
+    var projectId = $(this).data('projectId')
+    $('#highlightGlow').insertAfter($('#IMG_'+projectId));
+  }
+});
+
 
 function randomDisplaceItem(previewID){
 	var position = 1
