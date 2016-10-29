@@ -51,3 +51,6 @@ http://www.orafaq.com/faq/how_does_one_escape_special_characters_when_writing_sq
 # Commands for starting DB
 
 > sqlite3 db/akmy-web.db < db/schema.sql
+
+
+[working with SVG ](http://stackoverflow.com/questions/4476526/do-i-use-img-object-or-embed-for-svg-files)

@@ -38,7 +38,7 @@ app.get('/3d/:project', function(req, res){
 	getProjectInfo("dimension3", req.url).then((databaseRow) => {
 		if(databaseRow){
 			getProjectImgS3(databaseRow.route).then((imageUrlList) =>{
-				imageUrlList = imageUrlList.filter(Boolean)
+				imageUrlList = imageUrlList.filter(Boolean).sort(imageUrlByIndex)
 				res.render('3d/index.jade', {imageUrlList, info: databaseRow})
 			})
 		}
@@ -107,4 +107,12 @@ function getProjectImgS3(projectPath){
 		}
 	});
 	return deferred.promise;
+}
+
+
+
+function imageUrlByIndex(a, b){
+	var aa = parseInt(a.substring(a.lastIndexOf("/") + 1, a.indexOf("_")));
+	var bb = parseInt(b.substring(b.lastIndexOf("/") + 1, b.indexOf("_")));
+	return aa < bb ? -1 : (aa > bb ? 1 : 0);
 }
