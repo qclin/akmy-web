@@ -22,7 +22,7 @@ app.get('/', function(req, res){
 });
 
 app.get('/scroll-test', function(req, res){
-	res.render('/scroll.jade');
+	res.render('scroll.jade');
 });
 
 app.get('/2d/:project', function(req, res){

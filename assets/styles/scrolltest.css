@@ -34,6 +34,11 @@ span#IMG_recall{
   top: 500px;
   right: 0;
 }
+
+span#IMG_recall img{
+  width: 31%;
+  float: right;
+}
 span#IMG_corridor{
   top: 750px;
 }
