@@ -20,7 +20,6 @@ ul{
 [dynamic loading](http://stackoverflow.com/questions/8988855/include-another-html-file-in-a-html-file)
 [event handling on generated content](http://stackoverflow.com/questions/6658752/click-event-doesnt-work-on-dynamically-generated-elements)
 
-
 [stroke-dash-animation](https://css-tricks.com/almanac/properties/s/stroke-dasharray/)
 
 [SVG filter primitive][https://developer.mozilla.org/en/docs/Web/SVG/Element/feTurbulence]
@@ -54,3 +53,6 @@ http://www.orafaq.com/faq/how_does_one_escape_special_characters_when_writing_sq
 
 
 [working with SVG ](http://stackoverflow.com/questions/4476526/do-i-use-img-object-or-embed-for-svg-files)
+
+
+[threejs mtl & obj loader example ](https://threejs.org/examples/#webgl_loader_obj_mtl)
