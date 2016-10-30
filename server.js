@@ -21,6 +21,10 @@ app.get('/', function(req, res){
 	res.render('index');
 });
 
+app.get('/scroll-test', function(req, res){
+	res.render('/scroll.jade');
+});
+
 app.get('/2d/:project', function(req, res){
 	getProjectInfo("dimension2", req.url).then((databaseRow) => {
 		if(databaseRow){

@@ -1,0 +1,46 @@
+p:first-of-type{
+  top: 28em;
+  width: 30%;
+  margin-left: 5em;
+}
+
+p:nth-of-type(2){
+  right: 2em;
+  top: 1500px;
+  width: 25%;
+}
+
+p:nth-of-type(3){
+  left: 4em;
+  top: 1800px;
+  width: 50%;
+}
+
+
+p {
+  position: absolute;
+  z-index: 20;
+  line-height: 30px;
+  font-family: courier;
+}
+
+span{
+  position: absolute;
+}
+span img{
+  width: inherit;
+}
+span#IMG_recall{
+  top: 500px;
+  right: 0;
+}
+span#IMG_corridor{
+  top: 750px;
+}
+span#IMG_reCorridor{
+  top: 1200px;
+  right: 0;
+}
+span#IMG_bathHouse{
+  top: 2000px;
+}
