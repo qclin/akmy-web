@@ -10,7 +10,7 @@ $('span.img-Ctrl').click(function(e) {
     }else{
       current -= 1
     }
-    $(imgList).eq(current).addClass('foreground')
+    $(imgList).eq(current).addClass('foreground reveal')
   }
   if(direction=="right"){
     if(current == maxIndex){
@@ -18,7 +18,7 @@ $('span.img-Ctrl').click(function(e) {
     }else{
       current += 1
     }
-    $(imgList).eq(current).addClass('foreground')
+    $(imgList).eq(current).addClass('foreground reveal')
   }
 });
 

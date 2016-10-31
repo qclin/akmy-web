@@ -115,12 +115,12 @@ div.infoBox {
   display:none;
 }
 
-.foreground img,
-.foreground object{
+.reveal img,
+.reveal object{
   display:block !important;
 }
-
-.foreground svg.cross{
+.foreground svg.cross,
+.reveal svg.cross{
   display: none;
 }
 
