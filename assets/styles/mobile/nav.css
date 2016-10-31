@@ -1,0 +1,23 @@
+@media(max-width: 768px){
+  nav{
+    height: 100%;
+    width: 100%;
+  }
+  ul{
+    display: block;
+    margin-right: 4em;
+    margin-left: 4em;
+    margin-bottom: calc(100vh/4 - 160px/4);
+    height: 40px;
+    background: -webkit-linear-gradient(white, grey);
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+  }
+  .label{
+    font-size: 21px
+  }
+  nav ul:last-of-type{
+    display: none;
+  }
+}

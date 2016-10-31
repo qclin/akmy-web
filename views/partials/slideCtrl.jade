@@ -6,6 +6,14 @@ section#ctrl-Wrapper
     span.range 0 %
     input(type='range', min='50', max='150', value='100')
     span.range 100 %
-
+    link(href='/styles/sliderCtrl.css', rel='stylesheet')
+section#sp-ctrl-Wrapper
+  .ctrl-Content
+    span#sp-left-arrow.img-Ctrl(data-value='left')
+      i.material-icons chevron_left
+    span#sp-showText
+      i.material-icons text_format
+    span#sp-right-arrow.img-Ctrl(data-value='right')
+      i.material-icons chevron_right
 script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js')
 script(type='text/javascript', src='/scripts/slideshow.js')

@@ -1,6 +1,7 @@
 var current = 0;
+var isMobile = (window.innerWidth <= 768)
 $('span.img-Ctrl').click(function(e) {
-  var direction = e.target.dataset.value
+  var direction = this.dataset.value
   var imgList = $('.project-images')
   var maxIndex = imgList.length-1
   $(imgList).eq(current).removeClass('foreground')
@@ -10,7 +11,6 @@ $('span.img-Ctrl').click(function(e) {
     }else{
       current -= 1
     }
-    $(imgList).eq(current).addClass('foreground reveal')
   }
   if(direction=="right"){
     if(current == maxIndex){
@@ -18,10 +18,24 @@ $('span.img-Ctrl').click(function(e) {
     }else{
       current += 1
     }
-    $(imgList).eq(current).addClass('foreground reveal')
   }
+  if(isMobile) return $(imgList).eq(current).addClass('foreground')
+  $(imgList).eq(current).addClass('foreground reveal')
 });
 
+$('#sp-showText').click(function(e){
+  $('body').addClass('greymode');
+  $('.subNav').addClass('blurmode');
+  $('.modal-layer').show()
+  $('.text-overlay').show()
+});
+
+$('body').on('click', '.text-overlay', function(e){
+  $('body').removeClass('greymode');
+  $('.subNav').removeClass('blurmode');
+  $('.modal-layer').hide()
+  $('.text-overlay').hide()
+});
 
 $('input[type=range]').change(function(e){
   var sliderValue = e.target.value

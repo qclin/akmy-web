@@ -56,3 +56,7 @@ http://www.orafaq.com/faq/how_does_one_escape_special_characters_when_writing_sq
 
 
 [threejs mtl & obj loader example ](https://threejs.org/examples/#webgl_loader_obj_mtl)
+
+[using material icons](http://google.github.io/material-design-icons/#getting-icons)
+
+[material icons](https://material.io/icons/)

@@ -65,6 +65,22 @@
   filter: grayscale(80%) opacity(50%);
   z-index: -2;
 }
-h1{
+header h1{
   text-decoration: underline;
+}
+
+.navMenu{
+  color: rgb(0,0,255);
+  margin: 1em auto .5em auto;
+  width: 100%;
+  text-align: center;
+}
+.md-36{
+  font-size: 36px !important;
+}
+
+@media(min-width: 768px){
+  .mobile{
+    display: none !important;
+  }
 }

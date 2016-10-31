@@ -1,16 +1,8 @@
-.img-Ctrl{
-  color: blue;
-  font-size: 60px;
-  position: fixed;
-  margin-top: 3em;
-  cursor: pointer;
-  z-index: 10;
-}
+
 
 #left-arrow{
   left: 1em;
 }
-
 #right-arrow{
   right: 1em;
 }
@@ -23,4 +15,49 @@
 }
 #ctrl-Wrapper{
   height: calc(100vh - 30%);
+}
+
+@media(min-width:768px){
+  .img-Ctrl{
+    color: blue;
+    font-size: 60px;
+    position: fixed;
+    cursor: pointer;
+    z-index: 10;
+  }
+}
+@media (max-width: 768px){
+  #ctrl-Wrapper{
+    display: none;
+  }
+}
+
+#sp-ctrl-Wrapper{
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  width: 80%;
+}
+
+.ctrl-Content{
+  margin: 0 auto;
+  width: 60%;
+  background: #EBEBEB;
+  height: 40px;
+}
+
+.ctrl-Content .material-icons{
+  font-size: 36px;
+}
+#sp-left-arrow{
+  float: left;
+  margin-left: 8px;
+}
+#sp-right-arrow{
+  float: right;
+  margin-right: 8px;
+}
+
+#sp-showText{
+  color: rgb(0,0,255);
 }

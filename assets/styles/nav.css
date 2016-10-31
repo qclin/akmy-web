@@ -34,30 +34,25 @@ ul{
     display: inline-block;
     vertical-align: top;
     margin-right: 3em;
-    display: inline-block;
     box-sizing: border-box;
     align-items: center;
 }
-ul:last-of-type{
-  margin-right: 0;
-}
 
 nav ul .label{
+  font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
   background: rgb(243,243,243);
   -webkit-appearance: menulist;
+  -moz-appearance: menulist;
+  appearance: menulist;
   white-space: pre;
   -webkit-rtl-ordering: logical;
-  color: black;
   cursor: default;
   border-width: 1px;
   border-style: solid;
   border-radius: 5px;
   text-rendering: auto;
   text-align: start;
-  font: 11px BlinkMacSystemFont;
   -webkit-writing-mode: horizontal-tb;
-  width: 120px;
-  height: 20px;
   position: relative;
   z-index: 3;
 }
@@ -92,4 +87,15 @@ li a{
 }
 li:hover{
   background: gold;
+}
+
+@media(min-width: 768px){
+  nav ul .label{
+    font-size: 11px;
+    width: 120px;
+    height: 20px;
+  }
+  ul:last-of-type{
+    margin-right: 0;
+  }
 }
