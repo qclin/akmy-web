@@ -254,3 +254,23 @@ a{
   right: 0;
   position: absolute;
 }
+
+
+@media(max-width: 768px) {
+  .portrait img,
+  .portrait object{
+    height: 95vh;
+  }
+  .img-modal.landscape img,
+  .img-modal.landscape object{
+    width: 100%;
+    top: 25%;
+  }
+  .closeModal{
+    z-index: 25;
+    position: absolute;
+    right: 0;
+    font-size: 36px !important;
+    margin: 0;
+  }
+}
