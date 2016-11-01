@@ -25,42 +25,6 @@ $('span.img-Ctrl').click(function(e) {
 });
 
 
-$(document).ready(function(){
-  console.log("document ready ")
-  if(window.innerWidth <= 768){
-    console.log(" innner width")
-    $('.foreground').on('swipeleft', function(){
-      console.log("left swipe ___ ");
-      // here can just use this.remove foreground then append prev or next
-      $(imgList).eq(current).removeClass('foreground')
-      if(current == 0){
-        current = maxIndex
-      }else{
-        current -= 1
-      }
-      $(imgList).eq(current).addClass('foreground')
-    });
-
-
-    $('.foreground').on('swiperight', function(){
-      $(imgList).eq(current).removeClass('foreground')
-      console.log("right swipe ___ ");
-    });
-
-
-
-    $( "img" ).on( "swipe", swipeHandler );
-
-      // Callback function references the event target and adds the 'swipe' class to it
-      function swipeHandler( event ){
-        $( event.target ).addClass( "swipe" );
-      }
-  }
-
-
-
-});
-
 $('#sp-showText').click(function(e){
   $('body').addClass('greymode');
   $('.subNav').addClass('blurmode');

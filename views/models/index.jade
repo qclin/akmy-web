@@ -1,45 +1,99 @@
+meta(name='viewport', content='width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0')
 link(href='/styles/project.css', rel='stylesheet')
 link(rel='stylesheet', href='/styles/main.css')
 script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js')
 script(src='https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js')
+script(src='/scripts/threejs/three.js')
+script(src='/scripts/threejs/loaders/DDSLoader.js')
+script(src='/scripts/threejs/loaders/MTLLoader.js')
+script(src='/scripts/threejs/loaders/OBJLoader.js')
+script(src='/scripts/threejs/Detector.js')
+script(src='/scripts/threejs/stats.min.js')
 include ../partials/nav.jade
 section#content-wrapper
-  header
+  header#header-model
     h3 #{info.name}
-    form(action='demo_form.asp')
-      input(type='checkbox', name='', value='who')
-      |  for who?
-      input(type='checkbox', name='', value='role')
-      |  role
-      input(type='checkbox', name='', value='software')
-      |  software
-      input(type='checkbox', name='', value='info')
-      |  description
-      if info.links
-        input(type='checkbox', name='', value='links')
-        |  external links
+    form
+      input(type='checkbox', name='', value='orbit')
+      |  orbit
+      input(type='checkbox', name='', value='zoom')
+      |  zoom 
+      input(type='checkbox', name='', value='pan')
+      |  pan
   section.project-content
-    each imageUrl in imageUrlList
-      div.project-images
-        if imageUrl.indexOf(".svg") > -1 
-          object.svg-files(data="#{imageUrl}" type="image/svg+xml")
-            img(src="#{imageUrl}")
-        else
-          img(src="#{imageUrl}")
-        svg.cross
-          line(x1='0', y1='100%', x2='100%', y2='0')
-          line(x1='0', y1='0', x2='100%', y2='100%')
-    .infoBox.text-who   #{info.who}
-    .infoBox.text-role  #{info.role}
-    .infoBox.text-software  #{info.software}
-    .infoBox.text-info #{info.description}
-    if info.links
-      .infoBox.text-links
-        each link in info.links
-          a(href=link) #{link}
-  include ../partials/slideCtrl.jade
-  script(type='text/javascript', src='/scripts/infoCheck.js')
-if info.links
-  footer
-      each link in info.links
-        a(href=link).ext-links #{link}
+  script. 
+    var container, stats;
+    var camera, scene, renderer;
+    var mouseX = 0, mouseY = 0;
+    var windowHalfX = window.innerWidth / 2;
+    var windowHalfY = window.innerHeight / 2;
+    init();
+    animate();
+    function init() {
+      container = document.createElement( 'div' );
+      document.body.appendChild( container );
+      camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 1, 2000 );
+      camera.position.z = 250;
+      // scene
+      scene = new THREE.Scene();
+      var ambient = new THREE.AmbientLight( 0x444444 );
+      scene.add( ambient );
+      var directionalLight = new THREE.DirectionalLight( 0xffeedd );
+      directionalLight.position.set( 0, 0, 1 ).normalize();
+      scene.add( directionalLight );
+      // model
+      var onProgress = function ( xhr ) {
+        if ( xhr.lengthComputable ) {
+          var percentComplete = xhr.loaded / xhr.total * 100;
+          console.log( Math.round(percentComplete, 2) + '% downloaded' );
+        }
+      };
+      var onError = function ( xhr ) { };
+      THREE.Loader.Handlers.add( /\.dds$/i, new THREE.DDSLoader() );
+      var mtlLoader = new THREE.MTLLoader();
+      mtlLoader.setPath("#{load.path}");
+      mtlLoader.load( "#{load.mtl}", function( materials ) {
+        materials.preload();
+        var objLoader = new THREE.OBJLoader();
+        objLoader.setMaterials( materials );
+        objLoader.setPath("#{load.path}");
+        objLoader.load("#{load.obj}", function ( object ) {
+          object.position.y = 0;
+          // make it a bit bigger
+          //- object.scale.set(2, 2, 2);
+          scene.add( object );
+        }, onProgress, onError );
+      });
+      //
+      renderer = new THREE.WebGLRenderer();
+      renderer.setPixelRatio( window.devicePixelRatio );
+      renderer.setSize( window.innerWidth, window.innerHeight );
+      container.appendChild( renderer.domElement );
+      document.addEventListener( 'mousemove', onDocumentMouseMove, false );
+      //
+      window.addEventListener( 'resize', onWindowResize, false );
+    }
+    function onWindowResize() {
+      windowHalfX = window.innerWidth / 2;
+      windowHalfY = window.innerHeight / 2;
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize( window.innerWidth, window.innerHeight );
+    }
+    function onDocumentMouseMove( event ) {
+      mouseX = ( event.clientX - windowHalfX ) / 2;
+      mouseY = ( event.clientY - windowHalfY ) / 2;
+    }
+    //
+    function animate() {
+      requestAnimationFrame( animate );
+      render();
+    }
+    function render() {
+      camera.position.x += ( mouseX - camera.position.x ) * .05;
+      camera.position.y += ( - mouseY - camera.position.y ) * .05;
+      camera.lookAt( scene.position );
+      renderer.render( scene, camera );
+    }
+
+  

@@ -35,7 +35,22 @@ h1{
 }
 
 @media(min-width: 768px) {
-
+  #header-2d{
+    position: relative;
+    left: calc(100%/5 + 120px);
+  }
+  #header-3d{
+    position: relative;
+    left: calc(100%/5 + 120px);
+  }
+  #header-fabrication{
+    position: relative;
+    left: calc(100%/5 + 120px);
+  }
+  #header-model{
+    position: relative;
+    left: calc(100%/5 + 120px);
+  }
   nav, header{
     display: inline-block;
   }
@@ -61,9 +76,7 @@ h1{
     margin-left: 14px;
   }
   #content-wrapper{
-    /*position: relative;
-    top: -5em;*/
-    top: 8em;
+    top: 9em;
     position: fixed;
   }
   #aboutME,

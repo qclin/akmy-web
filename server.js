@@ -24,10 +24,17 @@ app.get('/', function(req, res){
 app.get('/scroll-test', function(req, res){
 	res.render('scroll.jade');
 });
-
+app.get('/swipe-test', function(req, res){
+	res.render('swipe.jade');
+});
 
 app.get('/threejs-test', function(req, res){
-	res.render('threejsLeaf.jade');
+	var payload = {
+		'path': './obj/Leaf_3js/',
+		'mtl': 'Leaf_3js.mtl',
+		'obj': 'Leaf_3js.obj'
+	}
+	res.render('threejsLeaf.jade', {load : payload});
 });
 
 
@@ -73,17 +80,64 @@ app.get('/fabrication/:project', function(req, res){
 	});
 });
 
-app.get('/model/:project', function(req, res){
-	getProjectInfo("Models", req.url).then((databaseRow) => {
-		if(databaseRow){
-			databaseRow.links = databaseRow.links.split(' ')
-			getProjectImgS3(databaseRow.route).then((imageUrlList) =>{
-				imageUrlList = imageUrlList.filter(Boolean).sort(urlByIndex)
-				res.render('models/index.jade', {imageUrlList, info: databaseRow})
-			})
+
+app.get('/model/fruits', function(req, res){
+		var payload = {
+			'path': '/3dModels/fruits/',
+			'mtl': 'Orange_Brush.mtl',
+			'obj': 'Orange_Brush.obj'
 		}
-	});
+		var info = {
+			'name' : 'fruits'
+		}
+		res.render('models/index.jade', {info, load: payload})
 });
+
+app.get('/model/corridor', function(req, res){
+		var payload = {
+			'path': '/3dModels/corridor/',
+			'mtl': 'Wave.mtl',
+			'obj': 'Wave.obj'
+		}
+		var info = {
+			'name' : 'fruits'
+		}
+		res.render('models/index.jade', {info, load: payload})
+});
+
+app.get('/model/food', function(req, res){
+		var payload = {
+			'path': '/3dModels/food/',
+			'mtl': 'Cloth_Tamago.mtl',
+			'obj': 'Cloth_Tamago.obj'
+		}
+		var info = {
+			'name' : 'fruits'
+		}
+		res.render('models/index.jade', {info, load: payload})
+});
+
+// app.get('/model/:project', function(req, res){
+// 	getProjectInfo("Models", req.url).then((databaseRow) => {
+// 		if(databaseRow){
+// 			databaseRow.links = databaseRow.links.split(' ')
+// 			getProjectImgS3(databaseRow.route).then((imageUrlList) =>{
+//
+// 				imageUrlList = imageUrlList.filter(Boolean).sort(urlByIndex)
+// 				var mtlFileUrl = imageUrlList.filter(findMtl)
+// 				var objFileUrl =imageUrlList.filter(findObj)
+// 				var path= imageUrlList[0].substring(0, imageUrlList[0].lastIndexOf('/')+1)
+// 				console.log(" path == =? ", path)
+// 				var payload = {
+// 					'path': path,
+// 					'mtl': mtlFileUrl[0].split('?')[0],
+// 					'obj': objFileUrl[0].split('?')[0]
+// 				}
+// 				res.render('models/index.jade', {imageUrlList, info: databaseRow, load: payload})
+// 			})
+// 		}
+// 	});
+// });
 
 app.listen(8080);
 console.log('Listening on port 8080');
@@ -131,4 +185,11 @@ function urlByIndex(a, b){
 	var aa = parseInt(a.substring(a.lastIndexOf("/") + 1, a.indexOf("_")));
 	var bb = parseInt(b.substring(b.lastIndexOf("/") + 1, b.indexOf("_")));
 	return aa < bb ? -1 : (aa > bb ? 1 : 0);
+}
+
+function findMtl(item){
+	if(item.indexOf('.mtl') > -1) return true;
+}
+function findObj(item){
+	if(item.indexOf('.obj') > -1) return true;
 }
