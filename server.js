@@ -34,7 +34,9 @@ app.get('/threejs-test', function(req, res){
 app.get('/2d/:project', function(req, res){
 	getProjectInfo("dimension2", req.url).then((databaseRow) => {
 		if(databaseRow){
-			databaseRow.links = databaseRow.links.split(' ')
+			if(databaseRow.links){
+				databaseRow.links = databaseRow.links.split(' ')
+			}
 			getProjectImgS3(databaseRow.route).then((imageUrlList) => {
 				imageUrlList = imageUrlList.filter(Boolean).sort(urlByIndex)
 				res.render('2d/index.jade', {imageUrlList, info: databaseRow})
@@ -47,8 +49,11 @@ app.get('/2d/:project', function(req, res){
 app.get('/3d/:project', function(req, res){
 	getProjectInfo("dimension3", req.url).then((databaseRow) => {
 		if(databaseRow){
-			getProjectImgS3(databaseRow.route).then((signedUrlList) =>{
-				var imageUrlList = signedUrlList.filter(Boolean).sort(urlByIndex)
+			if(databaseRow.links){
+				databaseRow.links = databaseRow.links.split(' ')
+			}
+			getProjectImgS3(databaseRow.route).then((imageUrlList) =>{
+				imageUrlList = imageUrlList.filter(Boolean).sort(urlByIndex)
 				res.render('3d/index.jade', {imageUrlList, info: databaseRow})
 			})
 		}
@@ -59,6 +64,7 @@ app.get('/3d/:project', function(req, res){
 app.get('/fabrication/:project', function(req, res){
 	getProjectInfo("Fabrications", req.url).then((databaseRow) => {
 		if(databaseRow){
+			databaseRow.links = databaseRow.links.split(' ')
 			getProjectImgS3(databaseRow.route).then((imageUrlList) =>{
 				imageUrlList = imageUrlList.filter(Boolean).sort(urlByIndex)
 				res.render('fabrications/index.jade', {imageUrlList, info: databaseRow})
@@ -70,6 +76,7 @@ app.get('/fabrication/:project', function(req, res){
 app.get('/model/:project', function(req, res){
 	getProjectInfo("Models", req.url).then((databaseRow) => {
 		if(databaseRow){
+			databaseRow.links = databaseRow.links.split(' ')
 			getProjectImgS3(databaseRow.route).then((imageUrlList) =>{
 				imageUrlList = imageUrlList.filter(Boolean).sort(urlByIndex)
 				res.render('models/index.jade', {imageUrlList, info: databaseRow})
@@ -101,13 +108,17 @@ function getProjectImgS3(projectPath){
 			 params: {Bucket: 'akmy-web',  Delimiter: '/'}
 	}
 	bucketInfo.params.Prefix = projectPath.substring(1)+'/'
+	
 	var deferred =Q.defer();
 	var bucket = new AWS.S3(bucketInfo);
 	bucket.listObjects(function(err, data){
 		if(err){
+			console.log("s3errr", err)
 			deferred.resolve(err)
 		}else{
 			var dataList = data.Contents
+			console.log("s3 dataList-----", dataList)
+
 			var urlFromDataList = dataList.map((item, index) => {
 				if(item.Size == 0) return;
 				var params = { Key : item.Key }
@@ -118,8 +129,11 @@ function getProjectImgS3(projectPath){
 	});
 	return deferred.promise;
 }
-
-
+// getProjectImgS3('/3d/meal-recipes').then((imageUrlList) => {
+// 	console.log("_____ ", imageUrlList)
+// 	imageUrlList = imageUrlList.filter(Boolean).sort(urlByIndex)
+// 	console.log("aftersorting_____ ", imageUrlList)
+// })
 
 function urlByIndex(a, b){
 	var aa = parseInt(a.substring(a.lastIndexOf("/") + 1, a.indexOf("_")));

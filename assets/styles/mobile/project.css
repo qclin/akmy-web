@@ -70,7 +70,7 @@
     width: 100vw;
     display:none;
     background: rgba(243,243, 243, .8);
-    background-image: linear-gradient(rgba(243,243,243,0),rgba(243,243,243,1) 50%);
+    background-image: linear-gradient(rgba(216,216,216,0),rgba(216,216,216,1) 50%);
   }
   section.text-overlay{
     top: 0;

@@ -1,9 +1,11 @@
 
 
 #left-arrow{
+  top: 50%;
   left: 1em;
 }
 #right-arrow{
+  top: 50%;
   right: 1em;
 }
 #img-Slider{

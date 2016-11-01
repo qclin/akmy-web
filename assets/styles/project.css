@@ -35,12 +35,44 @@ h1{
 }
 
 @media(min-width: 768px) {
+
+  nav, header{
+    display: inline-block;
+  }
+  nav{
+    top: -2em;
+    right: -2em;
+    position: relative;
+  }
+  form,
+  header h3{
+    font-family: "Times New Roman", Georgia, Serif;
+    font-size: 14px;
+  }
+  header h3{
+    font-weight: 400;
+    text-decoration: underline;
+  }
+  form{
+    font-weight: 700;
+    font-style: italic;
+  }
+  form input{
+    margin-left: 14px;
+  }
+  #content-wrapper{
+    /*position: relative;
+    top: -5em;*/
+    top: 8em;
+    position: fixed;
+  }
   #aboutME,
   .mobile{
     display: none;
   }
+
   .project-content div{
-    width: 45%;
+    width: 30%;
   }
   .project-content div:nth-of-type(2){
     margin-top: 5%;
@@ -74,8 +106,10 @@ h1{
     height: 400px;
   }
   .project-content{
+    height: 70vh;
     width: 100vw;
     position: absolute;
+    overflow: hidden;
   }
   section.text-overlay,
   div.subNav,
@@ -123,9 +157,10 @@ div.infoBox {
   position: relative;
   top: -20px;
   overflow: auto;
-  z-index: -2;
+  /*z-index: -2;*/
   padding: 8px 12px;
   margin: none;
+  font-size: 12px;
 }
 
 .project-images img,
@@ -135,7 +170,11 @@ div.infoBox {
 
 .reveal img,
 .reveal object{
+  border: none;
   display:block !important;
+  -webkit-box-shadow: 2px 4px 5px 0px rgba(190,190,190,1);
+  -moz-box-shadow: 2px 4px 5px 0px rgba(190,190,190,1);
+  box-shadow: 2px 4px 5px 0px rgba(190,190,190,1);
 }
 .foreground svg.cross,
 .reveal svg.cross{
@@ -150,12 +189,14 @@ footer{
   width: 100vw;
   position: fixed;
   bottom: 0;
-  height: 10%;
+  height: 5%;
   background: linear-gradient(rgba(255,255,255, 0), #F8E71C);
 }
 
 footer a{
   margin: 2em;
+  top: 30%;
+  position: relative;
 }
 
 body{
@@ -164,4 +205,39 @@ body{
 }
 a{
   font-size: 11px;
+}
+.img-modal{
+  display:block;
+  position: fixed;
+  top: 100vh;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 11;
+  width: 100vw;
+  background-image: linear-gradient(rgba(216,216,216,.3),rgba(216,216,216,1) 100%);
+  background: rgba(255,255, 255, .8);
+}
+.closeModal{
+  float: right;
+  margin: 1em;
+  color: rgb(0,0,255);
+  cursor: pointer;
+  text-shadow: 0px 2px 4px rgba(0,0,0,.5);
+}
+.img-modal.landscape img,
+.img-modal.landscape object{
+  width: 100vh;
+}
+.portrait img,
+.portrait object{
+  height: 100vh;
+}
+.img-modal img,
+.img-modal object{
+  margin: 0 auto;
+  position: center;
+  left: 0;
+  right: 0;
+  position: absolute;
 }

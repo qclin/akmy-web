@@ -5,7 +5,7 @@ include ../partials/nav.jade
 script(type='text/javascript', src='/scripts/nav.js')
 section#content-wrapper
   header
-    h1 #{info.name}
+    h3 #{info.name}
     form(action='demo_form.asp')
       input(type='checkbox', name='', value='who')
       |  for who?
@@ -15,9 +15,6 @@ section#content-wrapper
       |  software
       input(type='checkbox', name='', value='info')
       |  description
-      if info.links
-        input(type='checkbox', name='', value='links')
-        |  external links
   section.project-content
     each imageUrl in imageUrlList
       div.project-images
@@ -33,10 +30,6 @@ section#content-wrapper
     .infoBox.text-role  #{info.role}
     .infoBox.text-software  #{info.software}
     .infoBox.text-info #{info.description}
-    if info.links
-      .infoBox.text-links
-        each link in info.links
-          a(href=link) #{link}
   include ../partials/slideCtrl.jade
   script(type='text/javascript', src='/scripts/infoCheck.js')
 if info.links

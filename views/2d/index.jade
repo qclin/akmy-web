@@ -24,7 +24,7 @@ html
         span#prepscans
           a(href='/2d/prepscans') Object Scans Scanned 
       header
-        h1 #{info.name}
+        h3 #{info.name}
         form(action='demo_form.asp')
           input(type='checkbox', name='', value='who')
           |  for who?
@@ -34,9 +34,6 @@ html
           |  software
           input(type='checkbox', name='', value='info')
           |  description
-          if info.links
-            input(type='checkbox', name='', value='links')
-            |  external links
       section.project-content
         each imageUrl in imageUrlList
           div.project-images
@@ -48,10 +45,6 @@ html
         .infoBox.text-role  #{info.role}
         .infoBox.text-software  #{info.software}
         .infoBox.text-info #{info.description}
-        if info.links
-          .infoBox.text-links
-            each link in info.links
-              a(href=link) #{link}
         
       include ../partials/slideCtrl.jade
       .modal-layer
@@ -71,6 +64,8 @@ html
           each link in info.links
             a(href=link target="_blank").ext-links
               i.material-icons share
+  section.img-modal
+    i.material-icons.closeModal close
 
   
 

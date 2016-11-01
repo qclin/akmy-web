@@ -7,15 +7,17 @@
   margin-top: 1em;
   font-weight: 400;
   cursor: alias;
+  position: relative;
+  display: inline-block;
 }
 #home-link:after{
   content: ' ';
   background: #F8E71C;
-  top: -10px;
-  left: -21px;
+  top: 7px;
+  left: -30px;
   position: absolute;
-  width: 10%;
-  height: 8%;
+  width: 175%;
+  height: 100%;
   border-radius: 50%;
   display: block;
   z-index: -5;
@@ -76,7 +78,7 @@ li{
   float: left;
   width: 100%;
   line-height: 22px;
-  padding: 4px;
+  padding-left: 8px;
 }
 li a{
   text-decoration: none;
