@@ -7,7 +7,7 @@
     display: block;
     margin-right: 4em;
     margin-left: 4em;
-    margin-bottom: calc(100vh/4 - 160px/4);
+    margin-bottom: calc(100vh/5 - 160px/4);
     height: 40px;
     background: -webkit-linear-gradient(white, grey);
     border: 1px solid #ccc;

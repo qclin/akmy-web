@@ -33,10 +33,12 @@ $('#sp-showText').click(function(e){
 });
 
 $('body').on('touchstart click', '.text-overlay', function(e){
-  $('body').removeClass('greymode');
-  $('.subNav').removeClass('blurmode');
-  $('.modal-layer').hide()
-  $('.text-overlay').hide()
+  if(e.target == this){
+    $('body').removeClass('greymode');
+    $('.subNav').removeClass('blurmode');
+    $('.modal-layer').hide()
+    $('.text-overlay').hide()
+  }
 });
 
 $('input[type=range]').change(function(e){

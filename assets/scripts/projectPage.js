@@ -2,15 +2,37 @@ $(document).ready(function(){
   if(window.innerWidth <= 768){
     $('nav').hide();
     $('#hamburger').click(function(){
-      console.log(" hamburger click click")
+      if($(this).html() == "close"){
+        $(this).html("menu");
+        return $('nav').hide();
+      }
+      $(this).html("close").addClass('hamburgerClose')
       $('nav').show();
     });
     $('.navMenuIcon').click(function(){
-      console.log(" menu click click")
       $('nav').show();
     });
     var projectName = location.pathname.split('/')[2]
     $('span#'+projectName).addClass('activeSpan')
+    $('#aboutME').click(function(){
+      var isClosed = ( $('.panel').attr('class').indexOf('close') > -1 )
+      if(isClosed){
+        $(this).css('color', 'white');
+        $('.panel').removeClass('close');
+      }else{
+        $(this).css('color', 'rgb(0,0,255)');
+        $('.panel').addClass('close');
+      }
+    });
+    $('body').on('click', '.foreground', function(e){
+      var orientation = "portrait"
+      if(e.target.width > e.target.height){
+        orientation = "landscape"
+      }
+      $('.img-modal').addClass(orientation);
+      $('.img-modal').css('top', 0);
+      $(e.target).clone().appendTo('.img-modal');
+    });
   }
   $('body').on('click', '.reveal', function(e){
     var orientation = "portrait"
