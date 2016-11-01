@@ -116,7 +116,7 @@
   }
   #aboutME{
     position: fixed;
-    left: -10px;
+    left: -.5em;
     -ms-transform: rotate(-90deg);
     -webkit-transform: rotate(-90deg);
     transform: rotate(-90deg);
@@ -129,6 +129,11 @@
     text-decoration: none;
     font-weight: 400;
     text-shadow: 0px 2px 4px rgba(0,0,0,.5);
+  }
+  .activeSpan a{
+    font-style: italic;
+    text-decoration: underline !important;
+    color: #551A8B;
   }
   header,
   section.text-overlay,

@@ -7,8 +7,8 @@ html
     link(rel='stylesheet', href='/styles/mobile/project.css')
     link(rel='stylesheet', href='https://fonts.googleapis.com/icon?family=Material+Icons')
     script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js')
-    script(src='https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js')
-
+    //- script(src='https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js')
+    script(src='http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js')
     script(type='text/javascript', src='/scripts/projectPage.js')
     h1#aboutME akm-y
     .navMenu
@@ -68,6 +68,9 @@ html
   section.img-modal
     i.material-icons.closeModal close
 
-  
+  script.
+    $('body').on('swipe', function(){
+      console.log("body swipe ___ ");
+    });
 
   

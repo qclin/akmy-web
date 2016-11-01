@@ -9,9 +9,8 @@ $(document).ready(function(){
       console.log(" menu click click")
       $('nav').show();
     });
-    if(location.pathname == ""){
-
-    }
+    var projectName = location.pathname.split('/')[2]
+    $('span#'+projectName).addClass('activeSpan')
   }
   $('body').on('click', '.reveal', function(e){
     var orientation = "portrait"
