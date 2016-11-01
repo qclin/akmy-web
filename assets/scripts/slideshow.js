@@ -30,7 +30,7 @@ $('#sp-showText').click(function(e){
   $('.text-overlay').show()
 });
 
-$('body').on('click', '.text-overlay', function(e){
+$('body').on('touchstart click', '.text-overlay', function(e){
   $('body').removeClass('greymode');
   $('.subNav').removeClass('blurmode');
   $('.modal-layer').hide()
