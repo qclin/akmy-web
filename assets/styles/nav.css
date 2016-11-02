@@ -42,7 +42,6 @@ ul{
 
 nav ul .label{
   font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
-  background: rgb(243,243,243);
   -webkit-appearance: menulist;
   -moz-appearance: menulist;
   appearance: menulist;
