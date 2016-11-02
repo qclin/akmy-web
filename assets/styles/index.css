@@ -1,3 +1,9 @@
+@media(min-width: 768px){
+  #spinLogo{
+    display: none;
+  }
+}
+
 @media(max-width: 768px){
   #home-link{
     display: none !important;
