@@ -6,9 +6,6 @@ html
     link(rel='stylesheet', href='/styles/project.css')
     link(rel='stylesheet', href='/styles/mobile/project.css')
     link(rel='stylesheet', href='https://fonts.googleapis.com/icon?family=Material+Icons')
-    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js')
-    script(src='https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js')
-    script(type='text/javascript', src='/scripts/projectPage.js')
     include ../partials/infoPanel.jade
     .navMenu
       i.mobile.material-icons.md-36#hamburger menu
@@ -27,13 +24,13 @@ html
       header#header-fabrication
         h3 #{info.name}
         form(action='demo_form.asp')
-          input(type='checkbox', name='', value='who')
+          input(type='checkbox', name='', value='who', data-role="none")
           |  for who?
-          input(type='checkbox', name='', value='role')
+          input(type='checkbox', name='', value='role', data-role="none")
           |  role
-          input(type='checkbox', name='', value='software')
+          input(type='checkbox', name='', value='software', data-role="none")
           |  software
-          input(type='checkbox', name='', value='info')
+          input(type='checkbox', name='', value='info', data-role="none")
           |  description
       section.project-content
         each imageUrl in imageUrlList
@@ -70,3 +67,6 @@ html
               i.material-icons share
   section.img-modal
     i.material-icons.closeModal close
+  script(src='http://code.jquery.com/jquery-1.10.2.min.js')
+  script(src='http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js')
+  script(type='text/javascript', src='/scripts/projectPage.js')

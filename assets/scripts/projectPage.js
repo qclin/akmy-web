@@ -1,3 +1,7 @@
+$( document ).on( "pageinit", function() {
+  $.mobile.loading().hide();
+});
+
 $(document).ready(function(){
   if(window.innerWidth <= 768){
     $('nav').hide();
@@ -59,27 +63,24 @@ var isMobile = (window.innerWidth <= 768)
 var imgList = $('.project-images')
 var maxIndex = imgList.length-1
 
-  console.log("page init")
-  if(window.innerWidth <= 768){
-    console.log(" innner width")
+if(window.innerWidth <= 768){
+  $(document).on('swipeleft', '.foreground img',function(e){
+    $(imgList).eq(current).removeClass('foreground')
+    if(current == 0){
+      current = maxIndex
+    }else{
+      current -= 1
+    }
+    $(imgList).eq(current).addClass('foreground')
+  });
 
-    $('body').on('swipeleft',function(){
-        console.log('swipe left _-__ ')
-    });
-
-    $('.foreground').on('swipeleft', function(){
-      console.log("left swipe ___ ");
-      // here can just use this.remove foreground then append prev or next
-      $(imgList).eq(current).removeClass('foreground')
-      if(current == 0){
-        current = maxIndex
-      }else{
-        current -= 1
-      }
-      $(imgList).eq(current).addClass('foreground')
-    });
-    $('.foreground').on('swiperight', function(){
-      $(imgList).eq(current).removeClass('foreground')
-      console.log("right swipe ___ ");
-    });
-  }
+  $(document).on('swiperight', '.foreground img',function(e){
+    $(imgList).eq(current).removeClass('foreground')
+    if(current == maxIndex){
+      current = 0
+    }else{
+      current += 1
+    }
+    $(imgList).eq(current).addClass('foreground')
+  });
+}
