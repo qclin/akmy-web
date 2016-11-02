@@ -88,7 +88,7 @@ app.get('/model/fruits', function(req, res){
 			'obj': 'Orange_Brush.obj'
 		}
 		var info = {
-			'name' : 'fruits'
+			'name' : 'Fruits'
 		}
 		res.render('models/fruits.jade', {info, load: payload})
 });
@@ -100,9 +100,9 @@ app.get('/model/corridor', function(req, res){
 			'obj': 'Wave.obj'
 		}
 		var info = {
-			'name' : 'fruits'
+			'name' : 'Corridor'
 		}
-		res.render('models/index.jade', {info, load: payload})
+		res.render('models/corridor.jade', {info, load: payload})
 });
 
 app.get('/model/food', function(req, res){
@@ -112,7 +112,7 @@ app.get('/model/food', function(req, res){
 			'obj': 'Cloth_Tamago.obj'
 		}
 		var info = {
-			'name' : 'fruits'
+			'name' : 'Food'
 		}
 		res.render('models/index.jade', {info, load: payload})
 });

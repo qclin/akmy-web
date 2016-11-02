@@ -1,0 +1,132 @@
+meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0')
+link(href='/styles/project.css', rel='stylesheet')
+link(rel='stylesheet', href='/styles/main.css')
+link(rel='stylesheet', href='/styles/modelPage.css')
+link(rel='stylesheet', href='/styles/mobile/project.css')
+link(rel='stylesheet', href='https://fonts.googleapis.com/icon?family=Material+Icons')
+script(src='http://code.jquery.com/jquery-1.10.2.min.js')
+script(src='http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js')
+script(type='text/javascript', src='/scripts/projectPage.js')
+script(src='/scripts/threejs/three.js')
+script(src='/scripts/threejs/loaders/DDSLoader.js')
+script(src='/scripts/threejs/loaders/MTLLoader.js')
+script(src='/scripts/threejs/loaders/OBJLoader.js')
+script(src='/scripts/threejs/Detector.js')
+script(src='/scripts/threejs/TrackballControls.js')
+script(src='/scripts/threejs/stats.min.js')
+include ../partials/infoPanel.jade
+.navMenu
+  i.mobile.material-icons.md-36#hamburger menu
+h1.category.mobile ~ 3d models ~
+include ../partials/nav.jade
+section#content-wrapper
+  div.subNav
+    span#fruits
+      a(href='/model/fruits' data-ajax="false") Fruits
+    span#food
+      a(href='/model/food' data-ajax="false") Food
+    span#corridor
+      a(href='/model/corridor' data-ajax="false") Corridor
+  header#header-model
+    h3 #{info.name}
+    form
+      input(type='checkbox', name='', value='orbit', data-role="none")
+      |  orbit
+      input(type='checkbox', name='', value='zoom', data-role="none")
+      |  zoom 
+      input(type='checkbox', name='', value='pan', data-role="none")
+      |  pan
+  section#modelFrame
+  script. 
+    var container, stats, iFrame;
+    var camera, controls, scene, renderer;
+    var mouseX = 0, mouseY = 0;
+    var windowHalfX = window.innerWidth / 2;
+    var windowHalfY = window.innerHeight / 2;
+    init();
+    animate();
+    function init() {
+      container = document.createElement( 'div' );
+      //- document.body.appendChild( container );
+      iFrame = document.getElementById('modelFrame')
+      iFrame.appendChild( container)
+      camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 1, 2000 );
+      //- camera.position.z = 250;
+      camera.position.x = 1; 
+      camera.position.y = -48.426920004993704;
+      // trackball control
+      controls = new THREE.TrackballControls( camera );
+      controls.rotateSpeed = 1.0;
+      controls.zoomSpeed = 1.2;
+      controls.panSpeed = 0.8;
+      controls.noZoom = false;
+      controls.noPan = false;
+      controls.staticMoving = true;
+      controls.keys = [ 65, 83, 68 ];
+      controls.dynamicDampingFactor = 0.3;
+      // scene
+      scene = new THREE.Scene();
+      var ambient = new THREE.AmbientLight( 0x444444 );
+      scene.add( ambient );
+      var directionalLight = new THREE.DirectionalLight( 0xffeedd );
+      directionalLight.position.set( 0, 0, 1 ).normalize();
+      scene.add( directionalLight );
+      // model
+      var onProgress = function ( xhr ) {
+        if ( xhr.lengthComputable ) {
+          var percentComplete = xhr.loaded / xhr.total * 100;
+          console.log( Math.round(percentComplete, 2) + '% downloaded' );
+        }
+      };
+      var onError = function ( xhr ) { };
+      THREE.Loader.Handlers.add( /\.dds$/i, new THREE.DDSLoader() );
+      var mtlLoader = new THREE.MTLLoader();
+      mtlLoader.setPath("#{load.path}");
+      mtlLoader.load( "#{load.mtl}", function( materials ) {
+        materials.preload();
+        var objLoader = new THREE.OBJLoader();
+        objLoader.setMaterials( materials );
+        objLoader.setPath("#{load.path}");
+        objLoader.load("#{load.obj}", function ( object ) {
+          object.position.y = 10;
+          object.position.x = 10;
+          // make it a bit bigger
+          //- object.scale.set(2, 2, 2);
+          scene.add( object );
+        }, onProgress, onError );
+      });
+      //
+      renderer = new THREE.WebGLRenderer();
+      renderer.setPixelRatio( window.devicePixelRatio );
+      //- renderer.setSize( window.innerWidth, window.innerHeight );
+      renderer.setSize( iFrame.offsetWidth, iFrame.offsetHeight); 
+      container.appendChild( renderer.domElement );
+      //- document.addEventListener( 'mousemove', onDocumentMouseMove, false );
+      //
+      window.addEventListener( 'resize', onWindowResize, false );
+    }
+    function onWindowResize() {
+      windowHalfX = window.innerWidth / 2;
+      windowHalfY = window.innerHeight / 2;
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize( window.innerWidth, window.innerHeight );
+    }
+    //- function onDocumentMouseMove( event ) {
+    //-   mouseX = ( event.clientX - windowHalfX ) / 2;
+    //-   mouseY = ( event.clientY - windowHalfY ) / 2;
+    //- }
+    //
+    function animate() {
+      requestAnimationFrame( animate );
+      controls.update();
+      render();
+    }
+    function render() {
+      controls.update();
+      //- console.log(camera.position.x, camera.position.y)
+      //- camera.position.x += ( mouseX - camera.position.x ) * .05;
+      //- camera.position.y += ( - mouseY - camera.position.y ) * .05;
+      camera.lookAt( scene.position );
+      renderer.render( scene, camera );
+    }
