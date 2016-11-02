@@ -1,4 +1,4 @@
-$( document ).on( "pageinit", function() {
+$( document ).on( "mobileinit", function() {
   $.mobile.loading().hide();
 });
 

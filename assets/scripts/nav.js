@@ -1,3 +1,7 @@
+$( document ).on( "mobileinit", function() {
+  $.mobile.loading().hide();
+});
+
 var projectType = location.pathname.split('/')[1]
 var projectName = location.pathname.split('/')[2]
 var projectTypeList = ["2d", "3d", "fabrication", "model"]

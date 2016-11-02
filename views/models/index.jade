@@ -22,11 +22,11 @@ include ../partials/nav.jade
 section#content-wrapper
   div.subNav
     span#fruits
-      a(href='/model/fruits') Fruits
+      a(href='/model/fruits' data-ajax="false") Fruits
     span#food
-      a(href='/model/food') Food
+      a(href='/model/food' data-ajax="false") Food
     span#corridor
-      a(href='/model/corridor') Corridor
+      a(href='/model/corridor' data-ajax="false") Corridor
   header#header-model
     h3 #{info.name}
     form
