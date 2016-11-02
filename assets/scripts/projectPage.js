@@ -4,10 +4,12 @@ $(document).ready(function(){
     $('#hamburger').click(function(){
       if($(this).html() == "close"){
         $(this).html("menu");
-        return $('nav').hide();
+        $('.category').show()
+        return $('nav').hide().removeClass('layover');
       }
-      $(this).html("close").addClass('hamburgerClose')
-      $('nav').show();
+      $('.category').hide()
+      $(this).html("close")
+      $('nav').show().addClass('layover');
     });
     $('.navMenuIcon').click(function(){
       $('nav').show();
