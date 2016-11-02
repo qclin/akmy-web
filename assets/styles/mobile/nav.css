@@ -6,12 +6,12 @@
     padding-top: 16vh;
   }
   ul{
-    max-width: 250px;
+    max-width: 220px;
     display: block;
     margin: auto;
     /*margin-bottom: calc(80vh/5 - 160px/4);*/
-    margin-bottom: calc(16vh - 40px);
-    height: 40px;
+    margin-bottom: calc(12vh - 40px);
+    height: 30px;
     background: -webkit-linear-gradient(white, #D3D3D3);
     border-radius: 5px;
     text-align: center;
@@ -24,7 +24,7 @@
     box-shadow: 2px 4px 5px 0px rgba(190,190,190,1);
   }
   .label{
-    font-size: 18px;
+    font-size: 14px;
     line-height: 40px;
     letter-spacing: 3px;
     top: 7px;

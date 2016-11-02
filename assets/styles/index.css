@@ -61,7 +61,7 @@ body{
 header{
   height: 0;
 }
-/*
+
 
 @-moz-keyframes spin {
     0% {
@@ -97,57 +97,57 @@ header{
     0% {
       -webkit-transform:rotate(-35deg);
       top:30vw;
-      left:50vw;
+      left:30vw;
     }
     33% {
       -webkit-transform:rotate(0deg);
       top:70vw;
-      left:10vw;
+      left:-10vw;
 
     }
     66% {
       -webkit-transform:rotate(360deg);
       top: 10vw;
-      left: 85vw;
+      left: 65vw;
     }
     80% {
       -webkit-transform:rotate(90deg);
       top: 95vw;
-      left: 90vw;
+      left: 70vw;
 
     }
     100% {
       -webkit-transform:rotate(0deg);
       top:30vw;
-      left:50vw;
+      left:20vw;
     }
 }
 @keyframes spin {
   0% {
     transform:rotate(-35deg);
     top:30vw;
-    left:50vw;
+    left:20vw;
   }
   33% {
     transform:rotate(0deg);
     top:70vw;
-    left:10vw;
+    left: -18vw;
 
   }
   66% {
     transform:rotate(360deg);
-    top: 10vw;
-    left: 85vw;
+    top: 0vw;
+    left: 45vw;
   }
   80% {
     transform:rotate(90deg);
     top: 95vw;
-    left: 90vw;
+    left: 50vw;
 
   }
   100% {
     transform:rotate(0deg);
     top:30vw;
-    left:50vw;
+    left:20vw;
   }
-}*/
+}
