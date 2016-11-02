@@ -19,6 +19,9 @@
     height: 40px;
     white-space: nowrap;
   }
+  div.subNav span a:first-of-type{
+    margin-left: 2em;
+  }
   div.subNav span a{
     font-size: 14px;
     text-decoration: none;
