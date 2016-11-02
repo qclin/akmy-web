@@ -32,13 +32,14 @@
     font-family: "Times New Roman", Georgia, Serif;
     font-style: italic;
     color: #0000FF;
-    top: 1em;
     font-weight: 400;
     text-decoration: none;
     display: inline-block;
-    position: absolute;
+    position: fixed;
+    top: 0;
     left: 10%;
-    font-size: 1.5em;
+    font-size: 1.1em;
+    letter-spacing: 3px;
   }
   #content-wrapper{
     margin: auto;
@@ -120,13 +121,14 @@
   #aboutME{
     z-index: 20;
     position: fixed;
+    letter-spacing: 4px; 
     left: -.5em;
     -ms-transform: rotate(-90deg);
     -webkit-transform: rotate(-90deg);
     transform: rotate(-90deg);
     margin: 0;
     top: 50%;
-    font-size: 32px;
+    font-size: 30px;
     font-family: "Times New Roman", Georgia, Serif;
     font-style: italic;
     color: #0000FF;

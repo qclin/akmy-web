@@ -6,7 +6,7 @@ Ks 0.0000 0.0000 0.0000
 Tf 0.0000 0.0000 0.0000
 d 1.0000
 Ns 0
-map_Kd ORANGE~1.JPG
+map_Kd ORANGE-1.jpeg
 
 newmtl Texture_1
 Ka 1.0000 1.0000 1.0000
@@ -15,7 +15,7 @@ Ks 0.0000 0.0000 0.0000
 Tf 0.0000 0.0000 0.0000
 d 1.0000
 Ns 0
-map_Kd ORANGE~2.JPG
+map_Kd ORANGE-2.jpeg
 
 newmtl Picture Frame
 Ka 0.0000 0.0000 0.0000
@@ -68,5 +68,4 @@ Ks 1.0000 1.0000 1.0000
 Tf 0.0000 0.0000 0.0000
 d 0.5556
 Ns 0
-map_Kd INJECT~1.PNG
-
+map_Kd INJECT-1.png

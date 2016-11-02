@@ -2,21 +2,32 @@
   nav{
     height: 100%;
     width: 100%;
+    padding-bottom: 16vh;
+    padding-top: 16vh;
   }
   ul{
-    max-width: 300px;
+    max-width: 250px;
     display: block;
-    margin-right: 4em;
-    margin-left: 4em;
-    margin-bottom: calc(100vh/5 - 160px/4);
+    margin: auto;
+    /*margin-bottom: calc(80vh/5 - 160px/4);*/
+    margin-bottom: calc(16vh - 40px);
     height: 40px;
-    background: -webkit-linear-gradient(white, grey);
-    border: 1px solid #ccc;
+    background: -webkit-linear-gradient(white, #D3D3D3);
     border-radius: 5px;
     text-align: center;
+    padding: 0;
+    border: solid 1px rgba(190,190,190,1);
+  }
+  ul:hover{
+    -webkit-box-shadow: 2px 4px 5px 0px rgba(190,190,190,1);
+    -moz-box-shadow: 2px 4px 5px 0px rgba(190,190,190,1);
+    box-shadow: 2px 4px 5px 0px rgba(190,190,190,1);
   }
   .label{
-    font-size: 21px
+    font-size: 18px;
+    line-height: 40px;
+    letter-spacing: 3px;
+    top: 7px;
   }
   nav ul:last-of-type{
     display: none;

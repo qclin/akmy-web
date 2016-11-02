@@ -90,7 +90,7 @@ app.get('/model/fruits', function(req, res){
 		var info = {
 			'name' : 'fruits'
 		}
-		res.render('models/index.jade', {info, load: payload})
+		res.render('models/fruits.jade', {info, load: payload})
 });
 
 app.get('/model/corridor', function(req, res){

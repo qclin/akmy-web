@@ -204,6 +204,7 @@ footer{
   bottom: 0;
   height: 5%;
   background: linear-gradient(rgba(255,255,255, 0), #F8E71C);
+  font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
 }
 
 footer a{
@@ -214,7 +215,7 @@ footer a{
 
 body{
   margin: 0;
-  font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
+  font-family: "Times New Roman", Georgia, Serif;
 }
 a{
   font-size: 11px;
@@ -257,6 +258,11 @@ a{
 
 
 @media(max-width: 768px) {
+  #hamburger{
+    font-size: 27px !important;
+    height: 40px;
+    line-height: 40px;
+  }
   .portrait img,
   .portrait object{
     height: 95vh;

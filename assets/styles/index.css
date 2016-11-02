@@ -1,5 +1,17 @@
 @media(max-width: 768px){
   #home-link{
+    display: none !important;
+  }
+  #spinLogo{
+    position: relative;
+    margin-left: 2em;
+    width: 50%;
+    font-family: "Times New Roman", Georgia, Serif;
+    font-style: italic;
+    color: #0000FF;
+    text-decoration: none;
+    margin-top: 1em;
+    font-weight: 400;
     -webkit-animation-name: spin;
     -webkit-animation-duration: 20000ms;
     -webkit-animation-iteration-count: infinite;
@@ -14,20 +26,42 @@
     -ms-animation-timing-function: ease-in-out;
     -o-transition: rotate(3600deg);
     z-index: -1;
-    -moz-transform: scale(-1, 1);
-    -webkit-transform: scale(-1, 1);
-    -o-transform: scale(-1, 1);
-    -ms-transform: scale(-1, 1);
-    transform: scale(-1, 1);
     animation-direction: alternate;
+    font-size: 36px !important;
+  }
+  #spinLogo:after{
+    content: ' ';
+    background: #F8E71C;
+    top: -30px;
+    left: -120px;
+    position: absolute;
+    width: 180%;
+    height: 230%;
+    border-radius: 50%;
+    display: block;
+    z-index: -5;
+    -webkit-filter: blur(35px);
+    -moz-filter: blur(35px);
+    -o-filter: blur(35px);
+    -ms-filter: blur(35px);
+    filter: blur(35px);
+    -webkit-transform: rotate(-35deg);
+    -moz-transform: rotate(-35deg);
+    -o-transform: rotate(-35deg);
+    -ms-transform: rotate(-35deg);
+    transform: rotate(-35deg);
   }
 }
 
 
 body{
-  background: #FFFFFF
+  background: #FFFFFF;
+  overflow: hidden;
 }
-
+header{
+  height: 0;
+}
+/*
 
 @-moz-keyframes spin {
     0% {
@@ -116,4 +150,4 @@ body{
     top:30vw;
     left:50vw;
   }
-}
+}*/

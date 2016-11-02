@@ -10,6 +10,7 @@
   position: relative;
   display: inline-block;
 }
+
 #home-link:after{
   content: ' ';
   background: #F8E71C;
@@ -41,16 +42,14 @@ ul{
 }
 
 nav ul .label{
-  font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
+  font-family: "Times New Roman", Georgia, Serif;
   -webkit-appearance: menulist;
   -moz-appearance: menulist;
   appearance: menulist;
-  white-space: pre;
   -webkit-rtl-ordering: logical;
   cursor: default;
   border-radius: 5px;
   text-rendering: auto;
-  text-align: start;
   -webkit-writing-mode: horizontal-tb;
   position: relative;
   z-index: 3;
@@ -93,6 +92,8 @@ li:hover{
     font-size: 11px;
     width: 120px;
     height: 20px;
+    text-align: start;
+    white-space: pre;
   }
   ul:last-of-type{
     margin-right: 0;
