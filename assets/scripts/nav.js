@@ -1,5 +1,6 @@
 $( document ).on( "mobileinit", function() {
   $.mobile.loading().hide();
+  $.mobile.hidePageLoadingMsg()
 });
 
 var projectType = location.pathname.split('/')[1]

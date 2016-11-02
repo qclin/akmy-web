@@ -1,4 +1,6 @@
-
+.ui-loader {
+  display:none !important;
+}
 header{
   margin-left: 1em;
 }

@@ -1,5 +1,6 @@
 $( document ).on( "mobileinit", function() {
   $.mobile.loading().hide();
+  $.mobile.hidePageLoadingMsg()
 });
 
 $(document).ready(function(){
@@ -64,7 +65,7 @@ var imgList = $('.project-images')
 var maxIndex = imgList.length-1
 
 if(window.innerWidth <= 768){
-  $(document).on('swipeleft', '.foreground img',function(e){
+  $(document).on('swipeleft', '.foreground',function(e){
     $(imgList).eq(current).removeClass('foreground')
     if(current == 0){
       current = maxIndex
@@ -74,7 +75,7 @@ if(window.innerWidth <= 768){
     $(imgList).eq(current).addClass('foreground')
   });
 
-  $(document).on('swiperight', '.foreground img',function(e){
+  $(document).on('swiperight', '.foreground',function(e){
     $(imgList).eq(current).removeClass('foreground')
     if(current == maxIndex){
       current = 0
