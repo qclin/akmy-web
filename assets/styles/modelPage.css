@@ -2,3 +2,14 @@
   width: 80vw;
   height: 60vh;
 }
+
+
+@media(max-width: 768px){
+  #modelFrame{
+    top: 10vh;
+    margin: 0 auto;
+    width: 90vw;
+    height: 90vh;
+    position: relative;
+  }
+}
