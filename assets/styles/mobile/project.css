@@ -1,3 +1,5 @@
+@import "../commons/fonts.css";
+
 @media(max-width: 768px){
   body{
     height: 100vh;
@@ -29,16 +31,16 @@
     line-height: 40px;
   }
   h1.category{
-    font-family: "Times New Roman", Georgia, Serif;
+    font-family: "Times New Roman",  TimesNewRomanItalic , Serif;
     font-style: italic;
-    color: #0000FF;
+    font-size: 1.1em;
     font-weight: 400;
+    color: #0000FF;
     text-decoration: none;
     display: inline-block;
     position: fixed;
     top: 0;
     left: 10%;
-    font-size: 1.1em;
     letter-spacing: 3px;
   }
   #content-wrapper{
@@ -98,7 +100,7 @@
     box-sizing: border-box;
     background: white;
     margin: auto;
-    font-family: "Times New Roman", Georgia, Serif;
+    font-family: "Times New Roman",  TimesNewRoman , Serif;
   }
   .greymode{
     background: rgba(216,216,216, 1);
@@ -123,23 +125,23 @@
     margin: 2em 1em;
   }
   #aboutME{
-    z-index: 20;
+    color: #0000FF;
+    cursor: pointer;
     position: fixed;
-    letter-spacing: 9px;
+    top: 50%;
     left: -1.2em;
+    margin: 0;
     -ms-transform: rotate(-90deg);
     -webkit-transform: rotate(-90deg);
     transform: rotate(-90deg);
-    margin: 0;
-    top: 50%;
     font-size: 30px;
-    font-family: "Times New Roman", Georgia, Serif;
-    font-style: italic;
-    color: #0000FF;
-    text-decoration: none;
     font-weight: 400;
+    font-style: italic;
+    font-family: "Times New Roman", TimesNewRomanBoldItalic , Serif;
+    letter-spacing: 9px;
+    text-decoration: none;
     text-shadow: 0px 2px 4px rgba(0,0,0,.5);
-    cursor: pointer;
+    z-index: 20;
   }
   .activeSpan a{
     font-style: italic;

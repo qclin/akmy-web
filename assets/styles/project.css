@@ -1,3 +1,6 @@
+@import "./commons/fonts.css";
+
+
 .ui-loader {
   display:none !important;
 }
@@ -63,7 +66,7 @@ h1{
   }
   form,
   header h3{
-    font-family: "Times New Roman", Georgia, Serif;
+    font-family: "Times New Roman", TimesNewRoman , Serif;
     font-size: 14px;
   }
   header h3{
@@ -217,7 +220,7 @@ footer a{
 
 body{
   margin: 0;
-  font-family: "Times New Roman", Georgia, Serif;
+  font-family: "Times New Roman", TimesNewRoman , Serif;
 }
 a{
   font-size: 11px;

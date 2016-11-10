@@ -1,0 +1,15 @@
+@font-face{
+  font-family: 'TimesNewRoman';
+  src: url('../../fonts/Times_New_Roman_Normal.ttf') format('TrueType');
+}
+
+
+@font-face{
+  font-family: 'TimesNewRomanItalic';
+  src: url('../../fonts/Times_New_Roman_Italic.ttf') format('TrueType');
+}
+
+@font-face{
+  font-family: 'TimesNewRomanBoldItalic';
+  src: url('../../fonts/Times_New_Roman_KOI8_Bold_Italic.ttf') format('TrueType');
+}

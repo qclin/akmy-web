@@ -1,0 +1,88 @@
+@-moz-keyframes spin {
+    0% {
+      -moz-transform:rotate(-35deg);
+      top:30vw;
+      left:50vw;
+    }
+    33% {
+      -moz-transform:rotate(0deg);
+      top:70vw;
+      left:10vw;
+
+    }
+    66% {
+      -moz-transform:rotate(360deg);
+      top: 10vw;
+      left: 85vw;
+    }
+    80% {
+      -moz-transform:rotate(90deg);
+      top: 95vw;
+      left: 90vw;
+
+    }
+    100% {
+      -moz-transform:rotate(0deg);
+      top:30vw;
+      left:50vw;
+    }
+}
+
+@-webkit-keyframes spin {
+    0% {
+      -webkit-transform:rotate(-35deg);
+      top:30vw;
+      left:30vw;
+    }
+    33% {
+      -webkit-transform:rotate(0deg);
+      top:70vw;
+      left:-10vw;
+
+    }
+    66% {
+      -webkit-transform:rotate(360deg);
+      top: 10vw;
+      left: 65vw;
+    }
+    80% {
+      -webkit-transform:rotate(90deg);
+      top: 95vw;
+      left: 70vw;
+
+    }
+    100% {
+      -webkit-transform:rotate(0deg);
+      top:30vw;
+      left:20vw;
+    }
+}
+@keyframes spin {
+  0% {
+    transform:rotate(-35deg);
+    top:30vw;
+    left:20vw;
+  }
+  33% {
+    transform:rotate(0deg);
+    top:70vw;
+    left: -18vw;
+
+  }
+  66% {
+    transform:rotate(360deg);
+    top: 0vw;
+    left: 45vw;
+  }
+  80% {
+    transform:rotate(90deg);
+    top: 95vw;
+    left: 50vw;
+
+  }
+  100% {
+    transform:rotate(0deg);
+    top:30vw;
+    left:20vw;
+  }
+}

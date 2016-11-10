@@ -1,11 +1,13 @@
+@import "./commons/fonts.css";
+
 #home-link{
   font-size: 24px;
-  font-family: "Times New Roman", Georgia, Serif;
+  font-family: "Times New Roman", TimesNewRomanBoldItalic , Serif;
   font-style: italic;
+  font-weight: 400;
   color: #0000FF;
   text-decoration: none;
   margin-top: 1em;
-  font-weight: 400;
   cursor: alias;
   position: relative;
   display: inline-block;
@@ -42,7 +44,7 @@ ul{
 }
 
 nav ul .label{
-  font-family: "Times New Roman", Georgia, Serif;
+  font-family: "Times New Roman", TimesNewRoman , Serif;
   -webkit-appearance: menulist;
   -moz-appearance: menulist;
   appearance: menulist;

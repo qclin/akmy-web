@@ -1,3 +1,5 @@
+@import "../commons/fonts.css";
+
 .panel{
   z-index: 15;
   background: linear-gradient(rgba(0,0,255, 1), rgba(255,255,255, 1));
@@ -24,7 +26,7 @@
 
 .panelContent {
    color: #FFFFFF;
-   font-family: "Times New Roman", Georgia, Serif;
+   font-family: "Times New Roman", TimesNewRomanItalic, Serif;
    font-style: italic;
    font-size: 1.5em;
 }
