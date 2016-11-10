@@ -1,5 +1,5 @@
-@import "./commons/animation.css";
-@import "./commons/fonts.css";
+@import "commons/animation.css";
+@import "commons/fonts.css";
 
 @media(min-width: 768px){
   #spinLogo{
