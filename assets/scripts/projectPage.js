@@ -43,17 +43,6 @@ $(document).ready(function(){
     });
   }
 
-
-
-  $('body').on('click', '.reveal', function(e){
-    var orientation = "portrait"
-    if(e.target.width > e.target.height){
-      orientation = "landscape"
-    }
-    $('.img-modal').addClass(orientation);
-    $('.img-modal').css('top', 0);
-    $(e.target).clone().appendTo('.img-modal');
-  });
   $('.img-modal').click(function(e){
     if(e.target.tagName != "IMG"){
       $('.img-modal').css('top', '100vh');
@@ -61,7 +50,10 @@ $(document).ready(function(){
     }
   });
 
-  $( ".draggable" ).draggable({stack: "div"});
+  $( ".draggable" ).draggable(
+    {stack: "div",
+      start: function(event, ui) { $(this).addClass('reveal') }
+    });
 
 
 });
