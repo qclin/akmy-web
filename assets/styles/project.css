@@ -1,4 +1,4 @@
-@import "commons/fonts.css";
+@import "commons/font.css";
 
 
 .ui-loader {
@@ -92,7 +92,13 @@ h1{
   .project-content div{
     width: 30%;
   }
-  .project-content div:nth-of-type(2){
+
+  .ui-focus {
+   -moz-box-shadow: none !important;
+   -webkit-box-shadow: none !important;
+   box-shadow: none !important;
+  }
+  /*.project-content div:nth-of-type(2){
     margin-top: 5%;
     margin-right: 18%;
   }
@@ -119,14 +125,13 @@ h1{
   .project-content div:last-of-type{
     margin-left: 25%;
     margin-top: 15%;
-  }
+  }*/
   .cross{
     height: 400px;
   }
   .project-content{
-    height: 70vh;
+    height: 100vh;
     width: 100vw;
-    position: absolute;
     overflow: hidden;
   }
   section.text-overlay,

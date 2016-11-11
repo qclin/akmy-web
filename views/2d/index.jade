@@ -34,7 +34,7 @@ html
           |  description
       section.project-content
         each imageUrl in imageUrlList
-          div.project-images
+          div.project-images.draggable
             if imageUrl.indexOf(".svg") > -1 
               object.svg-files(data="#{imageUrl}" type="image/svg+xml")
                 img(src="#{imageUrl}")
@@ -43,10 +43,10 @@ html
             svg.cross
               line(x1='0', y1='100%', x2='100%', y2='0')
               line(x1='0', y1='0', x2='100%', y2='100%')
-        .infoBox.text-who   #{info.who}
-        .infoBox.text-role  #{info.role}
-        .infoBox.text-software  #{info.software}
-        .infoBox.text-info #{info.description}
+        .infoBox.text-who.draggable   #{info.who}
+        .infoBox.text-role.draggable  #{info.role}
+        .infoBox.text-software.draggable  #{info.software}
+        .infoBox.text-info.draggable #{info.description}
       script(type='text/javascript', src='/scripts/infoCheck.js')
       include ../partials/slideCtrl.jade
       .modal-layer
@@ -68,6 +68,7 @@ html
   section.img-modal
     i.material-icons.closeModal close
   script(src='http://code.jquery.com/jquery-1.10.2.min.js')
+  script(src='https://code.jquery.com/ui/1.12.1/jquery-ui.js')
   script(src='http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js')
   script(type='text/javascript', src='/scripts/projectPage.js')
 

@@ -42,6 +42,9 @@ $(document).ready(function(){
       $(e.target).clone().appendTo('.img-modal');
     });
   }
+
+
+
   $('body').on('click', '.reveal', function(e){
     var orientation = "portrait"
     if(e.target.width > e.target.height){
@@ -57,11 +60,14 @@ $(document).ready(function(){
       $('.img-modal').find('img').remove()
     }
   });
+
+  $( ".draggable" ).draggable({stack: "div"});
+
+
 });
 
 
 var current = 0;
-var isMobile = (window.innerWidth <= 768)
 var imgList = $('.project-images')
 var maxIndex = imgList.length-1
 
