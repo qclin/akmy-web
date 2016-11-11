@@ -5,7 +5,7 @@ $( document ).on( "mobileinit", function() {
 
 $(document).ready(function(){
   if(window.innerWidth <= 768){
-    document.body.requestFullscreen();
+    window.scrollTo(0,1);
     $('nav').hide();
     $('#hamburger').click(function(){
       if($(this).html() == "close"){
