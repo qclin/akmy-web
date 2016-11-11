@@ -22,6 +22,7 @@ $('span.img-Ctrl').click(function(e) {
   }
   if(isMobile) return $(imgList).eq(current).addClass('foreground')
   $(imgList).eq(current).addClass('foreground reveal')
+  $('input[type=range]').val(100)
 });
 
 

@@ -20,14 +20,9 @@ app.set('view engine', 'jade');
 app.get('/', function(req, res){
 	res.render('index');
 });
-
-app.get('/scroll-test', function(req, res){
-	res.render('scroll.jade');
-});
 app.get('/swipe-test', function(req, res){
 	res.render('swipe.jade');
 });
-
 app.get('/threejs-test', function(req, res){
 	var payload = {
 		'path': './obj/Leaf_3js/',
