@@ -1,10 +1,11 @@
 $( document ).on( "mobileinit", function() {
   $.mobile.loading().hide();
-  $.mobile.hidePageLoadingMsg()
+  $.mobile.hidePageLoadingMsg();
 });
 
 $(document).ready(function(){
   if(window.innerWidth <= 768){
+    document.body.requestFullscreen();
     $('nav').hide();
     $('#hamburger').click(function(){
       if($(this).html() == "close"){
