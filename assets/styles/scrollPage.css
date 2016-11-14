@@ -41,7 +41,7 @@ p{
   -moz-box-shadow: 2px 4px 5px #aaa;
   box-shadow: 2px 4px 5px #aaa;
   position: absolute;
-  width: 70vw;
+  width: 65vw;
   margin: 0 auto;
   left: 0;
   right: 0;
@@ -82,13 +82,13 @@ p{
 }
 .overlayGridWrapper{
   position:relative;
-  top: 100vh;
+  top: 95vh;
 }
 .overlayGrid{
   position: absolute;
   right: 0;
   left: 0;
-  width: 80vw;
+  width: 75vw;
   margin: 0 auto;
 }
 #topGrid img:hover{
@@ -96,13 +96,16 @@ p{
 }
 .overlayGrid img{
   max-width: 33%;
-  width: 26vw;
-  margin: 3px;
+  width: 24vw;
+  margin: 4px;
   box-sizing: border-box;
   -webkit-transition: opacity 1s ease-in-out;
   -moz-transition: opacity 1s ease-in-out;
   -o-transition: opacity 1s ease-in-out;
   transition: opacity 1s ease-in-out;
+  -webkit-box-shadow: 1px 2px 3px #aaa;
+  -moz-box-shadow: 1px 2px 3px #aaa;
+  box-shadow: 1px 2px 3px #aaa;
 }
 #TranslatedPanel img{
   width: 65vw;
@@ -148,10 +151,11 @@ p{
 }
 
 .bitmapCluster{
-  width: 35vw;
+  width: 30vw;
   float: right;
   display: block;
   right: 0;
+  margin-right: 3em;
   position: relative;
 }
 .bitmapCluster img{
@@ -159,24 +163,57 @@ p{
 }
 
 #batch1{
-  top: 220vh;
+  top: 200vh;
 }
 #batch2{
-  top: 80vh;
+  right: 15vw;
+  top: 180vh;
 }
 #batch3{
-  top: 130vh;
+  top: 105vh;
 }
 #batch4{
   position: relative;
-  top: 400vh;
+  top: 160vh;
+  width: 50vw;
 }
 #batch4 img{
   position: absolute;
-  width: 75vw;
-  margin: 0 auto;
-  left: 0;
-  right: 0;
+  width: 100%;
+  animation-name: cf5FadeInOut;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-duration: 9s;
+}
+
+#batch4 img:nth-of-type(1) {
+  animation-delay: 0s;
+
+}
+#batch4 img:nth-of-type(2) {
+  animation-delay: 6s;
+}
+#batch4 img:nth-of-type(3) {
+  animation-delay: 4s;
+}
+
+
+@keyframes cf5FadeInOut {
+  0% {
+    opacity:1;
+  }
+  17% {
+    opacity:.5;
+  }
+  25% {
+    opacity:1;
+  }
+  92% {
+    opacity:.7;
+  }
+  100% {
+    opacity:0;
+  }
 }
 #selectedPaths{
   width: 30vw;

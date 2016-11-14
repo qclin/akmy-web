@@ -39,17 +39,17 @@ html
       p.
         The in-between corridor now collides with its original place, returning back to the series of images that constructed it. This results in a mode of representation that wants to make obvious the difference and similarities of both perceptions and how they work together to reach an understanding of what that image is representing. A second look to what was possibly disregarded.
     
-    span#BitmapPanel
-      img(src="#{Panels[0]}")
     secion.bitmapCluster#batch2
         - for (var i = 3; i < 6; ++i) {
             img(src="#{Bitmaps[i]}")
         - }
+    #BitmapPanel
+      img(src="#{Panels[0]}")
     secion.bitmapCluster#batch3
         - for (var i = 6; i < 9; ++i) {
             img(src="#{Bitmaps[i]}")
         - }
-    secion#batch4
+    secion.bitmapCluster#batch4
       - for (var i = 9; i < 12; ++i) {
           img(src="#{Bitmaps[i]}")
       - }
