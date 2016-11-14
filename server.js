@@ -47,7 +47,22 @@ app.get('/2d/:project', function(req, res){
 	});
 });
 
-
+app.get('/3d/corridor', function(req, res){
+	getAllDirectoryFilesS3('/3d/vertical-scroll-1/').then((urlList) =>{
+		urlList = urlList.filter(Boolean).sort(urlByIndex)
+		var Panels = urlList.filter(findPanels)
+		var SVGs = urlList.filter(findSVGs).sort(urlByIndex)
+		var Existings = urlList.filter(findExistings).sort(urlByIndex)
+		var Iterations = urlList.filter(findIterations).sort(urlByIndex)
+		res.render('3d/corridor.jade', {Panels, SVGs, Existings, Iterations})
+	});
+});
+app.get('/3d/reCorridor', function(req, res){
+	getAllDirectoryFilesS3('/3d/vertical-scroll-2/').then((directories,imageUrlList) =>{
+		imageUrlList = imageUrlList.filter(Boolean).sort(urlByIndex)
+		res.render('3d/reCorridor.jade', {imageUrlList})
+	})
+});
 app.get('/3d/:project', function(req, res){
 	getProjectInfo("dimension3", req.url).then((databaseRow) => {
 		if(databaseRow){
@@ -157,7 +172,6 @@ function getProjectImgS3(projectPath){
 			 params: {Bucket: 'akmy-web',  Delimiter: '/'}
 	}
 	bucketInfo.params.Prefix = projectPath.substring(1)+'/'
-
 	var deferred =Q.defer();
 	var bucket = new AWS.S3(bucketInfo);
 	bucket.listObjects(function(err, data){
@@ -176,12 +190,60 @@ function getProjectImgS3(projectPath){
 	return deferred.promise;
 }
 
+
+function getAllDirectoryFilesS3(projectPath){
+	var bucketInfo = {
+			 endpoint: 's3-eu-central-1.amazonaws.com',
+			 signatureVersion: 'v4',
+			 region: 'eu-central-1',
+			 params: {Bucket: 'akmy-web'},
+	}
+	bucketInfo.params.Prefix = projectPath.substring(1)
+	var deferred =Q.defer();
+	var bucket = new AWS.S3(bucketInfo);
+	bucket.listObjects(function(err, data){
+		if(err){
+			deferred.resolve(err)
+		}else{
+			var dataList = data.Contents
+			var urlList = dataList.map((item, index) => {
+				if(item.Size == 0) return;
+				var params = { Key : item.Key }
+				return bucket.getSignedUrl('getObject', params)
+			})
+			deferred.resolve(urlList)
+		}
+	});
+	return deferred.promise;
+}
+
+
 function urlByIndex(a, b){
 	var aa = parseInt(a.substring(a.lastIndexOf("/") + 1, a.indexOf("_")));
 	var bb = parseInt(b.substring(b.lastIndexOf("/") + 1, b.indexOf("_")));
 	return aa < bb ? -1 : (aa > bb ? 1 : 0);
 }
 
+function findPanels(item){
+	console.log(" findPanels --- ", item )
+	if(item.indexOf('/Panels/') > -1) return true;
+}
+
+function findSVGs(item){
+	if(item.indexOf('/SVGs/') > -1) return true;
+}
+
+function findExistings(item){
+	if(item.indexOf('/existing-photos/') > -1) return true;
+}
+
+function findIterations(item){
+	if(item.indexOf('/iteration-scans/') > -1) return true;
+}
+
+function findPanels(item){
+	if(item.indexOf('/Panels/') > -1) return true;
+}
 function findMtl(item){
 	if(item.indexOf('.mtl') > -1) return true;
 }

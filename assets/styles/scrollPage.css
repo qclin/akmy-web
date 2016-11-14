@@ -1,0 +1,103 @@
+#headerText{
+  width: 90%;
+  max-width: 768px;
+  padding: 2em;
+}
+#footerText{
+  width: 90%;
+  max-width: 768px;
+  margin: 0 auto;
+}
+p{
+  font-family: "Times New Roman", TimesNewRoman , Serif;
+  font-size: 14px;
+  letter-spacing: 1px;
+  line-height: 2em;
+}
+.containers{
+  position:relative;
+}
+.gridBackdrop img{
+  width: 100%;
+  z-index: -10;
+  position: absolute;
+}
+.gridImages{
+  padding-top: 20em;
+}
+.gridImages img{
+  width: 25vw;
+}
+#Translated img{
+  width: 65vw;
+  float: right;
+}
+#Over img{
+  width: 80vw;
+  margin: 0 auto;
+}
+#tracedPaths{
+  width: 30vw;
+  float: left;
+}
+#penduLumSVG object,
+#penduLumSVG img, {
+  width: 100vw;
+}
+#iterationCluster{
+  width: 33vw;
+  float: left;
+}
+#iterationCluster span:first-of-type img{
+  top: -40vh;
+  position: relative;
+  width: 50vw;
+  z-index: -2;
+}
+#iterationCluster img{
+  width: 100%;
+  display: block;
+}
+#selectedPaths{
+  width: 30vw;
+  float: left;
+}
+#RhinoComposition img{
+  width: 50vw;
+  position: absolute;
+  left: 0;
+  z-index: -2;
+  margin-top: 303px;
+}
+
+.fadeFrames{
+  position: relative;
+}
+.fadeFrames object,
+.fadeFrames img{
+  position:absolute;
+  left:0;
+}
+.fadeFrames .top{
+  animation-name: cf3FadeInOut;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-duration: 4s;
+  animation-direction: alternate;
+}
+
+
+@keyframes cf3FadeInOut {
+ 0% {
+   opacity:1;
+  }
+  45% {
+  opacity:1;
+  }
+  55% {
+  opacity:0;
+  }
+  100% {
+  opacity:0;
+  }
+}

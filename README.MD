@@ -10,7 +10,7 @@
 
 #S3 cloud image storage
 [batch fetching](http://stackoverflow.com/questions/32702431/display-images-fetched-from-s3)
-
+[paging](https://derickbailey.com/2016/04/13/paging-the-results-of-an-aws-s3-bucket/)
 ## Create db
  - sqlite3 schema
  - seed file
@@ -23,3 +23,7 @@
 # three JS
 [mtl & obj loader example ](https://threejs.org/examples/#webgl_loader_obj_mtl)
 [Trackball control](https://threejs.org/examples/?q=track#misc_controls_trackball)
+
+
+#vertical scroll
+(cross-fade)[http://css3.bradshawenterprises.com/cfimg/]
