@@ -1,14 +1,19 @@
 #headerText{
-  width: 90%;
-  max-width: 768px;
   padding: 2em;
+  max-width: 768px;
 }
 #footerText{
-  width: 90%;
-  max-width: 768px;
   margin: 0 auto;
+  max-width: 768px;
+}
+#bodyText{
+  position: relative;
+  top: 180vh;
+  padding: 4em;
+  max-width: 400px;
 }
 p{
+  width: 90%;
   font-family: "Times New Roman", TimesNewRoman , Serif;
   font-size: 14px;
   letter-spacing: 1px;
@@ -28,13 +33,95 @@ p{
 .gridImages img{
   width: 25vw;
 }
-#Translated img{
+.overlayBackdrop{
+  position: relative;
+}
+.overlayBackdrop img{
+  -webkit-box-shadow: 2px 4px 5px #aaa;
+  -moz-box-shadow: 2px 4px 5px #aaa;
+  box-shadow: 2px 4px 5px #aaa;
+  position: absolute;
+  width: 70vw;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  animation-name: cf4FadeInOut;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-duration: 8s;
+}
+@keyframes cf4FadeInOut {
+  0% {
+    opacity:1;
+  }
+  17% {
+    opacity:1;
+  }
+  25% {
+    opacity:0;
+  }
+  92% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
+
+.overlayBackdrop img:nth-of-type(1) {
+  animation-delay: 6s;
+}
+.overlayBackdrop img:nth-of-type(2) {
+  animation-delay: 4s;
+}
+.overlayBackdrop img:nth-of-type(3) {
+  animation-delay: 2s;
+}
+.overlayBackdrop img:nth-of-type(4) {
+  animation-delay: 0;
+}
+.overlayGridWrapper{
+  position:relative;
+  top: 100vh;
+}
+.overlayGrid{
+  position: absolute;
+  right: 0;
+  left: 0;
+  width: 80vw;
+  margin: 0 auto;
+}
+#topGrid img:hover{
+  opacity: 0;
+}
+.overlayGrid img{
+  max-width: 33%;
+  width: 26vw;
+  margin: 3px;
+  box-sizing: border-box;
+  -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out;
+}
+#TranslatedPanel img{
   width: 65vw;
   float: right;
 }
+#BitmapPanel{
+  position: relative;
+  top: 150vh;
+  z-index: -3;
+}
+#BitmapPanel img{
+  width: 65vw;
+}
+#Over{
+  position: relative;
+  top: 180vh;
+}
 #Over img{
-  width: 80vw;
-  margin: 0 auto;
+  width: 50vw;
 }
 #tracedPaths{
   width: 30vw;
@@ -54,9 +141,42 @@ p{
   width: 50vw;
   z-index: -2;
 }
-#iterationCluster img{
+#iterationCluster img,
+.bitmapCluster img{
   width: 100%;
   display: block;
+}
+
+.bitmapCluster{
+  width: 35vw;
+  float: right;
+  display: block;
+  right: 0;
+  position: relative;
+}
+.bitmapCluster img{
+  margin: 1em;
+}
+
+#batch1{
+  top: 220vh;
+}
+#batch2{
+  top: 80vh;
+}
+#batch3{
+  top: 130vh;
+}
+#batch4{
+  position: relative;
+  top: 400vh;
+}
+#batch4 img{
+  position: absolute;
+  width: 75vw;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
 }
 #selectedPaths{
   width: 30vw;

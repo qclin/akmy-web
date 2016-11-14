@@ -26,4 +26,4 @@
 
 
 #vertical scroll
-(cross-fade)[http://css3.bradshawenterprises.com/cfimg/]
+[cross-fade](http://css3.bradshawenterprises.com/cfimg/)

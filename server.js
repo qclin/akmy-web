@@ -49,18 +49,22 @@ app.get('/2d/:project', function(req, res){
 
 app.get('/3d/corridor', function(req, res){
 	getAllDirectoryFilesS3('/3d/vertical-scroll-1/').then((urlList) =>{
-		urlList = urlList.filter(Boolean).sort(urlByIndex)
-		var Panels = urlList.filter(findPanels)
-		var SVGs = urlList.filter(findSVGs).sort(urlByIndex)
-		var Existings = urlList.filter(findExistings).sort(urlByIndex)
-		var Iterations = urlList.filter(findIterations).sort(urlByIndex)
+		urlList = urlList.filter(Boolean).sort(urlByIndex);
+		var Panels = urlList.filter(findPanels);
+		var SVGs = urlList.filter(findSVGs);
+		var Existings = urlList.filter(findExistings);
+		var Iterations = urlList.filter(findIterations);
 		res.render('3d/corridor.jade', {Panels, SVGs, Existings, Iterations})
 	});
 });
+
 app.get('/3d/reCorridor', function(req, res){
-	getAllDirectoryFilesS3('/3d/vertical-scroll-2/').then((directories,imageUrlList) =>{
-		imageUrlList = imageUrlList.filter(Boolean).sort(urlByIndex)
-		res.render('3d/reCorridor.jade', {imageUrlList})
+	getAllDirectoryFilesS3('/3d/vertical-scroll-2/').then((urlList) =>{
+		urlList = urlList.filter(Boolean).sort(urlByIndex);
+		var Panels = urlList.filter(findPanels);
+		var Bitmaps = urlList.filter(findBitmaps);
+		var Overlays = urlList.filter(findOverlays);
+		res.render('3d/reCorridor.jade', {Panels, Bitmaps, Overlays})
 	})
 });
 app.get('/3d/:project', function(req, res){
@@ -225,25 +229,24 @@ function urlByIndex(a, b){
 }
 
 function findPanels(item){
-	console.log(" findPanels --- ", item )
 	if(item.indexOf('/Panels/') > -1) return true;
 }
-
+function findBitmaps(item){
+	if(item.indexOf('/Bitmaps/') > -1) return true;
+}
+function findExistings(item){
+	if(item.indexOf('/existing-photos/') > -1) return true;
+}
+function findIterations(item){
+	if(item.indexOf('/iteration-scans/') > -1) return true;
+}
+function findOverlays(item){
+	if(item.indexOf('/Overlays/') > -1) return true;
+}
 function findSVGs(item){
 	if(item.indexOf('/SVGs/') > -1) return true;
 }
 
-function findExistings(item){
-	if(item.indexOf('/existing-photos/') > -1) return true;
-}
-
-function findIterations(item){
-	if(item.indexOf('/iteration-scans/') > -1) return true;
-}
-
-function findPanels(item){
-	if(item.indexOf('/Panels/') > -1) return true;
-}
 function findMtl(item){
 	if(item.indexOf('.mtl') > -1) return true;
 }
