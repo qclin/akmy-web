@@ -1,13 +1,12 @@
 @import "commons/font.css";
 
 #home-link{
-  font-size: 24px;
+  font-size: 30px;
   font-family: "Times New Roman", TimesNewRomanBoldItalic , Serif;
   font-style: italic;
   font-weight: 400;
   color: #0000FF;
   text-decoration: none;
-  margin-top: 1em;
   cursor: alias;
   position: relative;
   display: inline-block;
@@ -16,11 +15,11 @@
 #home-link:after{
   content: ' ';
   background: #F8E71C;
-  top: 7px;
-  left: -30px;
+  top: -21px;
+  left: -150px;
   position: absolute;
-  width: 175%;
-  height: 100%;
+  width: 165%;
+  height: 200%;
   border-radius: 50%;
   display: block;
   z-index: -5;
@@ -29,11 +28,11 @@
   -o-filter: blur(15px);
   -ms-filter: blur(15px);
   filter: blur(15px);
-  -webkit-transform: rotate(-35deg);
-  -moz-transform: rotate(-35deg);
-  -o-transform: rotate(-35deg);
-  -ms-transform: rotate(-35deg);
-  transform: rotate(-35deg);
+  -webkit-transform: rotate(5deg);
+  -moz-transform: rotate(5deg);
+  -o-transform: rotate(5deg);
+  -ms-transform: rotate(5deg);
+  transform: rotate(5deg);
 }
 ul{
     display: inline-block;
@@ -44,15 +43,19 @@ ul{
 }
 
 nav ul .label{
-  font-family: "Times New Roman", TimesNewRoman , Serif;
-  -webkit-appearance: menulist;
+  background: -webkit-linear-gradient(white, #D3D3D3);
+  border-radius: 5px;
+  text-align: center;
+  padding: 0;
+  border: solid 1px rgba(190,190,190,1);
+  /*-webkit-appearance: menulist;
   -moz-appearance: menulist;
   appearance: menulist;
   -webkit-rtl-ordering: logical;
   cursor: default;
   border-radius: 5px;
-  text-rendering: auto;
-  -webkit-writing-mode: horizontal-tb;
+  /*text-rendering: auto;*/
+  /*-webkit-writing-mode: horizontal-tb;*/*/
   position: relative;
   z-index: 3;
 }
@@ -88,13 +91,23 @@ li a{
 li:hover{
   background: gold;
 }
-
+.label{
+  font-family: "Times New Roman", TimesNewRoman , Serif;
+  font-style: italic;
+}
 @media(min-width: 768px){
+  nav{
+    text-align: center;
+  }
+  nav ul{
+    text-align: left;
+  }
   nav ul .label{
-    font-size: 11px;
+    font-style: italic;
+    font-size: 12px;
     width: 120px;
     height: 20px;
-    text-align: start;
+    text-align: center;
     white-space: pre;
   }
   ul:last-of-type{

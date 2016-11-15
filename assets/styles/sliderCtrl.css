@@ -2,11 +2,11 @@
 
 #left-arrow{
   top: 50%;
-  left: 1em;
+  left: 34vw;
 }
 #right-arrow{
   top: 50%;
-  right: 1em;
+  right: 14vw;
 }
 #img-Slider{
   bottom: 2em;
@@ -22,7 +22,7 @@
 @media(min-width:768px){
   .img-Ctrl{
     color: blue;
-    font-size: 60px;
+    font-size: 28px;
     position: fixed;
     cursor: pointer;
     z-index: 10;

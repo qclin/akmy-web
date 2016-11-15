@@ -25,15 +25,6 @@ html
           a(href='/3d/meal-recipes' data-ajax="false") MEAL & RECIPES
       header#header-3d
         h3 #{info.name}
-        form(action='demo_form.asp')
-          input(type='checkbox', name='', value='who', data-role="none")
-          |  for who?
-          input(type='checkbox', name='', value='role', data-role="none")
-          |  role
-          input(type='checkbox', name='', value='software', data-role="none")
-          |  software
-          input(type='checkbox', name='', value='info', data-role="none")
-          |  description
       section.project-content
         each imageUrl in imageUrlList
           div.project-images.draggable
@@ -45,10 +36,17 @@ html
             svg.cross
               line(x1='0', y1='100%', x2='100%', y2='0')
               line(x1='0', y1='0', x2='100%', y2='100%')
-        .infoBox.text-who   #{info.who}
-        .infoBox.text-role  #{info.role}
-        .infoBox.text-software  #{info.software}
-        .infoBox.text-info #{info.description}
+      section#textBox
+        .text-content 
+          p #{info.name}
+          p who ?
+          p  #{info.who}
+          p role ?
+          p  #{info.role} 
+          p software ?
+          .text-italic  #{info.software}
+          p description ?
+          .text-info #{info.description}
       script(type='text/javascript', src='/scripts/infoCheck.js')
       include ../partials/slideCtrl.jade
       .modal-layer
