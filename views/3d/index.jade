@@ -13,16 +13,16 @@ html
     include ../partials/nav.jade
     section#content-wrapper
       div.subNav
-        span#fruits
-          a(href='/3d/fruits' data-ajax="false") Fruits 
-        span#meals-recipes
-          a(href='/3d/meal-recipes' data-ajax="false") MEAL & RECIPES
+        span#bathhouse
+          a(href='/3d/bathhouse' data-ajax="false") Rebirth of the Bath House
         span#corridor
           a(href='/3d/corridor' data-ajax="false") Corridor 
         span#re-corridor
           a(href='/3d/re-corridor' data-ajax="false") e-Corridor 
-        span#bathhouse
-          a(href='/3d/bathhouse' data-ajax="false") Bath House 
+        span#fruits
+          a(href='/3d/fruits' data-ajax="false") Fruits 
+        span#meals-recipes
+          a(href='/3d/meal-recipes' data-ajax="false") MEAL & RECIPES
       header#header-3d
         h3 #{info.name}
         form(action='demo_form.asp')
@@ -36,7 +36,7 @@ html
           |  description
       section.project-content
         each imageUrl in imageUrlList
-          div.project-images
+          div.project-images.draggable
             if imageUrl.indexOf(".svg") > -1 
               object.svg-files(data="#{imageUrl}" type="image/svg+xml")
                 img(src="#{imageUrl}")

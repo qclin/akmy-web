@@ -14,13 +14,13 @@ html
     section#content-wrapper
       div.subNav
         span#bathhouse
-          a(href='/fabrication/bathhouse' data-ajax="false") Bath House  
+          a(href='/fabrication/bathhouse' data-ajax="false") Rebirth of the Bath House  
         span#groupshow
           a(href='/fabrication/groupshow' data-ajax="false") Group Show  
         span#lecky
-          a(href='/fabrication/leckey' data-ajax="false") LECKEY
+          a(href='/fabrication/leckey' data-ajax="false") A Month in Making
         span#berggren
-          a(href='/fabrication/berggren' data-ajax="false") Berggren 
+          a(href='/fabrication/berggren' data-ajax="false") Previlege & Melancholy 
       header#header-fabrication
         h3 #{info.name}
         form(action='demo_form.asp')
@@ -34,7 +34,7 @@ html
           |  description
       section.project-content
         each imageUrl in imageUrlList
-          div.project-images
+          div.project-images.draggable
             if imageUrl.indexOf(".svg") > -1 
               object.svg-files(data="#{imageUrl}" type="image/svg+xml")
                 img(src="#{imageUrl}")

@@ -62,3 +62,29 @@ p.footnote{
   right: -17px;
   font-size: 36px !important;
 }
+@media(min-width: 768px){
+  #aboutME{
+    display: none;
+  }
+}
+@media(max-width: 768px){
+  #aboutME{
+    color: #0000FF;
+    cursor: pointer;
+    position: fixed;
+    top: 50%;
+    left: -1.2em;
+    margin: 0;
+    -ms-transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    font-size: 30px;
+    font-weight: 400;
+    font-style: italic;
+    font-family: "Times New Roman", TimesNewRomanBoldItalic , Serif;
+    letter-spacing: 9px;
+    text-decoration: none;
+    text-shadow: 0px 2px 4px rgba(0,0,0,.5);
+    z-index: 20;
+  }
+}
