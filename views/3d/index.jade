@@ -23,8 +23,7 @@ html
           a(href='/3d/fruits' data-ajax="false") Fruits 
         span#meals-recipes
           a(href='/3d/meal-recipes' data-ajax="false") MEAL & RECIPES
-      header#header-3d
-        h3 #{info.name}
+      
       section.project-content
         each imageUrl in imageUrlList
           div.project-images.draggable
@@ -36,17 +35,21 @@ html
             svg.cross
               line(x1='0', y1='100%', x2='100%', y2='0')
               line(x1='0', y1='0', x2='100%', y2='100%')
+      header#header-3d
+        h3 #{info.name}
+      section.tilde.top 
+        span &#12336;&#12336;&#12336;&#12336;&#12336;&#12336;&#12336;&#12336;
       section#textBox
-        .text-content 
-          p #{info.name}
-          p who ?
-          p  #{info.who}
-          p role ?
-          p  #{info.role} 
-          p software ?
-          .text-italic  #{info.software}
-          p description ?
-          .text-info #{info.description}
+        .text-label What
+        p  #{info.who}
+        .text-label Role
+        p  #{info.role} 
+        .text-label Software
+        p #{info.software}
+        .text-label Description
+        p #{info.description}
+      section.tilde.bottom 
+        span &#12336;&#12336;&#12336;&#12336;&#12336;&#12336;&#12336;&#12336;
       script(type='text/javascript', src='/scripts/infoCheck.js')
       include ../partials/slideCtrl.jade
       .modal-layer

@@ -6,13 +6,14 @@
 }
 #right-arrow{
   top: 50%;
-  right: 14vw;
+  right: 10vw;
 }
 #img-Slider{
-  bottom: 2em;
+  bottom: 10vh;
   position: fixed;
   width: 100%;
   text-align: center;
+  left: 10vw;
   z-index: 10;
 }
 #ctrl-Wrapper{
@@ -66,4 +67,38 @@
 #sp-showText{
   font-size: 28px;
   color: rgb(0,0,255);
+}
+
+
+input[type=range]::-ms-track {
+    width: 296px;
+    height: 3px;
+    /*remove bg colour from the track, we'll use ms-fill-lower and ms-fill-upper instead */
+    background: transparent;
+    /*leave room for the larger thumb to overflow with a transparent border */
+    border-color: transparent;
+    border-width: 6px 0;
+    /*remove default tick marks*/
+    color: transparent;
+}
+input[type=range]::-ms-fill-lower {
+    background: #777;
+    border-radius: 10px;
+}
+input[type=range]::-ms-fill-upper {
+    background: #ddd;
+    border-radius: 10px;
+}
+input[type=range]::-ms-thumb {
+    border: none;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background: #0052c1;
+}
+input[type=range]:focus::-ms-fill-lower {
+    background: #888;
+}
+input[type=range]:focus::-ms-fill-upper {
+    background: #ccc;
 }

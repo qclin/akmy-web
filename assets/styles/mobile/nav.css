@@ -22,6 +22,7 @@
     box-shadow: 2px 4px 5px 0px rgba(190,190,190,1);
   }
   .label{
+    background: -webkit-linear-gradient(white, #D3D3D3);
     line-height: 30px;
     height: 30px;
     font-size: 14px;

@@ -56,33 +56,26 @@ h1{
     position: relative;
     left: calc(100%/5 + 120px);
   }*/
-  header{
-    margin: 0 10vw;
-    text-align: center;
-  }
   nav{
     top: -2em;
     position: relative;
   }
   form,
   header h3{
-
     font-family: "Times New Roman", TimesNewRoman , Serif;
     font-size: 14px;
   }
   header{
-    display: block;
-    width: 100%;
-    margin-top: -2em;
+
   }
   header h3{
-    /*font-weight: 400;
-    text-decoration: underline;*/
-    letter-spacing: 2px;
-    font-weight: bold;
-    background: rgba(248,231,28, .5);
-    display: inline-block;
+    font-weight: lighter;
+    position: fixed;
+    top: 15vh;
+    left: 3vw;
+    letter-spacing: 1px;
     margin: 0 auto 1em auto;
+    font-size: 16px;
   }
   form{
     font-weight: 700;
@@ -140,8 +133,10 @@ h1{
     height: 400px;
   }
   .project-content{
-    height: 100vh;
-    width: 100vw;
+    height: 70vh;
+    width: 70vw;
+    left: 25vw;
+    position: relative;
     overflow: hidden;
   }
   section.text-overlay,
@@ -198,19 +193,39 @@ div.infoBox {
 
 #textBox{
   width: 20vw;
-  height: 50vh;
-  border: solid 1px grey;
+  height: 35vh;
   background: white;
-  border-radius: 5px;
-  box-shadow: inset 0 0 2px grey;
   left: 3vw;
   top: 20vh;
   position: fixed;
   overflow: scroll;
-  z-index: 5;
-  padding: 8px 12px;
+  padding: 8px 0;
   margin: none;
-  font-size: 14px;
+  font-size: 12px;
+}
+#textBox p{
+  color: #5C5C5C;
+  margin-top: 0;
+}
+.tilde{
+  z-index: 3;
+  width: 20vw;
+  left: 5vw;
+  overflow: hidden;
+  position: fixed;
+  line-height: 20px;
+  height: 20px;
+  font-size: 50px;
+  text-shadow: 0px 2px 4px rgba(0,0,0,.2);
+  transform:scale(1.25,1);
+  color: rgba(190,190,190,1);
+}
+.tilde.top{
+  top: 18vh;
+}
+
+.tilde.bottom{
+  top: 60vh;
 }
 .project-images img,
 .project-images object{
@@ -238,7 +253,7 @@ footer{
   width: 100vw;
   position: fixed;
   bottom: 0;
-  height: 5%;
+  height: 8vh;
   background: linear-gradient(rgba(255,255,255, 0), #F8E71C);
   font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
 }
