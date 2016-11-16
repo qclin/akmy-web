@@ -62,7 +62,6 @@ h1{
     left: calc(100%/5 + 120px);
   }*/
   nav{
-    top: -2em;
     position: relative;
     z-index: 100;
   }
