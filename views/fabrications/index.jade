@@ -7,9 +7,9 @@ html
     link(rel='stylesheet', href='/styles/mobile/project.css')
     link(rel='stylesheet', href='https://fonts.googleapis.com/icon?family=Material+Icons')
     include ../partials/infoPanel.jade
+    h1.category.mobile ~fabrication~
     .navMenu
       i.mobile.material-icons.md-36#hamburger menu
-    h1.category.mobile ~fabrication~
     include ../partials/nav.jade
     section#content-wrapper
       div.subNav
@@ -21,17 +21,7 @@ html
           a(href='/fabrication/leckey' data-ajax="false") A Month in Making
         span#berggren
           a(href='/fabrication/berggren' data-ajax="false") Previlege & Melancholy 
-      header#header-fabrication
-        h3 #{info.name}
-        form(action='demo_form.asp')
-          input(type='checkbox', name='', value='who', data-role="none")
-          |  for who?
-          input(type='checkbox', name='', value='role', data-role="none")
-          |  role
-          input(type='checkbox', name='', value='software', data-role="none")
-          |  software
-          input(type='checkbox', name='', value='info', data-role="none")
-          |  description
+
       section.project-content
         each imageUrl in imageUrlList
           div.project-images.draggable
@@ -43,11 +33,21 @@ html
             svg.cross
               line(x1='0', y1='100%', x2='100%', y2='0')
               line(x1='0', y1='0', x2='100%', y2='100%')
-        .infoBox.text-who   #{info.who}
-        .infoBox.text-role  #{info.role}
-        .infoBox.text-software  #{info.software}
-        .infoBox.text-info #{info.description}
-      script(type='text/javascript', src='/scripts/infoCheck.js')
+      header
+        h3 #{info.name}
+      section.tilde.top 
+        span &#12336;&#12336;&#12336;&#12336;&#12336;&#12336;&#12336;&#12336;
+      section#textBox
+        .text-label What
+        p  #{info.who}
+        .text-label Role
+        p  #{info.role} 
+        .text-label Software
+        p #{info.software}
+        .text-label Description
+        p #{info.description}
+      section.tilde.bottom 
+        span &#12336;&#12336;&#12336;&#12336;&#12336;&#12336;&#12336;&#12336;
       include ../partials/slideCtrl.jade
       .modal-layer
       section.text-overlay
@@ -68,5 +68,6 @@ html
   section.img-modal
     i.material-icons.closeModal close
   script(src='http://code.jquery.com/jquery-1.10.2.min.js')
+  script(src='https://code.jquery.com/ui/1.12.1/jquery-ui.js')
   script(src='http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js')
   script(type='text/javascript', src='/scripts/projectPage.js')

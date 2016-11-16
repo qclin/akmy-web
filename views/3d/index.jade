@@ -35,7 +35,7 @@ html
             svg.cross
               line(x1='0', y1='100%', x2='100%', y2='0')
               line(x1='0', y1='0', x2='100%', y2='100%')
-      header#header-3d
+      header
         h3 #{info.name}
       section.tilde.top 
         span &#12336;&#12336;&#12336;&#12336;&#12336;&#12336;&#12336;&#12336;
@@ -50,7 +50,6 @@ html
         p #{info.description}
       section.tilde.bottom 
         span &#12336;&#12336;&#12336;&#12336;&#12336;&#12336;&#12336;&#12336;
-      script(type='text/javascript', src='/scripts/infoCheck.js')
       include ../partials/slideCtrl.jade
       .modal-layer
       section.text-overlay
@@ -71,5 +70,6 @@ html
   section.img-modal
     i.material-icons.closeModal close
   script(src='http://code.jquery.com/jquery-1.10.2.min.js')
+  script(src='https://code.jquery.com/ui/1.12.1/jquery-ui.js')
   script(src='http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js')
   script(type='text/javascript', src='/scripts/projectPage.js')

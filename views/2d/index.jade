@@ -21,17 +21,21 @@ html
           a(href='/2d/shells' data-ajax="false") Shells 
         span#screentale
           a(href='/2d/screentale' data-ajax="false") Screen Tale 
-      header#header-2d
+      header
         h3 #{info.name}
-        form(data-role="none")
-          input(type='checkbox', name='', value='who', data-role="none")
-          |  for who?
-          input(type='checkbox', name='', value='role', data-role="none")
-          |  role
-          input(type='checkbox', name='', value='software', data-role="none")
-          |  software
-          input(type='checkbox', name='', value='info', data-role="none")
-          |  description
+      section.tilde.top 
+        span &#12336;&#12336;&#12336;&#12336;&#12336;&#12336;&#12336;&#12336;
+      section#textBox
+        .text-label What
+        p  #{info.who}
+        .text-label Role
+        p  #{info.role} 
+        .text-label Software
+        p #{info.software}
+        .text-label Description
+        p #{info.description}
+      section.tilde.bottom 
+        span &#12336;&#12336;&#12336;&#12336;&#12336;&#12336;&#12336;&#12336;
       section.project-content
         each imageUrl in imageUrlList
           div.project-images.draggable

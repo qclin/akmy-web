@@ -7,12 +7,12 @@ var projectType = location.pathname.split('/')[1]
 var projectName = location.pathname.split('/')[2]
 var projectTypeList = ["2d", "fabrication", "model"]
 
-if(window.innerWidth > 768){
-  if(projectTypeList.indexOf(projectType) > -1 ){
-    $('#'+projectType).find('.navDropdownBox').show()
-    $('#'+projectName).addClass('selectedLink')
-  }
-}
+// if(window.innerWidth > 768){
+//   if(projectTypeList.indexOf(projectType) > -1 ){
+//     $('#'+projectType).find('.navDropdownBox').show()
+//     $('#'+projectName).addClass('selectedLink')
+//   }
+// }
 $('.label').click((e) => {
   if(window.innerWidth <= 768){
     return window.location.href = $(e.target).next().children().first().children().attr('href');
