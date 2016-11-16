@@ -1,0 +1,57 @@
+doctype html 
+html 
+  head 
+    meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0')
+    link(rel='stylesheet', href='/styles/main.css')
+    link(rel='stylesheet', href='/styles/scrollPage.css')
+    link(rel='stylesheet', href='/styles/mobile/project.css')
+    link(rel='stylesheet', href='https://fonts.googleapis.com/icon?family=Material+Icons')
+    include ../partials/infoPanel.jade
+    h1.category.mobile ~ 3d ~
+    .navMenu
+      i.mobile.material-icons.md-36#hamburger menu
+    include ../partials/nav.jade
+    section#content-wrapper
+
+    section#headerText
+      p.
+        Monotonous surfaces of corporate mundanity. Grey, beige, fluorescent cream, yellow with a hint of green. The columns blend into walls, hugging the vinyl tiling that guide the pedestrian to a classroom. This palette provided the ideal challenge to the 3d scanning technique developed at the ‘prep stage’. These corridors were captured while one walked through them; to the elevator, bathroom, auditorium, lab..
+
+    section#gridCluster
+      .gridBackdrop
+        each imageUrl in Existings
+          if imageUrl.indexOf('Whole') > -1
+            span
+              img(src="#{imageUrl}")
+      .gridImages
+        each imageUrl in Existings
+          if imageUrl.indexOf('Whole') == -1
+            span
+              img(src="#{imageUrl}")
+    secion#svgCluster
+      span#tracedPaths.fadeFrames
+          object.svg-files(data="#{SVGs[1]}" type="image/svg+xml")
+            img(src="#{SVGs[1]}")
+          object.top.svg-files(data="#{SVGs[2]}" type="image/svg+xml")
+            img(src="#{SVGs[2]}")
+      span#penduLumSVG
+          object.svg-files(data="#{SVGs[0]}" type="image/svg+xml")
+            img(src="#{SVGs[0]}")
+      //- span#RhinoComposition
+      //-   img(src="#{Iterations[0]}")
+      span#selectedPaths.fadeFrames
+          object.svg-files(data="#{SVGs[3]}" type="image/svg+xml")
+            img(src="#{SVGs[3]}")
+          object.top.svg-files(data="#{SVGs[4]}" type="image/svg+xml")
+            img(src="#{SVGs[4]}")
+    secion#iterationCluster
+      each imageUrl in Iterations
+        span
+          img(src="#{imageUrl}")
+    span#TranslatedPanel
+      img(src="#{Panels[1]}")
+    span#Over
+      img(src="#{Panels[0]}")
+    section#footerText
+      p.
+        This led to an iterative series of translated corridors. Here a small selection is presented in a way that each component of mesh, bitmap and surface are extracted. These diagrams argue that it is the collision between all components that create a cohesive understanding of what that corridor is.  Visualize concept to it’s highest rendered reality. Have the sun rays and shadows cast themselves in a form that tricks the eye of it’s false physical reality. Through the effort to reach visual reproduction, effort in architectural production becomes about software proficiency. This thesis uses a 3d scanning technique that glorifies mistakes and mistranslations of architectural space in order to use software proficiency as a tool to discover new forms of spatial understanding rather than its reproduction.  The monotonous surfaces of corporate corridors provided an ideal challenge to 3d scanning which yielded a high level of mistranslated scanned forms. The thesis developed through an iterative series of translated corridors where each component (mesh, bitmap, and surface) was extracted. It is the collision of these three components that create a cohesive understanding of what the form is to the viewer’s eye. This produced the ‘in-between’ corridor, neither pristine translation or formless matter.  (Focus more on how i developed the 3d scan technique, on the technical process of the project.. What should the middle ground between concept and process?)

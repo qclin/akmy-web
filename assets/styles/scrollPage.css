@@ -1,260 +1,43 @@
-#headerText{
-  padding: 2em;
-  max-width: 768px;
-}
-#footerText{
-  margin: 0 auto;
-  max-width: 768px;
-}
-#bodyText{
-  position: relative;
-  top: 180vh;
-  padding: 4em;
-  max-width: 400px;
-}
-p{
-  width: 90%;
-  font-family: "Times New Roman", TimesNewRoman , Serif;
-  font-size: 14px;
-  letter-spacing: 1px;
-  line-height: 2em;
-}
-.containers{
-  position:relative;
-}
-.gridBackdrop img{
-  width: 100%;
-  z-index: -10;
-  position: absolute;
-}
-.gridImages{
-  padding-top: 20em;
-}
-.gridImages img{
-  width: 20vw;
-}
-.overlayBackdrop{
-  position: relative;
-}
-.overlayBackdrop img{
-  -webkit-box-shadow: 2px 4px 5px #aaa;
-  -moz-box-shadow: 2px 4px 5px #aaa;
-  box-shadow: 2px 4px 5px #aaa;
-  position: absolute;
-  width: 65vw;
-  margin: 0 auto;
-  left: 0;
-  right: 0;
-  animation-name: cf4FadeInOut;
-  animation-timing-function: ease-in-out;
-  animation-iteration-count: infinite;
-  animation-duration: 8s;
-}
-@keyframes cf4FadeInOut {
-  0% {
-    opacity:1;
-  }
-  17% {
-    opacity:1;
-  }
-  25% {
-    opacity:0;
-  }
-  92% {
-    opacity:0;
-  }
-  100% {
-    opacity:1;
-  }
-}
-
-.overlayBackdrop img:nth-of-type(1) {
-  animation-delay: 6s;
-}
-.overlayBackdrop img:nth-of-type(2) {
-  animation-delay: 4s;
-}
-.overlayBackdrop img:nth-of-type(3) {
-  animation-delay: 2s;
-}
-.overlayBackdrop img:nth-of-type(4) {
-  animation-delay: 0;
-}
-.overlayGridWrapper{
-  position:relative;
-  top: 95vh;
-}
-.overlayGrid{
-  position: absolute;
-  right: 0;
-  left: 0;
-  width: 75vw;
-  margin: 0 auto;
-}
-#topGrid img:hover{
-  opacity: 0;
-}
-.overlayGrid img{
-  max-width: 33%;
-  width: 24vw;
-  margin: 4px;
-  box-sizing: border-box;
-  -webkit-transition: opacity 1s ease-in-out;
-  -moz-transition: opacity 1s ease-in-out;
-  -o-transition: opacity 1s ease-in-out;
-  transition: opacity 1s ease-in-out;
-  -webkit-box-shadow: 1px 2px 3px #aaa;
-  -moz-box-shadow: 1px 2px 3px #aaa;
-  box-shadow: 1px 2px 3px #aaa;
-}
-#TranslatedPanel img{
-  width: 65vw;
-  float: right;
-}
-#BitmapPanel{
-  position: relative;
-  top: 150vh;
-  z-index: -3;
-}
-#BitmapPanel img{
-  width: 65vw;
-}
-#Over{
-  position: relative;
-  top: 180vh;
-}
-#Over img{
-  width: 50vw;
-}
-#tracedPaths{
-  width: 30vw;
-  float: left;
-}
-#penduLumSVG object,
-#penduLumSVG img, {
-  width: 100vw;
+#existingCluster{
+  width: 35vw;
 }
 #iterationCluster{
-  width: 33vw;
-  float: left;
+  width: 40vw;
 }
-#iterationCluster span:first-of-type img{
-  top: -40vh;
+.carousel{
   position: relative;
-  width: 50vw;
-  z-index: -2;
+  width: inherit;
 }
-#iterationCluster img,
-.bitmapCluster img{
-  width: 100%;
-  display: block;
-}
-
-.bitmapCluster{
-  width: 30vw;
-  float: right;
-  display: block;
-  right: 0;
-  margin-right: 3em;
-  position: relative;
-}
-.bitmapCluster img{
-  margin: 1em;
-}
-
-#batch1{
-  top: 200vh;
-}
-#batch2{
-  right: 15vw;
-  top: 180vh;
-}
-#batch3{
-  top: 105vh;
-}
-#batch4{
-  position: relative;
-  top: 160vh;
-  width: 50vw;
-}
-#batch4 img{
+.carousel span{
   position: absolute;
-  width: 100%;
-  animation-name: cf5FadeInOut;
-  animation-timing-function: ease-in-out;
-  animation-iteration-count: infinite;
-  animation-duration: 9s;
+  background: white;
 }
-
-#batch4 img:nth-of-type(1) {
-  animation-delay: 0s;
-
+.carousel div img{
+  width: 80%;
 }
-#batch4 img:nth-of-type(2) {
-  animation-delay: 6s;
+.carousel .img-Content {
+  text-align: center;
 }
-#batch4 img:nth-of-type(3) {
-  animation-delay: 4s;
-}
-
-
-@keyframes cf5FadeInOut {
-  0% {
-    opacity:1;
-  }
-  17% {
-    opacity:.5;
-  }
-  25% {
-    opacity:1;
-  }
-  92% {
-    opacity:.7;
-  }
-  100% {
-    opacity:0;
-  }
-}
-#selectedPaths{
-  width: 30vw;
-  float: left;
-}
-#RhinoComposition img{
+#project-content{
+  position: relative;
   width: 50vw;
+  left: 30vw;
+}
+.img-Ctrl{
+  position: relative;
+}
+.img-Ctrl span{
+  cursor: pointer;
+  margin-top: 4em;
+}
+.arrow{
   position: absolute;
+  font-size: 2em;
+  color: rgb(0, 0, 255);
+}
+#left{
   left: 0;
-  z-index: -2;
-  margin-top: 303px;
 }
-
-.fadeFrames{
-  position: relative;
-}
-.fadeFrames object,
-.fadeFrames img{
-  position:absolute;
-  left:0;
-}
-.fadeFrames .top{
-  animation-name: cf3FadeInOut;
-  animation-timing-function: ease-in-out;
-  animation-iteration-count: infinite;
-  animation-duration: 4s;
-  animation-direction: alternate;
-}
-
-
-@keyframes cf3FadeInOut {
- 0% {
-   opacity:1;
-  }
-  45% {
-  opacity:1;
-  }
-  55% {
-  opacity:0;
-  }
-  100% {
-  opacity:0;
-  }
+#right{
+  right: 0;
 }

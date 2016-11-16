@@ -52,9 +52,10 @@ app.get('/3d/corridor', function(req, res){
 		urlList = urlList.filter(Boolean).sort(urlByIndex);
 		var Panels = urlList.filter(findPanels);
 		var SVGs = urlList.filter(findSVGs);
+		var Wallpaper = urlList.filter(findWallpaper);
 		var Existings = urlList.filter(findExistings);
 		var Iterations = urlList.filter(findIterations);
-		res.render('3d/corridor.jade', {Panels, SVGs, Existings, Iterations})
+		res.render('3d/corridor.jade', {Panels, SVGs, Wallpaper, Existings, Iterations})
 	});
 });
 
@@ -245,6 +246,9 @@ function findOverlays(item){
 }
 function findSVGs(item){
 	if(item.indexOf('/SVGs/') > -1) return true;
+}
+function findWallpaper(item){
+	if(item.indexOf('/Wallpaper/') > -1) return true;
 }
 
 function findMtl(item){

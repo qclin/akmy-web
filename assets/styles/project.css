@@ -70,18 +70,6 @@ h1{
     font-family: "Times New Roman", TimesNewRoman , Serif;
     font-size: 14px;
   }
-  header{
-
-  }
-  header h3{
-    font-weight: lighter;
-    position: fixed;
-    top: 15vh;
-    left: 3vw;
-    letter-spacing: 1px;
-    margin: 0 auto 1em auto;
-    font-size: 16px;
-  }
   form{
     font-weight: 700;
     font-style: italic;
@@ -193,55 +181,6 @@ div.infoBox {
   font-size: 12px;
 }
 
-#textBox{
-  max-width: 400px;
-  width: 20vw;
-  height: 40vh;
-  background: white;
-  left: 3vw;
-  top: 20vh;
-  position: fixed;
-  overflow: scroll;
-  overflow-x: hidden;
-  padding-top: 20px
-  margin: none;
-  font-size: 12px;
-}
-#textBox p{
-  color: #5C5C5C;
-  margin-top: 0;
-}
-.text-content{
-  position: relative;
-  top: 20px;
-}
-.tilde{
-  max-width: 400px;
-  z-index: 3;
-  left: 6vw;
-  width: 20vw;
-  overflow: hidden;
-  position: fixed;
-  line-height: 20px;
-  height: 20px;
-  font-size: 50px;
-  text-shadow: 0px 2px 4px rgba(0,0,0,.2);
-  transform:scale(1.25,1);
-  color: rgba(190,190,190,1);
-}
-.tilde span{
-  width: 100%;
-}
-.tilde.top{
-  top: 18vh;
-}
-
-.tilde.bottom{
-  top: 60vh;
-}
-.tilde.bottom span{
-  background: linear-gradient(rgba(255,255,255,0), rgba(255,255,255,1) 50%);
-}
 .project-images img,
 .project-images object{
   display:none;
