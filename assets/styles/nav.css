@@ -1,5 +1,12 @@
 @import "commons/font.css";
-
+.ui-loader {
+  display:none !important;
+}
+.ui-focus {
+ -moz-box-shadow: none !important;
+ -webkit-box-shadow: none !important;
+ box-shadow: none !important;
+}
 #home-link{
   left: 2em;
   font-size: 24px;
