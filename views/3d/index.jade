@@ -37,19 +37,20 @@ html
               line(x1='0', y1='0', x2='100%', y2='100%')
       header
         h3 #{info.name}
-      section.tilde.top 
-        span &#12336;&#12336;&#12336;&#12336;&#12336;&#12336;&#12336;&#12336;
       section#textBox
-        .text-label What
-        p  #{info.who}
-        .text-label Role
-        p  #{info.role} 
-        .text-label Software
-        p #{info.software}
-        .text-label Description
-        p #{info.description}
-      section.tilde.bottom 
-        span &#12336;&#12336;&#12336;&#12336;&#12336;&#12336;&#12336;&#12336;
+        .tilde.top
+          span &#12336;&#12336;&#12336;&#12336;&#12336;&#12336;&#12336;&#12336;
+        .text-content
+          .text-label What
+          p  #{info.who}
+          .text-label Role
+          p  #{info.role} 
+          .text-label Software
+          p #{info.software}
+          .text-label Description
+          p #{info.description}
+        .tilde.bottom
+          span &#12336;&#12336;&#12336;&#12336;&#12336;&#12336;&#12336;&#12336;
       include ../partials/slideCtrl.jade
       .modal-layer
       section.text-overlay

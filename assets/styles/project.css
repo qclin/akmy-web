@@ -194,8 +194,9 @@ div.infoBox {
 }
 
 #textBox{
+  max-width: 400px;
   width: 20vw;
-  height: 37vh;
+  height: 40vh;
   background: white;
   left: 3vw;
   top: 20vh;
@@ -210,10 +211,15 @@ div.infoBox {
   color: #5C5C5C;
   margin-top: 0;
 }
+.text-content{
+  position: relative;
+  top: 20px;
+}
 .tilde{
+  max-width: 400px;
   z-index: 3;
+  left: 6vw;
   width: 20vw;
-  left: 5vw;
   overflow: hidden;
   position: fixed;
   line-height: 20px;
@@ -224,14 +230,17 @@ div.infoBox {
   color: rgba(190,190,190,1);
 }
 .tilde span{
+  width: 100%;
 }
 .tilde.top{
   top: 18vh;
-  /*background: linear-gradient(rgba(255,255,255,1),rgba(255,255,255,0));*/
 }
 
 .tilde.bottom{
   top: 60vh;
+}
+.tilde.bottom span{
+  background: linear-gradient(rgba(255,255,255,0), rgba(255,255,255,1) 50%);
 }
 .project-images img,
 .project-images object{

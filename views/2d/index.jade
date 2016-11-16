@@ -23,19 +23,20 @@ html
           a(href='/2d/screentale' data-ajax="false") Screen Tale 
       header
         h3 #{info.name}
-      section.tilde.top 
-        span &#12336;&#12336;&#12336;&#12336;&#12336;&#12336;&#12336;&#12336;
       section#textBox
-        .text-label What
-        p  #{info.who}
-        .text-label Role
-        p  #{info.role} 
-        .text-label Software
-        p #{info.software}
-        .text-label Description
-        p #{info.description}
-      section.tilde.bottom 
-        span &#12336;&#12336;&#12336;&#12336;&#12336;&#12336;&#12336;&#12336;
+        .tilde.top
+          span &#12336;&#12336;&#12336;&#12336;&#12336;&#12336;&#12336;&#12336;
+        .text-content
+          .text-label What
+          p  #{info.who}
+          .text-label Role
+          p  #{info.role} 
+          .text-label Software
+          p #{info.software}
+          .text-label Description
+          p #{info.description}
+        .tilde.bottom
+          span &#12336;&#12336;&#12336;&#12336;&#12336;&#12336;&#12336;&#12336;
       section.project-content
         each imageUrl in imageUrlList
           div.project-images.draggable
