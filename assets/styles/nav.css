@@ -88,6 +88,7 @@ nav ul .label{
   left: 10px;
   position: relative;
   overflow: auto;
+  overflow-x: hidden;
   width: 165px;
 }
 li{

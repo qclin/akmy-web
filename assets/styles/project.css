@@ -201,6 +201,7 @@ div.infoBox {
   top: 20vh;
   position: fixed;
   overflow: scroll;
+  overflow-x: hidden;
   padding-top: 20px
   margin: none;
   font-size: 12px;
