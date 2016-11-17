@@ -248,7 +248,7 @@ function findSVGs(item){
 	if(item.indexOf('/SVGs/') > -1) return true;
 }
 function findWallpaper(item){
-	if(item.indexOf('/Wallpaper/') > -1) return true;
+	if(item.indexOf('/Wallpaper/') > -1  && item.indexOf('/SVGs/') == -1) return true;
 }
 
 function findMtl(item){

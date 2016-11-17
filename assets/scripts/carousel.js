@@ -1,4 +1,3 @@
-console.log(" -------", existingUrlList, iterationUrlList)
 var currentE = 0;
 var maxIndexE = existingUrlList.length-1
 

@@ -1,8 +1,9 @@
 #existingCluster{
-  width: 35vw;
+  width: 45vw;
+  margin: 0 auto;
 }
 #iterationCluster{
-  width: 40vw;
+  width: 35vw;
 }
 .carousel{
   position: relative;
@@ -10,7 +11,6 @@
 }
 .carousel span{
   position: absolute;
-  background: white;
 }
 .carousel div img{
   width: 80%;
@@ -20,8 +20,8 @@
 }
 #project-content{
   position: relative;
-  width: 50vw;
-  left: 30vw;
+  width: 70vw;
+  left: 25vw;
 }
 .img-Ctrl{
   position: relative;
@@ -40,4 +40,48 @@
 }
 #right{
   right: 0;
+}
+
+#PanelCluster{
+
+}
+#PanelCluster span{
+}
+#PanelCluster span img{
+  width: 50%;
+  box-sizing: border-box;
+  padding: .5em;
+}
+#penduLumSVG{
+  display: block;
+  width: 40%;
+  margin: 0 auto 3em auto;
+}
+#penduLumSVG object,
+#penduLumSVG img{
+}
+.wallpaper{
+  width: 30vw;
+  position: fixed;
+  z-index: -10;
+}
+.wallpaper img{
+  width: inherit;
+  float:  right;
+}
+#Extraction{
+  left: 20vw;
+  top: 30vh;
+  width: 40vw;
+}
+#Extration2{
+  right: 0;
+  top: 70vh;
+}
+#Extration3{
+  right: 0;
+  top: 0;
+}
+.tilde.bottom span{
+  background: transparent !important;
 }

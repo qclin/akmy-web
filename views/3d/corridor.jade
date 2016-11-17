@@ -27,6 +27,9 @@ html
         .tilde.bottom
           span &#12336;&#12336;&#12336;&#12336;&#12336;&#12336;&#12336;&#12336;
     section#project-content
+      span#penduLumSVG
+          object.svg-files(data="#{SVGs[0]}" type="image/svg+xml")
+            img(src="#{SVGs[0]}")
       section#existingCluster
         .carousel
           .img-Ctrl
@@ -34,15 +37,19 @@ html
             span#right.arrow(data-value='right')  → 
           .img-Content
             img#existing(src="#{Existings[0]}")
+      span#Extraction.wallpaper
+        img(src="#{Wallpaper[0]}")
+      span#Extration2.wallpaper
+        img(src="#{Wallpaper[1]}")
+      span#Extration3.wallpaper
+        img(src="#{Wallpaper[2]}")
       //- secion#svgCluster
       //-   span#tracedPaths.fadeFrames
       //-       object.svg-files(data="#{SVGs[1]}" type="image/svg+xml")
       //-         img(src="#{SVGs[1]}")
       //-       object.top.svg-files(data="#{SVGs[2]}" type="image/svg+xml")
       //-         img(src="#{SVGs[2]}")
-      //-   span#penduLumSVG
-      //-       object.svg-files(data="#{SVGs[0]}" type="image/svg+xml")
-      //-         img(src="#{SVGs[0]}")
+
       //-   span#selectedPaths.fadeFrames
       //-       object.svg-files(data="#{SVGs[3]}" type="image/svg+xml")
       //-         img(src="#{SVGs[3]}")
@@ -55,10 +62,11 @@ html
             span#right.arrow(data-value='right')  → 
           .img-Content
               img#iteration(src="#{Iterations[0]}")
-      //- span#TranslatedPanel
-      //-   img(src="#{Panels[1]}")
-      //- span#Over
-      //-   img(src="#{Panels[0]}")
+      secion#PanelCluster
+        span
+          img(src="#{Panels[1]}")
+        span
+          img(src="#{Panels[0]}")
       script(src='http://code.jquery.com/jquery-1.10.2.min.js')
       script(src='https://code.jquery.com/ui/1.12.1/jquery-ui.js')
       script(src='http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js')
