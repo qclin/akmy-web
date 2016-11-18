@@ -29,6 +29,7 @@ header h3{
   position: relative;
   top: 20px;
   line-height: 20px;
+  height: 100%;
 }
 .tilde{
   max-width: 300px;
