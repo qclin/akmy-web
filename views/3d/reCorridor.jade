@@ -4,6 +4,7 @@ html
     meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0')
     link(rel='stylesheet', href='/styles/main.css')
     link(rel='stylesheet', href='/styles/scrollPage.css')
+    link(rel='stylesheet', href='/styles/textContent.css')
     link(rel='stylesheet', href='/styles/mobile/project.css')
     link(rel='stylesheet', href='https://fonts.googleapis.com/icon?family=Material+Icons')
     include ../partials/infoPanel.jade
@@ -12,44 +13,53 @@ html
       i.mobile.material-icons.md-36#hamburger menu
     include ../partials/nav.jade
     section#content-wrapper
-
-    secion#overlayCluster
-      .overlayBackdrop
-        - for (var i = 0; i < 4; ++i) {
-          img(src="#{Overlays[i]}")
-        - }
-      .overlayGridWrapper
-        .overlayGrid
-          - for (var i = 4; i < 10; ++i) {
-              img(src="#{Overlays[i]}")
-          - }
-        .overlayGrid#topGrid
-          - for (var i = 10; i < 16; ++i) {
-              img(src="#{Overlays[i]}")
-          - }
-    span#Over
-      img(src="#{Panels[1]}")
-    secion.bitmapCluster#batch1
-      - for (var i = 0; i < 3; ++i) {
-          img(src="#{Bitmaps[i]}")
-      - }
-    section#bodyText
-      p. 
-        The in-between corridor manifested throughout this process, highlighting the surfaces, colors, signs,textures that managed to push through the iterative system. It is not a right or wrong corridor, but a still moment between its physical reality and that of pristine translation.  
-      p.
-        The in-between corridor now collides with its original place, returning back to the series of images that constructed it. This results in a mode of representation that wants to make obvious the difference and similarities of both perceptions and how they work together to reach an understanding of what that image is representing. A second look to what was possibly disregarded.
-    
-    secion.bitmapCluster#batch2
-        - for (var i = 3; i < 6; ++i) {
-            img(src="#{Bitmaps[i]}")
-        - }
-    #BitmapPanel
-      img(src="#{Panels[0]}")
-    secion.bitmapCluster#batch3
-        - for (var i = 6; i < 9; ++i) {
-            img(src="#{Bitmaps[i]}")
-        - }
-    secion.bitmapCluster#batch4
-      - for (var i = 9; i < 12; ++i) {
-          img(src="#{Bitmaps[i]}")
-      - }
+      header
+        h3 reCorridor
+      section#textBox
+        .tilde.top
+          span &#12336;&#12336;&#12336;&#12336;&#12336;&#12336;&#12336;&#12336;
+        .text-content
+          p. 
+            The in-between corridor manifested throughout this process, highlighting the surfaces, colors, signs,textures that managed to push through the iterative system. It is not a right or wrong corridor, but a still moment between its physical reality and that of pristine translation.  
+          p.
+            The in-between corridor now collides with its original place, returning back to the series of images that constructed it. This results in a mode of representation that wants to make obvious the difference and similarities of both perceptions and how they work together to reach an understanding of what that image is representing. A second look to what was possibly disregarded.
+        .tilde.bottom
+          span &#12336;&#12336;&#12336;&#12336;&#12336;&#12336;&#12336;&#12336;
+    section#project-content
+      span#Overlayed
+        img(src="#{Panels[0]}")
+      secion#overlayCluster
+        .carousel
+          .img-Ctrl
+            span#left.arrow(data-value='left')  ← 
+            span#right.arrow(data-value='right')  → 
+          .img-Content
+            img#overlay(src="#{Overlays[0]}")
+      section#bitmapTriple
+        span
+          img(src="#{Bitmaps[0]}")
+        span
+          img(src="#{Bitmaps[1]}")
+          img(src="#{Bitmaps[2]}")
+      span#Paths.wallpaper
+        img(src="#{SVGs[1]}")
+      span#Pendulum.wallpaper
+        img(src="#{SVGs[3]}")
+      span#Mesh.wallpaper
+        img(src="#{Wallpaper[0]}")
+      section#bitmapCluster
+        .carousel
+          .img-Ctrl
+            span#left.arrow(data-value='left')  ← 
+            span#right.arrow(data-value='right')  → 
+          .img-Content
+            img#bitmap(src="#{Bitmaps[3]}")
+      span#BitmapModel
+        img(src="#{Bitmaps[10]}")
+    script(src='http://code.jquery.com/jquery-1.10.2.min.js')
+    script(src='https://code.jquery.com/ui/1.12.1/jquery-ui.js')
+    script(src='http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js')
+    script.                                                 
+      var overlayUrlList =!{JSON.stringify(Overlays)}; 
+      var bitmapUrlList =!{JSON.stringify(Bitmaps)};
+    script(type='text/javascript', src='/scripts/carousel2.js')

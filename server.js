@@ -65,7 +65,9 @@ app.get('/3d/reCorridor', function(req, res){
 		var Panels = urlList.filter(findPanels);
 		var Bitmaps = urlList.filter(findBitmaps);
 		var Overlays = urlList.filter(findOverlays);
-		res.render('3d/reCorridor.jade', {Panels, Bitmaps, Overlays})
+		var SVGs = urlList.filter(findSVGs);
+		var Wallpaper = urlList.filter(findWallpaper);
+		res.render('3d/reCorridor.jade', {Panels, Bitmaps, Overlays, SVGs, Wallpaper})
 	})
 });
 app.get('/3d/:project', function(req, res){

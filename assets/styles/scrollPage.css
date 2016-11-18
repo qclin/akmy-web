@@ -5,6 +5,16 @@
 #iterationCluster{
   width: 35vw;
 }
+#bitmapCluster,
+#overlayCluster,
+span#BitmapModel{
+  width: 45vw;
+  float: right;
+  margin: 1em;
+}
+span#BitmapModel img{
+  width: inherit;
+}
 .carousel{
   position: relative;
   width: inherit;
@@ -17,6 +27,37 @@
 }
 .carousel .img-Content {
   text-align: center;
+}
+#bitmapTriple{
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+#bitmapTriple span{
+
+}
+#bitmapTriple span:first-of-type{
+  width: 55%;
+  padding: 1em;
+  padding-left: 3em;
+}
+#bitmapTriple span:nth-of-type(2){
+  width: 25%;
+  display: inline-block;
+}
+#bitmapTriple span:nth-of-type(2) img{
+  display: block;
+  width: 100%;
+  padding: .5em;
+}
+#bitmapTriple span img{
+  width: inherit;
+}
+span#Overlayed{
+  width: 45vw;
+}
+span#Overlayed img{
+  width: 100%;
 }
 #project-content{
   position: relative;
@@ -69,19 +110,41 @@
   width: inherit;
   float:  right;
 }
+
 #Extraction{
   left: 20vw;
   top: 30vh;
   width: 40vw;
 }
+#Pendulum{
+  /*-ms-transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);*/
+  width: 50vw;
+  top: 10vh;
+  bottom:0;
+  position:fixed;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
 #Extration2{
   right: 0;
   top: 70vh;
 }
+#Mesh{
+  position: absolute;
+  width: 20vw;
+  left: 0;
+  top: 330vh;
+  margin: 3em;
+}
+
+#Paths,
 #Extration3{
   right: 0;
   top: 0;
 }
+
 .tilde.bottom span{
   background: transparent !important;
 }
