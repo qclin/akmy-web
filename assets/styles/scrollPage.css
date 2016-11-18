@@ -12,6 +12,12 @@ span#BitmapModel{
   float: right;
   margin: 1em;
 }
+span#BitmapModel{
+  width: 40vw;
+  float: right;
+  margin: 1em;
+  margin-right: -2em;
+}
 span#BitmapModel img{
   width: inherit;
 }
@@ -37,7 +43,7 @@ span#BitmapModel img{
 
 }
 #bitmapTriple span:first-of-type{
-  width: 55%;
+  width: 50%;
   padding: 1em;
   padding-left: 3em;
 }
@@ -57,7 +63,7 @@ span#Overlayed{
   width: 45vw;
 }
 span#Overlayed img{
-  width: 100%;
+  width: inherit;
 }
 #project-content{
   position: relative;
@@ -135,7 +141,7 @@ span#Overlayed img{
   position: absolute;
   width: 20vw;
   left: 0;
-  top: 330vh;
+  top: 300vh;
   margin: 3em;
 }
 
