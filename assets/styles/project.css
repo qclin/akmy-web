@@ -86,7 +86,7 @@ h1{
   }
 
   .project-content div{
-    width: 40%;
+    width: 50%;
   }
 
   .project-content div:nth-of-type(2){
@@ -121,10 +121,9 @@ h1{
     height: 400px;
   }
   .project-content{
-    height: 70vh;
+    height: 80vh;
     width: 70vw;
     left: 25vw;
-    top:  -5vh;
     position: relative;
     overflow: hidden;
 
@@ -246,18 +245,20 @@ a{
 }
 .img-modal.landscape img,
 .img-modal.landscape object{
-  width: 100vh;
+  width: 100vw;
+  top: 0;
+  bottom: 0;
+  margin: auto;
 }
 .portrait img,
 .portrait object{
   height: 100vh;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
 }
 .img-modal img,
 .img-modal object{
-  margin: 0 auto;
-  position: center;
-  left: 0;
-  right: 0;
   position: absolute;
 }
 

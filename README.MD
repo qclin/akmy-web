@@ -27,3 +27,4 @@
 
 #vertical scroll
 [cross-fade](http://css3.bradshawenterprises.com/cfimg/)
+[position fixed, overflow scroll](http://stackoverflow.com/questions/16094785/have-a-fixed-position-div-that-needs-to-scroll-if-content-overflows)

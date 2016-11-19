@@ -5,7 +5,7 @@ $( document ).on( "mobileinit", function() {
 
 var projectType = location.pathname.split('/')[1]
 var projectName = location.pathname.split('/')[2]
-var projectTypeList = ["2d", "fabrication", "model"]
+var projectTypeList = ["2d", "3d", "fabrication", "model"]
 
 // if(window.innerWidth > 768){
 //   if(projectTypeList.indexOf(projectType) > -1 ){
@@ -13,6 +13,12 @@ var projectTypeList = ["2d", "fabrication", "model"]
 //     $('#'+projectName).addClass('selectedLink')
 //   }
 // }
+
+if(window.innerWidth > 768){
+  if(projectTypeList.indexOf(projectType) > -1 ){
+    $('#'+projectType).addClass('selectedTopic')
+  }
+}
 $('.label').click((e) => {
   if(window.innerWidth <= 768){
     return window.location.href = $(e.target).next().children().first().children().attr('href');
