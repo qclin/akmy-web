@@ -29,9 +29,11 @@ html
         each imageUrl in imageUrlList
           div.project-images.draggable
             if imageUrl.indexOf(".svg") > -1 
+              span.helper
               object.svg-files(data="#{imageUrl}" type="image/svg+xml")
                 img(src="#{imageUrl}")
             else
+              span.helper
               img(src="#{imageUrl}")
             svg.cross
               line(x1='0', y1='100%', x2='100%', y2='0')
@@ -40,7 +42,8 @@ html
         h3 #{info.name}
       section#textBox
         .tilde.top
-          span &#12336;&#12336;&#12336;&#12336;&#12336;&#12336;&#12336;&#12336;
+          object.svg-files.shadow(data="/vectors/squiggle-01.svg" type="image/svg+xml")
+            img(src="/vectors/squiggle-01.svg")
         .text-content
           .text-label What
           p  #{info.who}
@@ -51,7 +54,8 @@ html
           .text-label Description
           p #{info.description}
         .tilde.bottom
-          span &#12336;&#12336;&#12336;&#12336;&#12336;&#12336;&#12336;&#12336;
+          object.svg-files.shadow(data="/vectors/squiggle-01.svg" type="image/svg+xml")
+            img(src="/vectors/squiggle-01.svg")
       include ../partials/slideCtrl.jade
       .modal-layer
       section.text-overlay
@@ -63,6 +67,7 @@ html
           .text-info #{info.description}
     if info.links
       footer
+        marquee(behavior="alternate")
           each link in info.links
             a(href=link).ext-links #{link}
       div.sideLinkPanel 

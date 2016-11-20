@@ -28,9 +28,9 @@ $('.label').click((e) => {
   if(location.pathname == "/"){
     var selectedId = $(e.target).parent().attr('id')
 
-    $(`#preview-${selectedId}`).show(function(){
+    $(`#preview-${selectedId}`).show(0, function(){
       $(`#preview-${selectedId}`).siblings().hide()
-      generateImageSizePostion(`#preview-${selectedId}`)
+      // generateImageSizePostion(`#preview-${selectedId}`)
     });
 
     // $("#content").load("partials/preview.jade #preview-"+$(e.target).parent().attr('id'), function(){

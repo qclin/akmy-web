@@ -26,7 +26,8 @@ html
         h3 #{info.name}
       section#textBox
         .tilde.top
-          span &#12336;&#12336;&#12336;&#12336;&#12336;&#12336;&#12336;&#12336;
+          object.svg-files.shadow(data="/vectors/squiggle-01.svg" type="image/svg+xml")
+            img(src="/vectors/squiggle-01.svg")
         .text-content
           .text-label What
           p  #{info.who}
@@ -37,22 +38,21 @@ html
           .text-label Description
           p #{info.description}
         .tilde.bottom
-          span &#12336;&#12336;&#12336;&#12336;&#12336;&#12336;&#12336;&#12336;
+          object.svg-files.shadow(data="/vectors/squiggle-01.svg" type="image/svg+xml")
+            img(src="/vectors/squiggle-01.svg")
       section.project-content
         each imageUrl in imageUrlList
           div.project-images.draggable
             if imageUrl.indexOf(".svg") > -1 
+              span.helper
               object.svg-files(data="#{imageUrl}" type="image/svg+xml")
                 img(src="#{imageUrl}")
             else
+              span.helper
               img(src="#{imageUrl}")
             svg.cross
               line(x1='0', y1='100%', x2='100%', y2='0')
               line(x1='0', y1='0', x2='100%', y2='100%')
-        .infoBox.text-who.draggable   #{info.who}
-        .infoBox.text-role.draggable  #{info.role}
-        .infoBox.text-software.draggable  #{info.software}
-        .infoBox.text-info.draggable #{info.description}
       script(type='text/javascript', src='/scripts/infoCheck.js')
       include ../partials/slideCtrl.jade
       .modal-layer
@@ -65,6 +65,7 @@ html
           .text-info #{info.description}
     if info.links
       footer
+        marquee(behavior="alternate")
           each link in info.links
             a(href=link target="_blank").ext-links #{link}
       div.sideLinkPanel 

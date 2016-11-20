@@ -1,7 +1,7 @@
 header h3{
   font-weight: lighter;
   position: fixed;
-  top: 15vh;
+  top: 20vh;
   left: 3vw;
   letter-spacing: 1px;
   margin: 0 auto 1em auto;
@@ -13,7 +13,7 @@ header h3{
   height: 40vh;
   background: white;
   left: 3vw;
-  top: 20vh;
+  top: 25vh;
   position: fixed;
   overflow: scroll;
   overflow-x: hidden;
@@ -32,29 +32,42 @@ header h3{
   height: 100%;
 }
 .tilde{
-  max-width: 300px;
+  /*
   z-index: 3;
-  left: 5vw;
   width: 20vw;
   overflow: hidden;
-  position: fixed;
   line-height: 20px;
   height: 20px;
-  font-size: 50px;
+  font-size: 50px;*/
+  left: 5vw;
+  max-width: 300px;
+  width: 16vw;
+  position: fixed;
   text-shadow: 0px 2px 4px rgba(0,0,0,.2);
   transform:scale(1.25,1);
   color: rgba(190,190,190,1);
 }
-.tilde span{
-  width: 100%;
+
+.shadow {
+    -webkit-filter: drop-shadow( 0px 2px 4px #000; );
+            filter: drop-shadow( 0px 2px 4px #000; ); /* Same syntax as box-shadow */
 }
+
+/*.tilde span{
+  width: 100%;
+}*/
 .tilde.top{
-  top: 18vh;
+  top: 23vh;
 }
 
 .tilde.bottom{
-  top: 60vh;
+  top: 65vh;
 }
-.tilde.bottom span{
+/*.tilde.bottom span{
   background: linear-gradient(rgba(255,255,255,0), rgba(255,255,255,1) 50%);
+}*/
+
+
+#textBox svg path{
+  stroke-width: 10;
 }

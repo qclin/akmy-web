@@ -3,6 +3,9 @@
     height: 100%;
     width: 100%;
   }
+  #home-link{
+    display: none !important;
+  }
   ul{
     padding: 0;
     max-width: 220px;

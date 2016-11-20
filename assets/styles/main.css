@@ -5,11 +5,17 @@
 .preview-wrapper{
   z-index: -5;
   display: none;
+  width: 100vw;
+  height: 15vh;
+  text-align: center;
 }
 .preview-wrapper > span{
+  display: inline;
+  margin-right: 2em;
 }
+
 .preview-wrapper img{
-  image-orientation: initial;
+  height: 100%;
 }
 .img-portrait{
   -ms-transform: rotate(90deg); /* IE 9 */
@@ -18,31 +24,28 @@
 }
 
 .highlightSelection{
+  position: relative;
   filter: none !important;
   -webkit-filter: none !important;
   z-index: 10 !important;
   opacity: 1;
-  -webkit-box-shadow: 2px 4px 5px 0px rgba(190,190,190,1);
-  -moz-box-shadow: 2px 4px 5px 0px rgba(190,190,190,1);
-  box-shadow: 2px 4px 5px 0px rgba(190,190,190,1);
 }
 
 .highlightSelection:after{
+  position: absolute;
   content: ' ';
   opacity:1;
   background: #F8E71C;
-  top: -50px;
-  left: -50px;
-  position: absolute;
-  width: 100%;
-  height: 100%;
+  left: 0;
+  width: 140%;
+  height: 15vh;
   border-radius: 50%;
   z-index: -5;
   -webkit-filter: blur(55px);
   -moz-filter: blur(55px);
   -o-filter: blur(55px);
   -ms-filter: blur(55px);
-  filter: blur(55px);
+  filter: blur(40px);
 }
 .imageOverlay{
   z-index: -5;

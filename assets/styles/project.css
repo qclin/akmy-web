@@ -35,7 +35,6 @@ h1{
 .project-content div{
   position: absolute;
   background: white;
-  left: 20vw;
   right: 0;
   margin: auto;
   border: 1px dotted grey;
@@ -87,6 +86,7 @@ h1{
 
   .project-content div{
     width: 50%;
+    left: 20vw;
   }
 
   .project-content div:nth-of-type(2){
@@ -159,10 +159,11 @@ h1{
 
 .foreground{
   z-index: 10;
+  display:initial;
 }
 .foreground  img,
 .foreground object{
-  display:block !important;
+  display:initial !important;
 }
 div.infoBox {
   display: none;
@@ -214,6 +215,10 @@ footer{
 footer a{
   margin: 2em;
   top: 30%;
+  position: relative;
+}
+footer marquee{
+  top: 20px;
   position: relative;
 }
 
@@ -273,6 +278,12 @@ a{
     position: absolute;
     z-index: 100;
     background: linear-gradient(#F8E71C, rgba(255,255,255, 1));
+  }
+  .project-images{
+    display:none;
+  }
+  .foreground{
+    display:block;
   }
   .portrait img,
   .portrait object{

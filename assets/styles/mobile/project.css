@@ -18,6 +18,7 @@
     display: block;
     width: 100%;
     overflow-x: scroll;
+    overflow-y: hidden;
     height: 40px;
     white-space: nowrap;
   }
@@ -53,6 +54,20 @@
   .project-content div{
     border: none;
     position: relative;
+  }
+  .project-images{
+    height: 70vh; 
+    white-space: nowrap;
+    text-align: center;
+  }
+  .helper{
+    height: 100%;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  .project-images img,
+  .project-images object{
+    vertical-align: middle;
   }
   div.sideLinkPanel{
     position: fixed;
@@ -124,12 +139,12 @@
     line-height: 1.5em;
     margin: 2em 1em;
   }
-
   .activeSpan a{
     font-style: italic;
     text-decoration: underline !important;
     color: #551A8B;
   }
+  #textBox,
   header,
   section.text-overlay,
   .cross,
