@@ -64,6 +64,12 @@ h1{
     position: relative;
     z-index: 100;
   }
+  header.modelPage  h3{
+    text-align: center;
+    font-weight: lighter;
+    letter-spacing: 1px;
+    font-size: 16px;
+  }
   form,
   header h3{
     font-family: "Times New Roman", TimesNewRoman , Serif;
@@ -126,7 +132,12 @@ h1{
     left: 25vw;
     position: relative;
     overflow: hidden;
-
+  }
+  .model-content{
+    height: 70vh;
+    width: 100vw;
+    position: relative;
+    overflow: hidden;
   }
   section.text-overlay,
   div.subNav,
@@ -292,7 +303,6 @@ a{
   .img-modal.landscape img,
   .img-modal.landscape object{
     width: 100%;
-    top: 25%;
   }
   .closeModal{
     margin: 10px;

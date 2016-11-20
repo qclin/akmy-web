@@ -1,0 +1,29 @@
+doctype html 
+html 
+  head 
+    meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0')
+    link(rel='stylesheet', href='/styles/main.css')
+    link(rel='stylesheet', href='/styles/project.css')
+    link(rel='stylesheet', href='/styles/mobile/project.css')
+    link(rel='stylesheet', href='https://fonts.googleapis.com/icon?family=Material+Icons')
+    include ../partials/infoPanel.jade
+    h1.category.mobile ~ 3d ~
+    .navMenu
+      i.mobile.material-icons.md-36#hamburger menu
+    include ../partials/nav.jade
+    header.modelPage
+      h3 CORRIDOR
+    section#content-wrapper
+      div.subNav
+        span#fruits
+          a(href='/model/fruits' data-ajax="false") Fruits
+        span#food
+          a(href='/model/food' data-ajax="false") Food
+        span#corridor
+          a(href='/model/corridor' data-ajax="false") Corridor
+      section.model-content
+        iframe( allowfullscreen webkitallowfullscreen width="100%" height="100%" frameborder="0" seamless src="https://p3d.in/e/9WFbS+shading,dl,help,share,fs,subd,spin,link-hidden")
+    script(src='http://code.jquery.com/jquery-1.10.2.min.js')
+    script(src='https://code.jquery.com/ui/1.12.1/jquery-ui.js')
+    script(src='http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js')
+    script(type='text/javascript', src='/scripts/projectPage.js')

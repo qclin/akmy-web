@@ -110,42 +110,45 @@ app.get('/fabrication/:project', function(req, res){
 	});
 });
 
-
-app.get('/model/fruits', function(req, res){
-		var payload = {
-			'path': '/3dModels/fruits/',
-			'mtl': 'Orange_Brush.mtl',
-			'obj': 'Orange_Brush.obj'
-		}
-		var info = {
-			'name' : 'Fruits'
-		}
-		res.render('models/fruits.jade', {info, load: payload})
+app.get('/model/:project', function( req, res){
+	var template = 'models/iframe-'+req.params.project+'.jade'
+	res.render(template)
 });
-
-app.get('/model/corridor', function(req, res){
-		var payload = {
-			'path': '/3dModels/corridor/',
-			'mtl': 'Wave.mtl',
-			'obj': 'Wave.obj'
-		}
-		var info = {
-			'name' : 'Corridor'
-		}
-		res.render('models/corridor.jade', {info, load: payload})
-});
-
-app.get('/model/food', function(req, res){
-		var payload = {
-			'path': '/3dModels/food/',
-			'mtl': 'Cloth_Tamago.mtl',
-			'obj': 'Cloth_Tamago.obj'
-		}
-		var info = {
-			'name' : 'Food'
-		}
-		res.render('models/index.jade', {info, load: payload})
-});
+// app.get('/model/fruits', function(req, res){
+// 		var payload = {
+// 			'path': '/3dModels/fruits/',
+// 			'mtl': 'Orange_Brush.mtl',
+// 			'obj': 'Orange_Brush.obj'
+// 		}
+// 		var info = {
+// 			'name' : 'Fruits'
+// 		}
+// 		res.render('models/fruits.jade', {info, load: payload})
+// });
+//
+// app.get('/model/corridor', function(req, res){
+// 		var payload = {
+// 			'path': '/3dModels/corridor/',
+// 			'mtl': 'Wave.mtl',
+// 			'obj': 'Wave.obj'
+// 		}
+// 		var info = {
+// 			'name' : 'Corridor'
+// 		}
+// 		res.render('models/corridor.jade', {info, load: payload})
+// });
+//
+// app.get('/model/food', function(req, res){
+// 		var payload = {
+// 			'path': '/3dModels/food/',
+// 			'mtl': 'Cloth_Tamago.mtl',
+// 			'obj': 'Cloth_Tamago.obj'
+// 		}
+// 		var info = {
+// 			'name' : 'Food'
+// 		}
+// 		res.render('models/index.jade', {info, load: payload})
+// });
 
 // app.get('/model/:project', function(req, res){
 // 	getProjectInfo("Models", req.url).then((databaseRow) => {

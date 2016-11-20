@@ -40,7 +40,7 @@ section#content-wrapper
   script. 
     var container, stats, iFrame;
     var camera, controls, scene, renderer;
-    var mouseX = 0, mouseY = 0;
+    var mouseX = 0, mouseY = 240;
     var windowHalfX = window.innerWidth / 2;
     var windowHalfY = window.innerHeight / 2;
     init();
@@ -52,6 +52,7 @@ section#content-wrapper
       iFrame.appendChild( container)
       camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 1, 2000 );
       camera.position.z = 250;
+      camera.position.y = -240;
       // trackball control
       controls = new THREE.TrackballControls( camera );
       controls.rotateSpeed = 1.0;
@@ -64,6 +65,7 @@ section#content-wrapper
       controls.dynamicDampingFactor = 0.3;
       // scene
       scene = new THREE.Scene();
+      scene.background = new THREE.Color( 0xffffff );
       var ambient = new THREE.AmbientLight( 0x444444 );
       scene.add( ambient );
       var directionalLight = new THREE.DirectionalLight( 0xffeedd );
@@ -86,6 +88,7 @@ section#content-wrapper
         objLoader.setMaterials( materials );
         objLoader.setPath("#{load.path}");
         objLoader.load("#{load.obj}", function ( object ) {
+          object.position.x = 0;
           object.position.y = 0;
           // make it a bit bigger
           //- object.scale.set(2, 2, 2);
@@ -96,6 +99,7 @@ section#content-wrapper
       renderer = new THREE.WebGLRenderer();
       renderer.setPixelRatio( window.devicePixelRatio );
       //- renderer.setSize( window.innerWidth, window.innerHeight );
+      
       renderer.setSize( iFrame.offsetWidth, iFrame.offsetHeight); 
       container.appendChild( renderer.domElement );
       //- document.addEventListener( 'mousemove', onDocumentMouseMove, false );
@@ -120,7 +124,12 @@ section#content-wrapper
       render();
     }
     function render() {
+      var timer = -0.0002 * Date.now();
       controls.update();
+      camera.position.y += ( - mouseY - camera.position.y ) * .5;
+      camera.position.x = 100 * Math.cos( timer );
+      camera.position.z = 100 * Math.sin( timer );
+      
       //- camera.position.x += ( mouseX - camera.position.x ) * .05;
       //- camera.position.y += ( - mouseY - camera.position.y ) * .05;
       camera.lookAt( scene.position );

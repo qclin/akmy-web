@@ -51,6 +51,9 @@
     background: white;
     border: 1px dotted grey;
   }
+  .model-content{
+    height: 100%; 
+  }
   .project-content div{
     border: none;
     position: relative;
