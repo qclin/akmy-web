@@ -101,6 +101,10 @@ app.get('/model/:project', function( req, res){
 	var template = 'models/iframe-'+req.params.project+'.jade'
 	res.render(template)
 });
+
+app.get('/who', function(req, res){
+	res.render('who/about.jade')
+})
 // app.get('/model/fruits', function(req, res){
 // 		var payload = {
 // 			'path': '/3dModels/fruits/',

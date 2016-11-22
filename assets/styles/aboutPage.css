@@ -1,0 +1,86 @@
+@import "/commons/font.css";
+
+body{
+  background: linear-gradient(rgba(0,0,255, 1), rgba(255,255,255, 1));
+  height: 100vh;
+}
+#home-link{
+  color: #FFFFFF !important;
+}
+#home-link:after{
+  background: transparent !important;
+}
+.panelContent img{
+  width: 200px;
+  float: right;
+  margin: 4em;
+}
+
+.panelContent {
+   color: #FFFFFF;
+   font-family: "Times New Roman", TimesNewRomanItalic, Serif;
+   font-style: italic;
+   font-size: 1.5em;
+   width: 70vw;
+   margin: 0 auto;
+}
+
+.aboutText{
+  font-size: 24px;
+  width: 600px;
+  margin: 4em;
+  position: absolute;
+}
+a{
+  cursor: pointer;
+}
+.contactIcon{
+  color:  #FFFFFF;
+  float: right;
+  cursor: pointer;
+}
+p.title{
+  display: inline-block;
+  width: 65%;
+  margin-bottom: 0;
+  font-size: .7em;
+}
+p.email{
+  display: inline-block;
+}
+p.footnote{
+  font-size: .7em;
+}
+
+.contactIcon{
+  position: relative;
+  top: -12px;
+  right: -17px;
+  font-size: 36px !important;
+}
+@media(min-width: 768px){
+  #aboutME{
+    display: none;
+  }
+}
+@media(max-width: 768px){
+  #aboutME{
+    color: #0000FF;
+    cursor: pointer;
+    position: fixed;
+    top: 50%;
+    left: -1.2em;
+    margin: 0;
+    -ms-transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    font-size: 30px;
+    font-weight: 400;
+    font-style: italic;
+    font-family: "Times New Roman", TimesNewRomanBoldItalic , Serif;
+    letter-spacing: 9px;
+    text-decoration: none;
+    text-shadow: 0px 2px 4px rgba(0,0,0,.5);
+    z-index: 20;
+  }
+}

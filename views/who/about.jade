@@ -1,0 +1,34 @@
+doctype html
+html
+  head
+    meta(http-equiv='Content-Type', content='text/html; charset=UTF-8')
+    meta(name='viewport', content='width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0')
+    meta(name='keywords', content='Andrea Macias-Ya&#xF1;ez 3d modeling 3d visualiser fabrication')
+    meta(name='description', content='Description')
+    meta(name='og:title', content=typeof(title) !== 'undefined' ? title : "Untitled template")
+    link(rel='shortcut icon', href='./images/favicon.jpg', type='image/x-icon') 
+    link(rel='stylesheet', href='./styles/main.css')
+    link(rel='stylesheet', href='./styles/home.css')
+    link(rel='stylesheet', href='./styles/aboutPage.css')
+    link(rel='stylesheet', href='https://fonts.googleapis.com/icon?family=Material+Icons')
+    title AKMY
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js')
+  body
+    #page-wrap
+      #spinLogo andrea k macias-ya&#xF1;ez
+      include ../partials/nav.jade
+      section#content-wrapper
+        #content 
+          .panelContent
+            img.profile-img(src="/images/favicon.jpg")
+            div.aboutText
+              p.title ~ tangible intangible ~
+              p Andrea Macias-Ya&#xF1;ez is a visualist, 3d artist and maybe architect --  
+                a(href='http://untitled00001.tumblr.com/' target="_blank") swimming
+                span  between the real and unreal world of the virtual --  based in Berlin
+              p.email amacias.y@gmail.com
+                a.contactIcon(href="mailto:amacias.y@gmail.com?Subject=Hello%20again" target="_top")
+                  i.material-icons send
+              p.footnote *A Gusto Production*
+
+    script(type='text/javascript', src='./scripts/main.js')
