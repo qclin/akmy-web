@@ -12,44 +12,50 @@ html
       i.mobile.material-icons.md-36#hamburger menu
     include ../partials/nav.jade
     section#content-wrapper
+      header
+        h3 Blind Spot part 2 
+    section#scroll-content
+      section#textZone4.snippets
+        p Architecture rendering wishes to seduce the eye to its ‘realness’ but it is rather a reflection of software proficiency. Instead of seeking the reproduction of reality this corridor project formulates images that are suspended in a liminal state between real and virtual. Here, software proficiency abuses and exaggerates the flaws of 3d scanning to create a new novel realization of a corridor. 
+      span#Mesh.wallpaper
+        img(src="#{Wallpaper[0]}")
+      span#Pendulum.wallpaper
+        img(src="#{SVGs[3]}")
+      span#BitmapPanel
+        img(src="#{Panels[0]}")
+      section#overlayMarquee
+        #marqueHolder
+          marquee
+            - for (var i = 1; i < Overlays.length ; ++i) {
+              span 
+                img(src="#{Overlays[i]}")
+            - }
+      span#BreadOverlay
+        img(src="#{Overlays[0]}")
+      span#DiagramLeft.diagrams
+        img(src="#{Diagrams[3]}")
+      span#DiagramRight.diagrams
+        img(src="#{Diagrams[1]}")
+      section#textZone5.snippets
+        p Using tools that desire to replicate objects are used against themselves in order to visualize a new kind of digital vision. This vision inserts movement into static 3d meshes in order to hint at a new system of representation that highlights process and not the final rendered image of quasi-reality. This methodology is against systematic operation and desires to sway the consumption of images towards the unnoticed. To create a method for new discoveries. 
+      section#bitmapDouble
+        span
+          img(src="#{Bitmaps[0]}")
+        span
+          img(src="#{Bitmaps[1]}")
+      
+      section#bitmapCluster
+        .carousel
+          .img-Ctrl
+            span#left.arrow(data-value='left')  ← 
+            span#right.arrow(data-value='right')  → 
+          .img-Content
+            img#bitmap(src="#{Bitmaps[3]}")
 
-    secion#overlayCluster
-      .overlayBackdrop
-        - for (var i = 0; i < 4; ++i) {
-          img(src="#{Overlays[i]}")
-        - }
-      .overlayGridWrapper
-        .overlayGrid
-          - for (var i = 4; i < 10; ++i) {
-              img(src="#{Overlays[i]}")
-          - }
-        .overlayGrid#topGrid
-          - for (var i = 10; i < 16; ++i) {
-              img(src="#{Overlays[i]}")
-          - }
-    span#Over
-      img(src="#{Panels[1]}")
-    secion.bitmapCluster#batch1
-      - for (var i = 0; i < 3; ++i) {
-          img(src="#{Bitmaps[i]}")
-      - }
-    section#bodyText
-      p. 
-        The in-between corridor manifested throughout this process, highlighting the surfaces, colors, signs,textures that managed to push through the iterative system. It is not a right or wrong corridor, but a still moment between its physical reality and that of pristine translation.  
-      p.
-        The in-between corridor now collides with its original place, returning back to the series of images that constructed it. This results in a mode of representation that wants to make obvious the difference and similarities of both perceptions and how they work together to reach an understanding of what that image is representing. A second look to what was possibly disregarded.
-    
-    secion.bitmapCluster#batch2
-        - for (var i = 3; i < 6; ++i) {
-            img(src="#{Bitmaps[i]}")
-        - }
-    #BitmapPanel
-      img(src="#{Panels[0]}")
-    secion.bitmapCluster#batch3
-        - for (var i = 6; i < 9; ++i) {
-            img(src="#{Bitmaps[i]}")
-        - }
-    secion.bitmapCluster#batch4
-      - for (var i = 9; i < 12; ++i) {
-          img(src="#{Bitmaps[i]}")
-      - }
+      script(src='http://code.jquery.com/jquery-1.10.2.min.js')
+      script(src='https://code.jquery.com/ui/1.12.1/jquery-ui.js')
+      script(src='http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js')
+      script.                                                 
+        var overlayUrlList =!{JSON.stringify(Overlays)}; 
+        var bitmapUrlList =!{JSON.stringify(Bitmaps)};
+      script(type='text/javascript', src='/scripts/carousel2.js')

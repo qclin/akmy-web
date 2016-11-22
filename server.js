@@ -64,10 +64,11 @@ app.get('/3d/blindSpot2', function(req, res){
 		urlList = urlList.filter(Boolean).sort(urlByIndex);
 		var Panels = urlList.filter(findPanels);
 		var Bitmaps = urlList.filter(findBitmaps);
+		var Diagrams = urlList.filter(findDiagrams);
 		var Overlays = urlList.filter(findOverlays);
 		var SVGs = urlList.filter(findSVGs);
 		var Wallpaper = urlList.filter(findWallpaper);
-		res.render('3d/blindSpot2.jade', {Panels, Bitmaps, Overlays, SVGs, Wallpaper})
+		res.render('3d/blindSpot2.jade', {Panels, Bitmaps, Diagrams, Overlays, SVGs, Wallpaper})
 	})
 });
 app.get('/3d/:project', function(req, res){
@@ -244,6 +245,9 @@ function findPanels(item){
 }
 function findBitmaps(item){
 	if(item.indexOf('/Bitmaps/') > -1) return true;
+}
+function findDiagrams(item){
+	if(item.indexOf('/Diagrams/') > -1) return true;
 }
 function findExistings(item){
 	if(item.indexOf('/existing-photos/') > -1) return true;

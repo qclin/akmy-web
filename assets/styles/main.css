@@ -55,7 +55,15 @@
 header h1{
   text-decoration: underline;
 }
-
+header h3{
+  font-weight: lighter;
+  position: fixed;
+  top: 20vh;
+  left: 3vw;
+  letter-spacing: 1px;
+  margin: 0 auto 1em auto;
+  font-size: 16px;
+}
 .navMenu{
   color: rgb(0,0,255);
   width: 100%;

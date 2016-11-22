@@ -20,7 +20,7 @@ $('#overlayCluster span#right').click(function(e) {
 });
 
 var currentBit = 3;
-var maxIndexBit = 8
+var maxIndexBit = 8; 
 
 $('#bitmapCluster span#left').click(function(e) {
     if(currentBit == 3){
