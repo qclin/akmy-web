@@ -55,20 +55,7 @@ app.get('/3d/blindSpot', function(req, res){
 		var Wallpaper = urlList.filter(findWallpaper);
 		var Existings = urlList.filter(findExistings);
 		var Iterations = urlList.filter(findIterations);
-		res.render('3d/corridor.jade', {Panels, SVGs, Wallpaper, Existings, Iterations})
-	});
-});
-
-
-app.get('/3d/oldCorridor', function(req, res){
-	getAllDirectoryFilesS3('/3d/vertical-scroll-1/').then((urlList) =>{
-		urlList = urlList.filter(Boolean).sort(urlByIndex);
-		var Panels = urlList.filter(findPanels);
-		var SVGs = urlList.filter(findSVGs);
-		var Wallpaper = urlList.filter(findWallpaper);
-		var Existings = urlList.filter(findExistings);
-		var Iterations = urlList.filter(findIterations);
-		res.render('3d/old-corridor.jade', {Panels, SVGs, Wallpaper, Existings, Iterations})
+		res.render('3d/blindSpot.jade', {Panels, SVGs, Wallpaper, Existings, Iterations})
 	});
 });
 
@@ -80,7 +67,7 @@ app.get('/3d/blindSpot2', function(req, res){
 		var Overlays = urlList.filter(findOverlays);
 		var SVGs = urlList.filter(findSVGs);
 		var Wallpaper = urlList.filter(findWallpaper);
-		res.render('3d/reCorridor.jade', {Panels, Bitmaps, Overlays, SVGs, Wallpaper})
+		res.render('3d/blindSpot2.jade', {Panels, Bitmaps, Overlays, SVGs, Wallpaper})
 	})
 });
 app.get('/3d/:project', function(req, res){

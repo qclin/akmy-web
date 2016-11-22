@@ -19,7 +19,7 @@ if(window.innerWidth > 768){
     $('#'+projectType).addClass('selectedTopic')
   }
 }
-$('.label').click((e) => {
+$('.label').click(function(e){
   if(window.innerWidth <= 768){
     return window.location.href = $(e.target).next().children().first().children().attr('href');
   }

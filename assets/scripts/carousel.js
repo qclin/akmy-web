@@ -1,41 +1,43 @@
-var currentE = 0;
-var maxIndexE = existingUrlList.length-1
+var currentI = 12;
+var maxIndexI = 14;
 
-$('#existingCluster span#left').click(function(e) {
+$('#existingCluster1 span#left').click(function(e) {
+  console.log("click click left", existingUrlList.length)
+    if(currentI == 12){
+      currentI = maxIndexI
+    }else{
+      currentI -= 1
+    }
+  $('img#existing1').attr('src', existingUrlList[currentI])
+});
+
+$('#existingCluster1 span#right').click(function(e) {
+  console.log("click click right", e)
+    if(currentI == maxIndexI){
+      currentI = 12
+    }else{
+      currentI += 1
+    }
+  $('img#existing1').attr('src', existingUrlList[currentI])
+});
+
+var currentE = 0;
+var maxIndexE = 9;
+
+$('#existingCluster2 span#left').click(function(e) {
     if(currentE == 0){
       currentE = maxIndexE
     }else{
       currentE -= 1
     }
-  $('img#existing').attr('src', existingUrlList[currentE])
+  $('img#existing2').attr('src', existingUrlList[currentE])
 });
 
-$('#existingCluster span#right').click(function(e) {
+$('#existingCluster2 span#right').click(function(e) {
     if(currentE == maxIndexE){
       currentE = 0
     }else{
       currentE += 1
     }
-  $('img#existing').attr('src', existingUrlList[currentE])
-});
-
-var currentI = 0;
-var maxIndexI = iterationUrlList.length-1
-
-$('#iterationCluster span#left').click(function(e) {
-    if(currentI == 0){
-      currentI = maxIndexI
-    }else{
-      currentI -= 1
-    }
-  $('img#iteration').attr('src', iterationUrlList[currentI])
-});
-
-$('#iterationCluster span#right').click(function(e) {
-    if(currentI == maxIndexI){
-      currentI = 0
-    }else{
-      currentI += 1
-    }
-  $('img#iteration').attr('src', iterationUrlList[currentI])
+  $('img#existing2').attr('src', existingUrlList[currentE])
 });

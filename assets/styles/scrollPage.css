@@ -1,8 +1,81 @@
-#existingCluster{
-  width: 45vw;
+.rightCluster{
+  width: 35vw;
   margin: 0 auto;
+  margin-right: 5vw;
+  position: relative;
+  top: -20vh;
 }
-#iterationCluster{
+.snippets{
+  font-family: "Times New Roman",  TimesNewRoman , Serif;
+  font-size: 18px;
+  letter-spacing: 3px;
+  line-height: 1.5em;
+}
+.captions{
+  font-family: "Times New Roman", TimesNewRomanItalic, Serif;
+  font-style: italic;
+  font-weight: 400;
+  width: 300px;
+  font-size: 24px;
+  color: grey;
+  margin: auto;
+}
+.pathCaption{
+  position: relative;
+  top: 11em;
+}
+.piecesCaption{
+  margin-top: 4em;
+  width: 200px;
+  margin-left: 0;
+}
+#textZone1{
+  margin: 0 auto;
+  margin-left: 20vw;
+  position: relative;
+  top: -30vh;
+  width: 500px;
+  max-width: 80%;
+}
+#textZone2{
+  margin: 0 auto;
+  margin-left: 20vw;
+  position: relative;
+  top: 30vh;
+  width: 768px;
+  max-width: 80%;
+}
+#textZone3{
+  right: -22vw;
+  top: -50vh;
+  position: relative;
+  width: 400px;
+  max-width: 80%;
+  text-align: left;
+  display: inline-block;
+}
+#existingCluster1{
+  margin: 1em;
+}
+#existingCluster2{
+  margin: 1em;
+}
+#iterationMarquee{
+  top: 30vh;
+  width: 35vw;
+  position: relative;
+  overflow: hidden;
+  height: 40vh;
+  left: 5vw;
+}
+#marqueHolder{
+  position: absolute;
+}
+#iterationMarquee span{
+  display: inline;
+}
+#iterationMarquee span,
+#iterationMarquee span img{
   width: 35vw;
 }
 #bitmapCluster,
@@ -90,26 +163,26 @@ span#Overlayed img{
 }
 
 #PanelCluster{
-
+  position: relative;
+  top: 20em;
+  text-align: center;
 }
-#PanelCluster span{
-}
-#PanelCluster span img{
+#PanelCluster div img{
   width: 50%;
   box-sizing: border-box;
   padding: .5em;
 }
 #penduLumSVG{
   display: block;
-  width: 40%;
-  margin: 0 auto 3em auto;
+  width: 50vw;
+  margin: 0 auto;
 }
 #penduLumSVG object,
 #penduLumSVG img{
 }
 .wallpaper{
   width: 30vw;
-  position: fixed;
+  position: absolute;
   z-index: -10;
 }
 .wallpaper img{
@@ -117,10 +190,14 @@ span#Overlayed img{
   float:  right;
 }
 
-#Extraction{
-  left: 20vw;
-  top: 30vh;
-  width: 40vw;
+#RhinoAxon{
+  left: -10vw;
+  top: 115vh;
+  width: 65vw;
+}
+#WireframeAxon{
+  right: 0;
+  width: 45vw;
 }
 #Pendulum{
   /*-ms-transform: rotate(90deg);
@@ -133,9 +210,8 @@ span#Overlayed img{
   overflow-y: scroll;
   overflow-x: hidden;
 }
-#Extration2{
+#RenderAxon{
   right: 0;
-  top: 70vh;
 }
 #Mesh{
   position: absolute;
@@ -150,7 +226,91 @@ span#Overlayed img{
   right: 0;
   top: 0;
 }
+.renderPieces{
+  width: 25vw;
+}
 
+section#svgCluster{
+  position: relative;
+  top: -20vh;
+}
+section#svgCluster span{
+  width: 35vw;
+  min-width:400px;
+  position: absolute;
+}
+section#svgCluster .renderPieces{
+  width: 30vw;
+}
+#rightIteration{
+  top: -35vh;
+  right: 0;
+}
+#roundPath{
+  left: 20vw;
+  top: -10vh;
+}
+#linearPath{
+  right: 15vw;
+  top: 20vh;
+}
+#leftIteration{
+  left: 0;
+  top: 30vh;
+}
+
+.renderPieces img,
+object.svg-files,
+object.svg-files img{
+  width: inherit;
+}
+#linearPath object,
+#linearPath img{
+  -ms-transform: rotate(70deg);
+  -webkit-transform: rotate(70deg);
+  transform: rotate(70deg);
+}
+section#iterationCluster{
+  position: relative;
+  top: 50vh;
+}
+#iterationCluster span{
+  position: absolute;
+  width: 35vw;
+}
+#ladderPiece{
+  top: 5vh;
+  right: 0;
+}
+#floorPiece{
+  top: 60vh;
+  left: 5vw;
+}
+#floorPiece img{
+  -ms-transform: rotate(-15deg);
+  -webkit-transform: rotate(-15deg);
+  transform: rotate(-15deg);
+}
+#doorPiece{
+  right: 7vw;
+  top: 120vh;
+}
+#ladderPiece img{
+  -ms-transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+}
 .tilde.bottom span{
   background: transparent !important;
+}
+.alignLeft{
+  text-align: left;
+  left: 6em;
+  position: relative;
+}
+.alignRight{
+  position: absolute;
+  bottom: 0;
+  margin-left: 12em;
+  z-index: -10;
 }
