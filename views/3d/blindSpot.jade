@@ -4,7 +4,7 @@ html
     meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0')
     link(rel='stylesheet', href='/styles/main.css')
     link(rel='stylesheet', href='/styles/scrollPage.css')
-    link(rel='stylesheet', href='/styles/mobile/project.css')
+    link(rel='stylesheet', href='/styles/mobile/scrollPage.css')
     link(rel='stylesheet', href='https://fonts.googleapis.com/icon?family=Material+Icons')
     include ../partials/infoPanel.jade
     h1.category.mobile ~ 3d ~
@@ -82,10 +82,12 @@ html
           p Now the monotone makeup of the corridor morph into cave-like, ambiguous shapes that highlight its fixtures: the water fountain, bathroom sign, exit sign, etc. It becomes another version of itself, stuck in a frozen moment. The architectural image is now malleable and through the this image-making process the question asked is: how can stillness and movement come to a collaborative state?
         div.alignRight
           img(src="#{Panels[2]}")
-      
+      footer
       script(src='http://code.jquery.com/jquery-1.10.2.min.js')
       script(src='https://code.jquery.com/ui/1.12.1/jquery-ui.js')
       script(src='http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js')
+      script(type='text/javascript', src='/scripts/mobileMain.js')
+      script(type='text/javascript', src='/scripts/scrollPage.js')
       script.                                                 
         var existingUrlList =!{JSON.stringify(Existings)}; 
       script(type='text/javascript', src='/scripts/carousel.js')

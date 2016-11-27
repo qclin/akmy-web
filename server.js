@@ -63,7 +63,7 @@ app.get('/3d/blindSpot2', function(req, res){
 	getAllDirectoryFilesS3('/3d/vertical-scroll-2/').then((urlList) =>{
 		urlList = urlList.filter(Boolean).sort(urlByIndex);
 		var Panels = urlList.filter(findPanels);
-		var Bitmaps = urlList.filter(findBitmaps);
+		var Bitmaps = urlList.filter(findBitmaps).sort(urlByIndex);
 		var Diagrams = urlList.filter(findDiagrams);
 		var Overlays = urlList.filter(findOverlays);
 		var SVGs = urlList.filter(findSVGs);

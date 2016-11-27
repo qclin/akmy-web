@@ -13,7 +13,6 @@ body{
 .panelContent img{
   width: 200px;
   float: right;
-  margin: 4em;
 }
 
 .panelContent {
@@ -22,14 +21,12 @@ body{
    font-style: italic;
    font-size: 1.5em;
    width: 70vw;
-   margin: 0 auto;
+   margin: 4em auto;
 }
 
 .aboutText{
   font-size: 24px;
-  width: 600px;
-  margin: 4em;
-  position: absolute;
+  max-width: 600px;
 }
 a{
   cursor: pointer;
@@ -58,7 +55,7 @@ p.footnote{
   right: -17px;
   font-size: 36px !important;
 }
-@media(min-width: 768px){
+@media(min-width: 769px){
   #aboutME{
     display: none;
   }

@@ -1,11 +1,62 @@
+@media (min-width: 600px){
+  header h3{
+    position: relative;
+    top: inherit;
+  }
+  .rightCluster{
+    width: 35vw;
+    margin: 0 auto;
+    margin-right: 5vw;
+    position: relative;
+    top: -20vh;
+  }
+  .wallpaper{
+    width: 30vw;
+    position: absolute;
+    z-index: -10;
+  }
+  .wallpaper img{
+    width: inherit;
+    float:  right;
+  }
+  #textZone1{
+    margin: 0 auto;
+    margin-left: 20vw;
+    position: relative;
+    top: -30vh;
+    width: 500px;
 
-.rightCluster{
-  width: 35vw;
-  margin: 0 auto;
-  margin-right: 5vw;
-  position: relative;
-  top: -20vh;
+  }
+  #textZone2{
+    margin: 0 auto;
+    margin-left: 20vw;
+    position: relative;
+    top: 30vh;
+    width: 768px;
+
+  }
+  #textZone3{
+    right: -22vw;
+    top: -50vh;
+    position: relative;
+    width: 400px;
+    text-align: left;
+    display: inline-block;
+  }
+  #textZone4{
+    width: 500px;
+    margin: auto;
+    margin-left: 18vw;
+  }
+  #textZone5{
+    max-width: 62vw;
+    width: 700px;
+    position: absolute;
+    right: 0;
+    margin: 2em;
+  }
 }
+
 .snippets{
   font-family: "Times New Roman",  TimesNewRoman , Serif;
   font-size: 18px;
@@ -31,44 +82,7 @@
   width: 200px;
   margin-left: 0;
 }
-#textZone1{
-  margin: 0 auto;
-  margin-left: 20vw;
-  position: relative;
-  top: -30vh;
-  width: 500px;
 
-}
-#textZone2{
-  margin: 0 auto;
-  margin-left: 20vw;
-  position: relative;
-  top: 30vh;
-  width: 768px;
-
-}
-#textZone3{
-  right: -22vw;
-  top: -50vh;
-  position: relative;
-  width: 400px;
-  text-align: left;
-  display: inline-block;
-}
-#textZone4{
-  width: 500px;
-  margin: auto;
-  margin-left: 18vw;
-}
-#textZone5{
-  max-width: 80%;
-  width: 700px;
-  display: inline-block;
-  position: relative;
-  top: 5em;
-  float: right;
-  margin-right: 10em;
-}
 #existingCluster1{
   margin: 1em;
 }
@@ -107,20 +121,22 @@
   margin-right: 2em;
 }
 
-#overlayCluster,
-span#BitmapModel{
+#overlayCluster{
   width: 45vw;
   float: right;
   margin: 1em;
 }
-span#BitmapModel{
-  width: 40vw;
-  float: right;
-  margin: 1em;
-  margin-right: -2em;
+
+#BitmapModel{
+  position: relative;
 }
-span#BitmapModel img{
-  width: inherit;
+#BitmapModel img{
+  margin: 0 auto;
+  width: 65vw;
+  position: absolute;
+  top: 30em;
+  right: 0;
+  left: 0;
 }
 .carousel{
   position: relative;
@@ -213,15 +229,7 @@ span#Overlayed img{
 #penduLumSVG object,
 #penduLumSVG img{
 }
-.wallpaper{
-  width: 30vw;
-  position: absolute;
-  z-index: -10;
-}
-.wallpaper img{
-  width: inherit;
-  float:  right;
-}
+
 
 #RhinoAxon{
   left: -10vw;
@@ -348,6 +356,16 @@ section#iterationCluster{
 .diagrams{
   width: 35vw;
 }
+.floatLeft{
+  float: left;
+}
+.floatRight{
+  float: right;
+}
+.diagram.floatRight{
+  width: 25vw;
+  margin: 6em;
+}
 #DiagramLeft{
   top: 25vh;
   position: relative;
@@ -356,7 +374,6 @@ section#iterationCluster{
 }
 #DiagramRight{
   position: relative;
-  top: 10em;
   left: 65vw;
 }
 #BreadOverlay{
@@ -376,17 +393,24 @@ section#iterationCluster{
 #bitmapDouble span img{
   margin: .5em;
 }
-#bitmapCluster {
-  width: 65vw;
+#bitmapCluster{
   position: relative;
-  float: right;
-  margin: 2em;
-  margin-right: 4em;
-  top: -25.5em;
+}
+#bitmapCluster .carousel {
+  width: 65vw;
+  position: absolute;
+  right: 0;
+  top: 18em;
 }
 #bitmapCluster .img-Ctrl span{
   margin-top: 11em;
 }
+#footerWallpaper{
+  z-index: -10;
+  position: relative;
+  width: 100vw;
+}
+
 span img{
   width: inherit;
 }

@@ -62,7 +62,7 @@ p.footnote{
   right: -17px;
   font-size: 36px !important;
 }
-@media(min-width: 768px){
+@media(min-width: 769px){
   #aboutME{
     display: none;
   }

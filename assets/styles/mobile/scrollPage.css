@@ -1,0 +1,40 @@
+@import "../commons/font.css";
+
+@media(max-width: 600px){
+  body{
+    overflow-x: hidden;
+  }
+  h1.category{
+    font-family: "Times New Roman",  TimesNewRomanItalic , Serif;
+    font-style: italic;
+    font-size: 1.1em;
+    font-weight: 400;
+    color: #0000FF;
+    text-decoration: none;
+    display: inline-block;
+    position: fixed;
+    top: 0;
+    left: 10%;
+    letter-spacing: 3px;
+  }
+  #content-wrapper{
+    margin: 0;
+    height: 100%;
+    background: white;
+  }
+  .snippets{
+    font-size: 12px;
+    line-height: initial;
+  }
+  #RenderAxon{
+    width: 100vw;
+    right: -30vw;
+    position: relative;
+  }
+  #penduLumSVG{
+    width: 80vw;
+  }
+  .img-Ctrl span {
+    margin-top: 2em;
+  }
+}

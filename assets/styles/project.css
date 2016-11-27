@@ -43,7 +43,7 @@ h1{
   width: 100%;
 }
 
-@media(min-width: 768px) {
+@media(min-width: 769px) {
   /*#header-2d{
     position: relative;
     left: calc(100%/5 + 120px);
@@ -219,24 +219,7 @@ div.infoBox {
   display: block;
 }
 
-footer{
-  width: 100vw;
-  position: fixed;
-  bottom: 0;
-  height: 8vh;
-  background: linear-gradient(rgba(255,255,255, 0), #F8E71C);
-  font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
-}
 
-footer a{
-  margin: 2em;
-  top: 30%;
-  position: relative;
-}
-footer marquee{
-  top: 20px;
-  position: relative;
-}
 
 body{
   margin: 0;

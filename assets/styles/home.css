@@ -1,7 +1,7 @@
 @import "commons/animation.css";
 @import "commons/font.css";
 
-@media(min-width: 768px){
+@media(min-width: 769px){
   #spinLogo{
     display: none;
   }
@@ -13,15 +13,13 @@
   }
   #spinLogo{
     position: relative;
-    margin-left: 2em;
-    width: 50%;
+    width: 165px;
     font-family: "Times New Roman", TimesNewRomanItalic, Serif;
     font-style: italic;
     font-weight: 400;
     font-size: 36px !important;
     color: #0000FF;
     text-decoration: none;
-    margin-top: 1em;
     -webkit-animation-name: spin;
     -webkit-animation-duration: 20000ms;
     -webkit-animation-iteration-count: infinite;
@@ -41,11 +39,11 @@
   #spinLogo:after{
     content: ' ';
     background: #F8E71C;
-    top: -30px;
-    left: -120px;
+    top: -80px;
+    left: -100px;
     position: absolute;
-    width: 180%;
-    height: 230%;
+    width: 200%;
+    height: 200%;
     border-radius: 50%;
     display: block;
     z-index: -5;

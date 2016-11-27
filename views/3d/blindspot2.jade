@@ -4,7 +4,7 @@ html
     meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0')
     link(rel='stylesheet', href='/styles/main.css')
     link(rel='stylesheet', href='/styles/scrollPage.css')
-    link(rel='stylesheet', href='/styles/mobile/project.css')
+    link(rel='stylesheet', href='/styles/mobile/scrollPage.css')
     link(rel='stylesheet', href='https://fonts.googleapis.com/icon?family=Material+Icons')
     include ../partials/infoPanel.jade
     h1.category.mobile ~ 3d ~
@@ -36,25 +36,35 @@ html
         img(src="#{Diagrams[3]}")
       span#DiagramRight.diagrams
         img(src="#{Diagrams[1]}")
-      section#textZone5.snippets
-        p Using tools that desire to replicate objects are used against themselves in order to visualize a new kind of digital vision. This vision inserts movement into static 3d meshes in order to hint at a new system of representation that highlights process and not the final rendered image of quasi-reality. This methodology is against systematic operation and desires to sway the consumption of images towards the unnoticed. To create a method for new discoveries. 
-      section#bitmapDouble
-        span
-          img(src="#{Bitmaps[0]}")
-        span
-          img(src="#{Bitmaps[1]}")
-      
       section#bitmapCluster
+        #textZone5.snippets
+          p Using tools that desire to replicate objects are used against themselves in order to visualize a new kind of digital vision. This vision inserts movement into static 3d meshes in order to hint at a new system of representation that highlights process and not the final rendered image of quasi-reality. This methodology is against systematic operation and desires to sway the consumption of images towards the unnoticed. To create a method for new discoveries. 
+        #bitmapDouble
+          span
+            img(src="#{Bitmaps[0]}")
+          span
+            img(src="#{Bitmaps[1]}")
         .carousel
           .img-Ctrl
             span#left.arrow(data-value='left')  ← 
             span#right.arrow(data-value='right')  → 
           .img-Content
             img#bitmap(src="#{Bitmaps[3]}")
+      span.diagrams.floatLeft
+        img(src="#{Diagrams[0]}")
+      span.diagrams.floatRight
+        img(src="#{Diagrams[2]}")
 
+      div#BitmapModel
+        img(src="#{Bitmaps[10]}")
+      span#footerWallpaper
+        img(src="#{Diagrams[4]}")
+      footer
       script(src='http://code.jquery.com/jquery-1.10.2.min.js')
       script(src='https://code.jquery.com/ui/1.12.1/jquery-ui.js')
       script(src='http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js')
+      script(type='text/javascript', src='/scripts/mobileMain.js')
+      script(type='text/javascript', src='/scripts/scrollPage.js')
       script.                                                 
         var overlayUrlList =!{JSON.stringify(Overlays)}; 
         var bitmapUrlList =!{JSON.stringify(Bitmaps)};

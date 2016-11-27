@@ -47,7 +47,6 @@
 ul{
   display: inline-block;
   vertical-align: top;
-  margin-right: 3em;
   box-sizing: border-box;
   align-items: center;
 }
@@ -74,7 +73,7 @@ nav ul .label{
 }
 .label span{
   float: right;
-  padding: 3px;
+  padding-right: 7px;
   font-size: 10px;
 }
 .navDropdownBox{
@@ -117,7 +116,7 @@ li:hover{
   font-family: "Times New Roman", TimesNewRoman , Serif;
   font-style: italic;
 }
-@media(min-width: 768px){
+@media(min-width: 769px){
   nav{
     text-align: center;
   }
@@ -132,6 +131,7 @@ li:hover{
     height: 20px;
     text-align: center;
     white-space: pre;
+    margin-right: 3em;
   }
   ul:last-of-type{
     margin-right: 0;
