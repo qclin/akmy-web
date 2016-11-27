@@ -239,9 +239,12 @@ a{
   width: 100vw;
   background-image: linear-gradient(rgba(216,216,216,.3),rgba(216,216,216,1) 100%);
   background: rgba(255,255, 255, .8);
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 .closeModal{
-  float: right;
+  right: 0;
+  position: fixed;
   margin: 1em;
   color: rgb(0,0,255);
   cursor: pointer;
@@ -253,6 +256,7 @@ a{
   top: 0;
   bottom: 0;
   margin: auto;
+  z-index: -10;
 }
 .portrait img,
 .portrait object{
