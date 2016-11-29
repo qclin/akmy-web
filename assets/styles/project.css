@@ -144,6 +144,14 @@ h1{
     position: relative;
     overflow: hidden;
   }
+  .model-content p{
+    position: absolute;
+    font-size: 20px;
+    margin: 2em;
+    color: grey;
+    font-family: "Times New Roman", TimesNewRomanItalic, Serif;
+    font-style: italic;
+  }
   section.text-overlay,
   div.subNav,
   div.sideLinkPanel,

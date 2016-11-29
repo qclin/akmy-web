@@ -84,8 +84,6 @@ app.get('/3d/:project', function(req, res){
 		}
 	});
 });
-
-
 app.get('/fabrication/:project', function(req, res){
 	getProjectInfo("Fabrications", req.url).then((databaseRow) => {
 		if(databaseRow){
@@ -97,15 +95,13 @@ app.get('/fabrication/:project', function(req, res){
 		}
 	});
 });
-
 app.get('/model/:project', function( req, res){
-	var template = 'models/iframe-'+req.params.project+'.jade'
-	res.render(template)
+	var payload= getModelPayload(req.params.project)
+	res.render('models/iframe.jade', {payload})
 });
-
 app.get('/who', function(req, res){
 	res.render('who/about.jade')
-})
+});
 // app.get('/model/fruits', function(req, res){
 // 		var payload = {
 // 			'path': '/3dModels/fruits/',
@@ -270,4 +266,17 @@ function findMtl(item){
 }
 function findObj(item){
 	if(item.indexOf('.obj') > -1) return true;
+}
+
+function getModelPayload(project){
+	switch(project){
+		case 'tamago':
+			return {name:"Tamago", url:"https://p3d.in/e/rJeUL+spin+load+controls,border-hidden"}
+		case 'fruits':
+			return {name:"Fruits", url:"https://p3d.in/e/UtIBY+spin+load+controls,border-hidden"}
+		case 'corridor':
+			return {name:"Corridor", url:"https://p3d.in/e/9WFbS+spin+load+controls,border-hidden"}
+		default:
+		 break
+	}
 }
