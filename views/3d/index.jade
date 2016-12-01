@@ -69,10 +69,10 @@ html
       footer
         marquee(behavior="alternate")
           each link in info.links
-            a(href=link).ext-links #{link}
+            a(target="_blank" href=link).ext-links #{link}
       div.sideLinkPanel 
           each link in info.links
-            a(href=link target="_blank").ext-links
+            a(target="_blank" href=link).ext-links
               i.material-icons share
   section.img-modal
     i.material-icons.closeModal close
