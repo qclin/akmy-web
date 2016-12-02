@@ -183,6 +183,7 @@ h1{
 }
 
 .foreground{
+  z-index: 10;
   display:initial;
 }
 .foreground  img,
