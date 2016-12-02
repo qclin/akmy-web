@@ -12,8 +12,6 @@ html
       i.mobile.material-icons.md-36#hamburger menu
     include ../partials/nav.jade
     section#content-wrapper
-      header
-        h3 Blind Spot
     section#scroll-content
       span#RenderAxon.wallpaper
         img(src="#{Wallpaper[2]}")
@@ -56,7 +54,7 @@ html
       section#iterationMarquee
         #marqueHolder
           marquee(onmouseover="this.stop();" onmouseout="this.start();")
-            - for (var i = 0; i < 9; ++i) {
+            - for (var i = 0; i < 8; ++i) {
                 span
                   img(src="#{Iterations[i]}")
             - }

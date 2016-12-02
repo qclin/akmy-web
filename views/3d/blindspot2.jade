@@ -12,8 +12,6 @@ html
       i.mobile.material-icons.md-36#hamburger menu
     include ../partials/nav.jade
     section#content-wrapper
-      header
-        h3 Blind Spot part 2 
     section#scroll-content
       section#textZone4.snippets
         p Architecture rendering wishes to seduce the eye to its ‘realness’ but it is rather a reflection of software proficiency. Instead of seeking the reproduction of reality this corridor project formulates images that are suspended in a liminal state between real and virtual. Here, software proficiency abuses and exaggerates the flaws of 3d scanning to create a new novel realization of a corridor. 
@@ -30,10 +28,11 @@ html
               span 
                 img(src="#{Overlays[i]}")
             - }
-      span#BreadOverlay
-        img(src="#{Overlays[0]}")
-      span#DiagramLeft.diagrams
-        img(src="#{Diagrams[3]}")
+      section#BreadCluster
+        span#BreadOverlay
+          img(src="#{Overlays[0]}")
+        span#DiagramLeft.diagrams
+          img(src="#{Diagrams[3]}")
       span#DiagramRight.diagrams
         img(src="#{Diagrams[1]}")
       section#bitmapCluster

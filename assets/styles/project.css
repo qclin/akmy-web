@@ -9,6 +9,9 @@
  -webkit-box-shadow: none !important;
  box-shadow: none !important;
 }
+svg{
+  pointer-events: none;
+}
 header{
   margin-left: 1em;
 }

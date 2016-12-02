@@ -31,13 +31,13 @@
     margin: 0 auto;
     margin-left: 20vw;
     position: relative;
-    top: 30vh;
+    top: 16em;
     width: 768px;
 
   }
   #textZone3{
     right: -22vw;
-    top: -50vh;
+    top: -30em;
     position: relative;
     width: 400px;
     text-align: left;
@@ -52,8 +52,9 @@
     max-width: 62vw;
     width: 700px;
     position: absolute;
-    right: 0;
+    right: 6em;
     margin: 2em;
+    margin-top: 0;
   }
 }
 
@@ -69,13 +70,14 @@
   font-style: italic;
   font-weight: 400;
   width: 300px;
-  font-size: 24px;
-  color: grey;
+  font-size: 18px;
+  letter-spacing: 3px;
+  color: rgb(150,150,150);
   margin: auto;
 }
 .pathCaption{
   position: relative;
-  top: 11em;
+  top: 15em;
 }
 .piecesCaption{
   margin-top: 4em;
@@ -91,7 +93,7 @@
 }
 #iterationMarquee{
   top: 30vh;
-  width: 35vw;
+  width: 100vw;
   position: relative;
   overflow: hidden;
   height: 40vh;
@@ -232,7 +234,7 @@ span#Overlayed img{
 
 
 #RhinoAxon{
-  left: -10vw;
+  left: 0;
   top: 115vh;
   width: 65vw;
 }
@@ -353,6 +355,10 @@ section#iterationCluster{
   margin-left: 12em;
   z-index: -10;
 }
+.alignRight img{
+  padding-top: 5em !important;
+  width: 55% !important;
+}
 .diagrams{
   width: 35vw;
 }
@@ -361,26 +367,34 @@ section#iterationCluster{
 }
 .floatRight{
   float: right;
+  width: 18vw;
+  margin-top: 9em;
+  margin-bottom: 2em;
 }
 .diagram.floatRight{
   width: 25vw;
   margin: 6em;
 }
 #DiagramLeft{
-  top: 25vh;
-  position: relative;
-  left: 8vw;
+  top: 20em;
+  position: absolute;
+  left: 0;
   z-index: -10;
+  width: 30vw;
 }
 #DiagramRight{
   position: relative;
   left: 65vw;
 }
+#BreadCluster{
+  position: relative;
+}
 #BreadOverlay{
-  width: 35vw;
+  width: 65vw;
   float: right;
   margin-right: 5em;
 }
+
 #bitmapDouble{
   width: 30vw;
   left: 0;
@@ -402,8 +416,14 @@ section#iterationCluster{
   right: 0;
   top: 18em;
 }
+#bitmapCluster .carousel span#left{
+  left: 1em;
+}
+#bitmapCluster .carousel span#right{
+  right: 1em; 
+}
 #bitmapCluster .img-Ctrl span{
-  margin-top: 11em;
+  margin-top: 9em;
 }
 #footerWallpaper{
   z-index: -10;

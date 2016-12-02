@@ -62,12 +62,12 @@ app.get('/3d/blindSpot', function(req, res){
 app.get('/3d/blindSpot2', function(req, res){
 	getAllDirectoryFilesS3('/3d/vertical-scroll-2/').then((urlList) =>{
 		urlList = urlList.filter(Boolean).sort(urlByIndex);
-		var Panels = urlList.filter(findPanels);
+		var Panels = urlList.filter(findPanels).sort(urlByIndex);
 		var Bitmaps = urlList.filter(findBitmaps).sort(urlByIndex);
-		var Diagrams = urlList.filter(findDiagrams);
-		var Overlays = urlList.filter(findOverlays);
+		var Diagrams = urlList.filter(findDiagrams).sort(urlByIndex);
+		var Overlays = urlList.filter(findOverlays).sort(urlByIndex);
 		var SVGs = urlList.filter(findSVGs);
-		var Wallpaper = urlList.filter(findWallpaper);
+		var Wallpaper = urlList.filter(findWallpaper).sort(urlByIndex);
 		res.render('3d/blindSpot2.jade', {Panels, Bitmaps, Diagrams, Overlays, SVGs, Wallpaper})
 	})
 });
