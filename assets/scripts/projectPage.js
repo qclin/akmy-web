@@ -25,11 +25,6 @@ $(document).ready(function(){
       $('.img-modal').removeClass('landscape');
     }
   });
-
-  $( ".draggable" ).draggable(
-    {stack: "div",
-      start: function(event, ui) { $(this).addClass('reveal') }
-    });
 });
 
 
