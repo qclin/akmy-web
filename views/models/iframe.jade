@@ -22,7 +22,8 @@ html
         span#corridor
           a(href='/model/corridor' data-ajax="false") Corridor
       section.model-content
-        p click on model to drag, scroll to zoom
+        p.desktop-text click on model to drag, scroll to zoom
+        p.mobile-text touch & drag to rotate, spread & pinch to zoom
         iframe( allowfullscreen webkitallowfullscreen width="100%" height="100%" frameborder="0" seamless src="#{payload.url}")
     script(src='http://code.jquery.com/jquery-1.10.2.min.js')
     script(src='https://code.jquery.com/ui/1.12.1/jquery-ui.js')

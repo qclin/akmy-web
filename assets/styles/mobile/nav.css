@@ -7,7 +7,8 @@
   }
   #homePage nav{
     top:50%;
-    margin-top: -210px;
+    margin-top: -120px;
+    height: initial;
     display:initial;
   }
   #home-link{
@@ -19,6 +20,12 @@
     display: block;
     margin: auto;
     margin-bottom: calc(12vh - 40px);
+  }
+  #homePage nav ul:first-of-type{
+    margin-top: initial;
+  }
+  ul:first-of-type{
+    margin-top: 5em;
   }
   ul:hover{
     -webkit-box-shadow: 2px 4px 5px 0px rgba(190,190,190,1);

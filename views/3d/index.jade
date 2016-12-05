@@ -29,7 +29,8 @@ html
         each imageUrl in imageUrlList
           div.project-images.draggable
             if imageUrl.indexOf(".svg") > -1 
-              span.helper.svg-helper
+              span.helper
+              span.svg-helper loading...
               object.svg-files(data="#{imageUrl}" type="image/svg+xml"  onclick="alert('click!')")
                 img(src="#{imageUrl}")
             else
