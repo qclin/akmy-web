@@ -3,6 +3,8 @@
     height: 100%;
     width: 100%;
     position: absolute;
+  }
+  #homePage nav{
     top:50%;
     margin-top: -210px;
   }

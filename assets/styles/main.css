@@ -94,4 +94,8 @@ footer marquee{
   .mobile{
     display: none !important;
   }
+  #content-wrapper{
+    top: 20vh;
+    position: relative;
+  }
 }

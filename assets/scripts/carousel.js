@@ -2,7 +2,6 @@ var currentI = 12;
 var maxIndexI = 14;
 
 $('#existingCluster1 span#left').click(function(e) {
-  console.log("click click left", existingUrlList.length)
     if(currentI == 12){
       currentI = maxIndexI
     }else{
@@ -12,7 +11,6 @@ $('#existingCluster1 span#left').click(function(e) {
 });
 
 $('#existingCluster1 span#right').click(function(e) {
-  console.log("click click right", e)
     if(currentI == maxIndexI){
       currentI = 12
     }else{
