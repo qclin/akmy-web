@@ -3,10 +3,12 @@
     height: 100%;
     width: 100%;
     position: absolute;
+    display:none;
   }
   #homePage nav{
     top:50%;
     margin-top: -210px;
+    display:initial;
   }
   #home-link{
     display: none !important;

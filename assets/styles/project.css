@@ -43,7 +43,15 @@ h1{
 .cross{
   width: 100%;
 }
-
+.cross line{
+  stroke:grey;
+  stroke-width:1;
+  stroke-dasharray: 1000;
+}
+.project-images img{
+  display:none;
+  width: 100%;
+}
 @media(min-width: 769px) {
   nav{
     position: relative;
@@ -147,19 +155,9 @@ h1{
     display: none;
   }
 }
-.cross line{
-  stroke:grey;
-  stroke-width:1;
-  stroke-dasharray: 1000;
-}
 
-.project-images img{
-  width: 100%;
-}
-.cross:first-of-type line{
-  /*stroke-dashoffset: 1000;*/
-  /*animation: dash 5s linear alternate infinite;*/
-}
+
+
 @keyframes dash {
   from {
     stroke-dashoffset: 1000;
@@ -194,9 +192,6 @@ div.infoBox {
   font-size: 12px;
 }
 
-.project-images img{
-  display:none;
-}
 .svg-helper{
   position: absolute;
   width: 100%;
