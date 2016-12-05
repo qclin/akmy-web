@@ -20,8 +20,8 @@ body{
    font-family: "Times New Roman", TimesNewRomanItalic, Serif;
    font-style: italic;
    font-size: 1.5em;
-   width: 70vw;
-   margin: 4em auto;
+   max-width: 70vw;
+   margin: 0 auto;
 }
 
 .aboutText{
