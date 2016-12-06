@@ -27,6 +27,7 @@
     line-height: initial;
   }
   #RenderAxon{
+    z-index: -1; 
     width: 100vw;
     right: -30vw;
     position: relative;

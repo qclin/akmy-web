@@ -22,6 +22,9 @@ $(document).ready(function(){
     });
     var projectName = location.pathname.split('/')[2]
     $('span#'+projectName).addClass('activeSpan')
+    if($('span#'+projectName).offset().left+$('span#'+projectName).width() > $('div.subNav').width()){
+      $('div.subNav').scrollLeft($('span#'+projectName).offset().left-32)
+    }
     $('#aboutME').click(function(){
       var isClosed = ( $('.panel').attr('class').indexOf('close') > -1 )
       if(isClosed){

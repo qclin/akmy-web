@@ -64,6 +64,9 @@
   .model-content p.mobile-text{
     display: inherit;
   }
+  .svg-helper{
+    background: transparent;
+  }
   .project-content{
     height: calc(100% - 40px);
   }

@@ -22,16 +22,16 @@ html
           a(href='/3d/blindSpot2' data-ajax="false") Blind Spot 2
         span#fruits
           a(href='/3d/fruits' data-ajax="false") Fruits 
-        span#meals-recipes
-          a(href='/3d/meal-recipes' data-ajax="false") MEAL & RECIPES
+        span#virtual-flavor
+          a(href='/3d/virtual-flavor' data-ajax="false")  Virtual Flavor
       
       section.project-content
         each imageUrl in imageUrlList
           div.project-images.draggable
             if imageUrl.indexOf(".svg") > -1 
               span.helper
-              span.svg-helper loading...
-              object.svg-files(data="#{imageUrl}" type="image/svg+xml"  onclick="alert('click!')")
+              span.svg-helper
+              object.svg-files(data="#{imageUrl}" type="image/svg+xml")
                 img(src="#{imageUrl}")
             else
               span.helper
