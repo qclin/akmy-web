@@ -7,6 +7,8 @@ $(document).ready(function(){
       orientation = "portrait"
     }
     $('.img-modal').addClass(orientation);
+    console.log("-000---- ", orientation)
+    console.log("-001---- ", $('.img-modal'))
     var isSVG = $(this).children('object').length > 0
     if($(e.target).hasClass('mobile')){
       var svgSource = $(e.target).attr('src')
