@@ -4,3 +4,4 @@ node_modules/
 s3bucketPolicy
 ec2instructions.md
 progress_Screenshots/
+design/
