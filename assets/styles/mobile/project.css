@@ -91,6 +91,9 @@
     vertical-align: middle;
     display: none;
   }
+  .foreground img, .foreground object {
+    display: initial;
+}
   div.sideLinkPanel{
     position: fixed;
     width: 10%;
@@ -190,8 +193,8 @@
     height: 95vh;
     max-width: 100%;
   }
-  .img-modal.landscape img,
-  .img-modal.landscape object{
+  .landscape img,
+  .landscape object{
     width: 100%;
   }
   .closeModal{

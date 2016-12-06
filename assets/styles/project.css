@@ -172,7 +172,7 @@ h1{
   display:initial;
   cursor: pointer;
 }
-.foreground  img.desktop,
+.foreground  img,
 .foreground object{
   display:initial;
 }
@@ -200,10 +200,10 @@ div.infoBox {
   background: white;
 }
 
-.reveal img.desktop,
+.reveal img,
 .reveal object{
   border: none;
-  display:block !important;
+  display:block;
   -webkit-box-shadow: 2px 4px 5px 0px rgba(190,190,190,1);
   -moz-box-shadow: 2px 4px 5px 0px rgba(190,190,190,1);
   box-shadow: 2px 4px 5px 0px rgba(190,190,190,1);
@@ -271,4 +271,7 @@ a{
 .img-modal object{
   position: absolute;
   background: white;
+}
+.mobile{
+  display: none;
 }
