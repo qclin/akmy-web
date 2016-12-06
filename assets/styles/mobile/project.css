@@ -187,6 +187,7 @@
   .portrait img,
   .portrait object{
     height: 95vh;
+    max-width: 100%;
   }
   .img-modal.landscape img,
   .img-modal.landscape object{
@@ -211,6 +212,13 @@
   .img-modal.landscape{
     overflow-x: scroll;
     overflow-y:hidden;
+  }
+  .img-modal.portrait{
+    overflow: scroll;
+  }
+  .img-modal.portrait object{
+    height: 150vh;
+    max-width: inherit;
   }
 }
 

@@ -7,6 +7,7 @@ html
     link(rel='stylesheet', href='/styles/textContent.css')
     link(rel='stylesheet', href='/styles/mobile/project.css')
     link(rel='stylesheet', href='https://fonts.googleapis.com/icon?family=Material+Icons')
+    script var isHoge = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
     include ../partials/infoPanel.jade
     .navMenu
       i.mobile.material-icons.md-36#hamburger menu
@@ -23,7 +24,7 @@ html
         span#screentale
           a(href='/2d/screentale' data-ajax="false") Screen Tale 
       header
-        h3 #{info.name}
+        h3 #{info.name} 
       section#textBox
         .tilde.top
           object.svg-files.shadow(data="/vectors/squiggle_shadow_2-01.svg" type="image/svg+xml")
@@ -43,7 +44,7 @@ html
       section.project-content(id=info.name)
         each imageUrl in imageUrlList
           div.project-images.draggable
-            if imageUrl.indexOf(".svg") > -1 
+            if imageUrl.indexOf(".svg") > -1
               span.helper
               img.mobile(src="#{imageUrl}")
               span.svg-helper
