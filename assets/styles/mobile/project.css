@@ -22,7 +22,7 @@
     height: 40px;
     white-space: nowrap;
   }
-  div.subNav span a:first-of-type{
+  div.subNav span:first-of-type a{
     margin-left: 2em;
   }
   div.subNav span a{
@@ -30,6 +30,7 @@
     text-decoration: none;
     margin-right: 2em;
     line-height: 40px;
+    letter-spacing: 1px;
   }
   h1.category{
     font-family: "Times New Roman",  TimesNewRomanItalic , Serif;
@@ -191,8 +192,7 @@
   }
   .img-modal.landscape img,
   .img-modal.landscape object{
-    width: initial;
-    height: 80vh;
+    width: 100%;
   }
   .closeModal{
     margin: 10px;
@@ -208,17 +208,6 @@
   footer,
   p.desktop-text{
     display: none;
-  }
-  .img-modal.landscape{
-    overflow-x: scroll;
-    overflow-y:hidden;
-  }
-  .img-modal.portrait{
-    overflow: scroll;
-  }
-  .img-modal.portrait object{
-    height: 150vh;
-    max-width: inherit;
   }
 }
 
