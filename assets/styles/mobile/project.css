@@ -84,6 +84,7 @@
     display: inline-block;
     vertical-align: middle;
   }
+
   .project-images img,
   .project-images object{
     vertical-align: middle;
@@ -124,7 +125,9 @@
     position: absolute;
   }
   .text-content{
-    overflow: scroll;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    word-wrap: break-word;
     border: 1px dotted grey;
     position: relative;
     width: 80%;
@@ -187,7 +190,8 @@
   }
   .img-modal.landscape img,
   .img-modal.landscape object{
-    width: 100%;
+    width: initial;
+    height: 80vh;
   }
   .closeModal{
     margin: 10px;
@@ -204,5 +208,21 @@
   p.desktop-text{
     display: none;
   }
+  .img-modal.landscape{
+    overflow-x: scroll;
+    overflow-y:hidden;
+  }
+}
 
+@media(max-width: 600px){
+  .foreground img.mobile{
+    display: inline-block;
+  }
+  .svg-helper, .svg-files{
+    display: none;
+  }
+  .img-modal .svg-helper,
+  .img-modal .svg-files{
+    display: initial;
+  }
 }

@@ -45,12 +45,13 @@ html
           div.project-images.draggable
             if imageUrl.indexOf(".svg") > -1 
               span.helper
+              img.mobile(src="#{imageUrl}")
               span.svg-helper
               object.svg-files(data="#{imageUrl}" type="image/svg+xml")
                 img(src="#{imageUrl}")
             else
               span.helper
-              img(src="#{imageUrl}")
+              img.desktop(src="#{imageUrl}")
             svg.cross
               line(x1='0', y1='100%', x2='100%', y2='0')
               line(x1='0', y1='0', x2='100%', y2='100%')

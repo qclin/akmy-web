@@ -35,15 +35,16 @@ var maxIndex = imgList.length-1
 
 if(window.innerWidth <= 768){
 
-  $('body').on('click', '.foreground', function(e){
-    var orientation = "portrait"
-    if(e.target.width > e.target.height){
-      orientation = "landscape"
-    }
-    $('.img-modal').addClass(orientation);
-    $('.img-modal').css('top', 0);
-    $(e.target).clone().appendTo('.img-modal');
-  });
+  // $('body').on('click', '.foreground', function(e){
+  //   debugger
+  //   var orientation = "portrait"
+  //   if(e.target.width > e.target.height){
+  //     orientation = "landscape"
+  //   }
+  //   $('.img-modal').addClass(orientation);
+  //   $('.img-modal').css('top', 0);
+  //   $(e.target).clone().appendTo('.img-modal');
+  // });
 
   $(document).on('swipeleft', '.foreground',function(e){
     $(imgList).eq(current).removeClass('foreground')
