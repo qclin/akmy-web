@@ -1,10 +1,9 @@
-var orientation;
+
 $(document).ready(function(){
   $('body').on('click', '.foreground', function(e){
+    var orientation = "portrait";
     if(e.target.width > e.target.height){
       orientation = "landscape"
-    }else{
-      orientation = "portrait"
     }
     $('.img-modal').addClass(orientation);
     console.log("-000---- ", orientation)
