@@ -20,8 +20,13 @@ app.use(express.static(__dirname + "/assets"));
 
 app.set('view engine', 'jade');
 
+
 app.use(function forceLiveDomain(req, res, next) {
-    return res.redirect(301, 'http://akm-y.com/' + req.path);
+  var host = req.get('Host');
+  if (host === 'ec2-52-206-191-9.compute-1.amazonaws.com') {
+    return res.redirect(301, 'http://akm-y.com/' + req.originalUrl);
+  }
+  return next();
 });
 
 app.get('/', function(req, res){
