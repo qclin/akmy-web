@@ -24,9 +24,9 @@ app.set('view engine', 'jade');
 app.use(function forceLiveDomain(req, res, next) {
   var host = req.get('Host');
   console.log("force live Domain-----", host, req.path, req.originalUrl)
-  
-  if (host === 'ec2-52-206-191-9.compute-1.amazonaws.com') {
-    return res.redirect(301, 'http://akm-y.com/' + req.originalUrl);
+
+  if (host === '172.31.61.177:443') {
+    return res.redirect(301, 'http://akm-y.com' + req.originalUrl);
   }
   return next();
 });
