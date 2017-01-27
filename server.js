@@ -21,13 +21,15 @@ app.use(express.static(__dirname + "/assets"));
 app.set('view engine', 'jade');
 
 
-// app.use(function forceLiveDomain(req, res, next) {
-//   var host = req.get('Host');
-//   if (host === 'ec2-52-206-191-9.compute-1.amazonaws.com') {
-//     return res.redirect(301, 'http://akm-y.com/' + req.originalUrl);
-//   }
-//   return next();
-// });
+app.use(function forceLiveDomain(req, res, next) {
+  var host = req.get('Host');
+  console.log("force live Domain-----", host, req.path, req.originalUrl)
+  
+  if (host === 'ec2-52-206-191-9.compute-1.amazonaws.com') {
+    return res.redirect(301, 'http://akm-y.com/' + req.originalUrl);
+  }
+  return next();
+});
 
 app.get('/', function(req, res){
 	res.render('index');
