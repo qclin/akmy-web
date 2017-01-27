@@ -15,7 +15,14 @@ var app = express();
 app.use(cors());
 app.use(bodyParser.json({ extended: false }));
 app.use(express.static(__dirname + "/assets"));
+
+
+
 app.set('view engine', 'jade');
+
+app.use(function forceLiveDomain(req, res, next) {
+    return res.redirect(301, 'http://akm-y.com/' + req.path);
+});
 
 app.get('/', function(req, res){
 	res.render('index');
@@ -159,6 +166,7 @@ app.get('/who', function(req, res){
 // 		}
 // 	});
 // });
+
 
 app.listen(80);
 app.listen(443);
