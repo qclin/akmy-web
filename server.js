@@ -23,9 +23,10 @@ app.set('view engine', 'jade');
 
 app.use(function forceLiveDomain(req, res, next) {
   var host = req.get('Host');
-  console.log("force live Domain-----", host, req.path, req.originalUrl)
+  console.log("force live Domain-----", host, typeof host, req.path, req.originalUrl)
 
   if (host === '172.31.61.177:443') {
+	  console.log("inside if statement ---- ", )
     return res.redirect(301, 'http://akm-y.com' + req.originalUrl);
   }
   return next();
