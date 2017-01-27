@@ -20,16 +20,15 @@ app.use(express.static(__dirname + "/assets"));
 
 app.set('view engine', 'jade');
 
-
-app.use(function forceLiveDomain(req, res, next) {
-  var host = req.get('Host');
-  console.log("force live Domain-----", host, typeof host, req.path, req.originalUrl)
-  if (host === '172.31.61.177:443') {
-	  console.log("inside if statement ---- ", host)
-    return res.redirect(301, 'akm-y.com' + req.originalUrl);
-  }
-  return next();
-});
+// app.use(function forceLiveDomain(req, res, next) {
+//   var host = req.get('Host');
+//   console.log("force live Domain-----", host, typeof host, req.path, req.originalUrl)
+//   if (host === '172.31.61.177:443') {
+// 	  console.log("inside if statement ---- ", host)
+//     return res.redirect(301, 'akm-y.com' + req.originalUrl);
+//   }
+//   return next();
+// });
 
 app.get('/', function(req, res){
 	res.render('index');
