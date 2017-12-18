@@ -1,0 +1,88 @@
+doctype html 
+html 
+  head 
+    meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no')
+    link(rel='stylesheet', href='/styles/main.css')
+    link(rel='stylesheet', href='/styles/scrollPage.css')
+    link(rel='stylesheet', href='/styles/mobile/scrollPage.css')
+    link(rel='stylesheet', href='https://fonts.googleapis.com/icon?family=Material+Icons')
+    include ../partials/infoPanel.pug
+    h1.category.mobile ~ 3d ~
+    .navMenu
+      i.mobile.material-icons.md-36#hamburger menu
+    include ../partials/nav.pug
+    section#content-wrapper
+    section#scroll-content
+      span#RenderAxon.wallpaper
+        img(src=Wallpaper[2])
+      span#penduLumSVG
+          object.svg-files(data=SVGs[0] type="image/svg+xml")
+            img(src=SVGs[0])
+      span#RhinoAxon.wallpaper
+        img(src=Wallpaper[0])
+      section.rightCluster
+        .img-Button
+          img#existing1(src=Existings[12])
+        .img-Button
+          img#existing2(src=Existings[0])
+
+      section#textZone1.snippets
+        p Grey, beige, fluorescent cream, yellow with a hint of green. The columns blend into walls, hugging the vinyl tiling that guide the pedestrian to a classroom. This palette provided a challenge to the 3d scanning methodology developed at the Scan Research stage. A series of corridors were captured while one walked through them: from the classroom to the bathroom, to the auditorium, lab, elevator... 
+
+      section#svgCluster
+        span#rightIteration.renderPieces
+          img(src=Iterations[11])
+        span#roundPath
+          object.svg-files(data=SVGs[2] type="image/svg+xml")
+            img(src=SVGs[2])
+        p.captions.pathCaption ( Walking path with points where images were taken )
+        span#linearPath
+            object.svg-files(data=SVGs[3] type="image/svg+xml")
+              img(src=SVGs[3])
+        span#leftIteration.renderPieces
+          img(src=Iterations[8])
+      section#iterationMarquee
+        #marqueHolder
+          marquee(onmouseover="this.stop();" onmouseout="this.start();")
+            - for (var i = 0; i < 8; ++i) {
+                span
+                  img(src=Iterations[i])
+            - }
+      span#WireframeAxon.wallpaper
+        img(src=Wallpaper[1])
+      section#textZone2.snippets
+        p Movement, an aspect of spatial experience is tested. The production of faulty scans is a process that begins to identify the limitations of architectural visualization in order to explore new territories of spatial understanding. The 3d corridors are not meant to be a reproduction but rather 3d data that provides a ‘frozen’ image of how the corridor transforms as one experiences it. 
+      section#iterationCluster
+        span.renderPieces#ladderPiece
+          img(src=Iterations[9])
+        span.renderPieces#floorPiece
+          img(src=Iterations[10])
+          p.captions.piecesCaption ( extracted corridor pieces )
+        span.renderPieces#doorPiece
+          img(src=Iterations[12])
+        
+      section#PanelCluster
+        div
+          img(src=Panels[1])
+        div.alignLeft
+          img(src=Panels[0])
+        section#textZone3.snippets
+          p Now the monotone makeup of the corridor morph into cave-like, ambiguous shapes that highlight its fixtures: the water fountain, bathroom sign, exit sign, etc. It becomes another version of itself, stuck in a frozen moment. The architectural image is now malleable and through the this image-making process the question asked is: how can stillness and movement come to a collaborative state?
+        div.alignRight
+          img(src=Panels[2])
+      footer
+      section.imgWindow
+        i.material-icons.imgWindow close
+        .img-Ctrl
+          span#left.arrow(data-value='left')  ← 
+          span#right.arrow(data-value='right')  → 
+        .img-Content
+          
+      script(src='http://code.jquery.com/jquery-1.10.2.min.js')
+      script(src='https://code.jquery.com/ui/1.12.1/jquery-ui.js')
+      script(src='http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js')
+      script(type='text/javascript', src='/scripts/mobileMain.js')
+      script(type='text/javascript', src='/scripts/scrollPage.js')
+      script.                                                
+        var existingUrlList =!{JSON.stringify(Existings)}; 
+      script(type='text/javascript', src='/scripts/carousel.js')

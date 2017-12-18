@@ -51,6 +51,8 @@ h1{
 .project-images img{
   display:none;
   width: 100%;
+
+  cursor: move;
 }
 @media(min-width: 769px) {
   nav{
@@ -221,8 +223,6 @@ img-modal span.svg-helper{
   display: block;
 }
 
-
-
 body{
   margin: 0;
   font-family: "Times New Roman", TimesNewRoman , Serif;
@@ -233,7 +233,8 @@ a{
 .img-modal{
   display:block;
   position: fixed;
-  top: 100vh;
+  top: -100vh;
+  height: 100vh;
   bottom: 0;
   right: 0;
   left: 0;

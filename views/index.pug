@@ -1,0 +1,21 @@
+html
+  head
+    meta(http-equiv='Content-Type', content='text/html; charset=UTF-8')
+    meta(name='viewport', content='width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0')
+    meta(name='keywords', content='Andrea Macias-Ya&#xF1;ez 3d modeling 3d visualiser fabrication')
+    meta(name='description', content='Description')
+    meta(name='og:title', content=typeof(title) !== 'undefined' ? title : "Untitled template")
+    link(rel='shortcut icon', href='./images/favicon.jpg', type='image/x-icon') 
+    link(rel='stylesheet', href='./styles/main.css')
+    link(rel='stylesheet', href='./styles/home.css')
+    link(rel='stylesheet', href='https://fonts.googleapis.com/icon?family=Material+Icons')
+    title AKMY
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js')
+  body
+    #homePage
+      #spinLogo andrea k macias-ya&#xF1;ez
+      include partials/nav.pug
+      section#content-wrapper
+        #content  
+          include partials/preview.pug
+    script(type='text/javascript', src='./scripts/main.js')

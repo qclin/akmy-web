@@ -6,9 +6,7 @@
     display:none;
   }
   #homePage nav{
-    top:50%;
-    margin-top: -120px;
-    height: initial;
+    top:0;
     display:initial;
   }
   #home-link{
@@ -24,10 +22,13 @@
   #homePage nav ul:first-of-type{
     margin-top: initial;
   }
-  ul:first-of-type{
+  li:first-of-type{
     margin-top: 5em;
   }
-  ul:hover{
+  li{
+    margin-bottom: 3em;
+  }
+  li:hover{
     -webkit-box-shadow: 2px 4px 5px 0px rgba(190,190,190,1);
     -moz-box-shadow: 2px 4px 5px 0px rgba(190,190,190,1);
     box-shadow: 2px 4px 5px 0px rgba(190,190,190,1);
@@ -38,8 +39,5 @@
     height: 30px;
     font-size: 14px;
     letter-spacing: 3px;
-  }
-  nav ul:last-of-type{
-    display: none;
   }
 }
