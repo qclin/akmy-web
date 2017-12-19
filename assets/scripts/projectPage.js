@@ -23,7 +23,7 @@ $(document).ready(function(){
 
   $('.img-modal').click(function(e){
     if(e.target.tagName != "IMG"){
-      $('.img-modal').css('top', '100vh');
+      $('.img-modal').css('top', '-100vh');
       $('.img-modal').find('img').remove();
       $('.img-modal').find('svg').remove();
       $('.img-modal').find('object').remove();

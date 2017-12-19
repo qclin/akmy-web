@@ -1,7 +1,7 @@
 var currentI = 12;
 var maxIndexI = 14;
 
-$('#existingCluster1 span#left').click(function(e) {
+$('#scroll-content').on('click', '#existing1.imgWindow span#left', function(e) {
     if(currentI == 12){
       currentI = maxIndexI
     }else{
@@ -10,7 +10,8 @@ $('#existingCluster1 span#left').click(function(e) {
   $('img#existing1').attr('src', existingUrlList[currentI])
 });
 
-$('#existingCluster1 span#right').click(function(e) {
+
+$('#scroll-content').on('click', '#existing1.imgWindow span#right',function(e) {
     if(currentI == maxIndexI){
       currentI = 12
     }else{
@@ -22,7 +23,7 @@ $('#existingCluster1 span#right').click(function(e) {
 var currentE = 0;
 var maxIndexE = 9;
 
-$('#existingCluster2 span#left').click(function(e) {
+$('#scroll-content').on('click', '#existing2.imgWindow span#left',function(e) {
     if(currentE == 0){
       currentE = maxIndexE
     }else{
@@ -31,7 +32,7 @@ $('#existingCluster2 span#left').click(function(e) {
   $('img#existing2').attr('src', existingUrlList[currentE])
 });
 
-$('#existingCluster2 span#right').click(function(e) {
+$('#scroll-content').on('click', '#existing2.imgWindow span#right',function(e) {
     if(currentE == maxIndexE){
       currentE = 0
     }else{
