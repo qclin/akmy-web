@@ -20,9 +20,9 @@ $('#overlayCluster span#right').click(function(e) {
 });
 
 var currentBit = 3;
-var maxIndexBit = 8; 
+var maxIndexBit = 8;
 
-$('#bitmapCluster span#left').click(function(e) {
+$('#scroll-content').on('click', '#bitmap.imgWindow span#left', function(e) {
     if(currentBit == 3){
       currentBit = maxIndexBit
     }else{
@@ -31,7 +31,7 @@ $('#bitmapCluster span#left').click(function(e) {
   $('img#bitmap').attr('src', bitmapUrlList[currentBit])
 });
 
-$('#bitmapCluster span#right').click(function(e) {
+$('#scroll-content').on('click', '#bitmap.imgWindow span#right', function(e) {
     if(currentBit == maxIndexBit){
       currentBit = 3
     }else{

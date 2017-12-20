@@ -34,5 +34,11 @@ module.exports = {
   },
   findObj: function (item){
   	if(item.indexOf('.obj') > -1) return true;
+  },
+
+  findKey: function(item){
+    console.log("findkey ---- ", item, this)
+    if(item.includes(this.value) > -1) return true;
   }
+
 }

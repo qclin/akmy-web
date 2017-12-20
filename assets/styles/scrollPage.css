@@ -55,6 +55,7 @@
     right: 6em;
     margin: 2em;
     margin-top: 0;
+    z-index: 30;
   }
 }
 
@@ -410,21 +411,13 @@ section#iterationCluster{
 #bitmapCluster{
   position: relative;
 }
-#bitmapCluster .carousel {
+#bitmapCluster .img-Button {
   width: 65vw;
   position: absolute;
   right: 0;
   top: 18em;
 }
-#bitmapCluster .carousel span#left{
-  left: 1em;
-}
-#bitmapCluster .carousel span#right{
-  right: 1em;
-}
-#bitmapCluster .img-Ctrl span{
-  margin-top: 9em;
-}
+
 #footerWallpaper{
   z-index: -10;
   position: relative;

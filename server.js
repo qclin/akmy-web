@@ -37,7 +37,7 @@ app.get('/threejs-test', function(req, res){
 
 
 app.get('/canvas/blindSpot', function(req, res){
-	aws.getDirectoryFiles('/blindSpot/').then((urlList) =>{
+	aws.getDirectoryFiles('blindSpot/').then((urlList) =>{
 		urlList = urlList.filter(Boolean).sort(filter.urlByIndex);
 		var Panels = urlList.filter(filter.findPanels);
 		var SVGs = urlList.filter(filter.findSVGs);
@@ -49,7 +49,7 @@ app.get('/canvas/blindSpot', function(req, res){
 });
 
 app.get('/canvas/blindSpot2', function(req, res){
-	aws.getDirectoryFiles('/blindSpot2/').then((urlList) =>{
+	aws.getDirectoryFiles('blindSpot2/').then((urlList) =>{
 		urlList = urlList.filter(Boolean).sort(filter.urlByIndex);
 		var Panels = urlList.filter(filter.findPanels);
 		var Bitmaps = urlList.filter(filter.findBitmaps);
@@ -64,51 +64,81 @@ app.get('/canvas/blindSpot2', function(req, res){
 
 app.get('/canvas/:project', function(req, res){
 	var projectTitle = req.params.project
-	firebaseSDK.getProjInfo(projectTitle).then(json => {
-		aws.getProjectImg(projectTitle).then((imageUrlList) => {
+	firebaseSDK.getProjInfo(projectTitle +'/').then(json => {
+		aws.getDirectoryFiles(projectTitle).then((imageUrlList) => {
 			imageUrlList = imageUrlList.filter(Boolean).sort(filter.urlByIndex)
-			res.render(`canvas/${projectTitle}`, {imageUrlList, info: json})
+
+
+			// matchClusters(json.captions, imageUrlList).then((clusters) => {
+			// 	console.log("00000000 ", clusters)
+			// 	res.render(`canvas/${projectTitle}`, {clusters, info:json})
+			// });
+
+			// problem is async, filters needs time before rendering
+			var clusters= Object.keys(json.captions).map(function(key, value) {
+				return {[key] :{
+					caption : json.captions[key],
+					urlList: imageUrlList.filter(s => {
+						console.log(s, key, s.includes([key]));
+							return s.includes([key])
+					})
+				}}
+			});
+
+			// var clusters = [];
+			// for (const item in captions) {
+			// 	clusters[item] = {
+			// 		caption : captions[item],
+			// 		urlList :imageUrlList.filter(s => s.includes(key))
+			// 	}
+			// }
+			console.log("get clusters ---- ", clusters[0].urlList)
+			res.render(`canvas/${projectTitle}`, {imageUrlList, clusters, info:json})
+
 		})
 	})
-})
-
-app.get('/3d/blindSpot', function(req, res){
-	aws.getDirectoryFiles('/3d/vertical-scroll-1/').then((urlList) =>{
-		urlList = urlList.filter(Boolean).sort(urlByIndex);
-		var Panels = urlList.filter(findPanels);
-		var SVGs = urlList.filter(findSVGs);
-		var Wallpaper = urlList.filter(findWallpaper);
-		var Existings = urlList.filter(findExistings);
-		var Iterations = urlList.filter(findIterations);
-		res.render('3d/blindSpot.jade', {Panels, SVGs, Wallpaper, Existings, Iterations})
-	});
 });
 
-app.get('/3d/blindSpot2', function(req, res){
-	aws.getDirectoryFiles('/3d/vertical-scroll-2/').then((urlList) =>{
-		urlList = urlList.filter(Boolean).sort(urlByIndex);
-		var Panels = urlList.filter(findPanels).sort(urlByIndex);
-		var Bitmaps = urlList.filter(findBitmaps).sort(urlByIndex);
-		var Diagrams = urlList.filter(findDiagrams).sort(urlByIndex);
-		var Overlays = urlList.filter(findOverlays).sort(urlByIndex);
-		var SVGs = urlList.filter(findSVGs);
-		var Wallpaper = urlList.filter(findWallpaper).sort(urlByIndex);
-		res.render('3d/blindSpot2.jade', {Panels, Bitmaps, Diagrams, Overlays, SVGs, Wallpaper})
-	})
-});
-app.get('/3d/:project', function(req, res){
-	getProjectInfo("dimension3", req.url).then((databaseRow) => {
-		if(databaseRow){
-			if(databaseRow.links){
-				databaseRow.links = databaseRow.links.split(' ')
-			}
-			aws.getProjectImg(databaseRow.route).then((imageUrlList) =>{
-				imageUrlList = imageUrlList.filter(Boolean).sort(urlByIndex)
-				res.render('3d/index.jade', {imageUrlList, info: databaseRow})
-			})
-		}
+
+function matchClusters(captions, imageUrlList){
+	console.log("111111111111 ", imageUrlList)
+
+	var deferred =Q.defer();
+
+	// var clusters = [];
+	// for (const item in captions) {
+	// 	clusters[item] = {
+	// 		caption : captions[item],
+	// 		urlList : imageUrlList.filter(s => s.includes(item))
+	// 	}
+	// }
+
+	var clusters= Object.keys(captions).map(function(key, value) {
+		console.log("222222222 ", key)
+
+		return {[key] :{
+			caption : captions[key],
+			urlList: imageUrlList.filter(s => s.includes(key))
+		}}
 	});
-});
+
+	deferred.resolve(clusters);
+
+	return deferred.promise
+}
+
+
+// app.get('/canvas/:project', function(req, res){
+// 	var projectTitle = req.params.project
+// 	firebaseSDK.getProjInfo(projectTitle).then(json => {
+// 		aws.getDirectoryFiles(projectTitle).then((imageUrlList) => {
+// 			console.log("yooooooo --- ", imageUrlList)
+// 			imageUrlList = imageUrlList.filter(Boolean).sort(filter.urlByIndex)
+// 			res.render(`canvas/${projectTitle}`, {imageUrlList, info: json})
+// 		})
+// 	})
+// })
+
 app.get('/fabrication/:project', function(req, res){
 	getProjectInfo("Fabrications", req.url).then((databaseRow) => {
 		if(databaseRow){
