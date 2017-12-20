@@ -413,10 +413,11 @@ section#iterationCluster{
   position: relative;
 }
 #bitmapCluster .img-Button {
-  width: 65vw;
+  max-width: 58vw;
+  width: 80%;
   position: absolute;
-  right: 0;
-  top: 18em;
+  right: 1em;
+  top: 15.7em;
 }
 
 #footerWallpaper{
@@ -424,7 +425,9 @@ section#iterationCluster{
   position: relative;
   width: 100vw;
 }
-
+span.wallpaper img{
+  width: 100%;
+}
 span img{
   width: inherit;
 }

@@ -56,12 +56,12 @@ app.get('/canvas/blindSpot2', function(req, res){
 
 	aws.getDirectoryFiles('blindSpot2/').then((urlList) =>{
 		urlList = urlList.filter(Boolean).sort(filter.urlByIndex);
-		var Panels = urlList.filter(filter.findPanels);
-		var Bitmaps = urlList.filter(filter.findBitmaps);
-		var Diagrams = urlList.filter(filter.findDiagrams);
-		var Overlays = urlList.filter(filter.findOverlays);
+		var Panels = urlList.filter(filter.findPanels).sort(filter.urlByIndex); // the extra sort is needed 
+		var Bitmaps = urlList.filter(filter.findBitmaps).sort(filter.urlByIndex);
+		var Diagrams = urlList.filter(filter.findDiagrams).sort(filter.urlByIndex);
+		var Overlays = urlList.filter(filter.findOverlays).sort(filter.urlByIndex);
 		var SVGs = urlList.filter(filter.findSVGs);
-		var Wallpaper = urlList.filter(filter.findWallpaper);
+		var Wallpaper = urlList.filter(filter.findWallpaper).sort(filter.urlByIndex);
 		res.render('canvas/blindSpot2', {Panels, Bitmaps, Diagrams, Overlays, SVGs, Wallpaper, dynamic})
 	})
 });
