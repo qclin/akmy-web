@@ -71,18 +71,16 @@ app.get('/canvas/:project', function(req, res){
 	firebaseSDK.getProjInfo(projectTitle +'/').then(json => {
 		aws.getDirectoryFiles(projectTitle).then((imageUrlList) => {
 			imageUrlList = imageUrlList.filter(Boolean).sort(filter.urlByIndex)
+			var clusters;
 			if(json.captions){
-				var clusters= Object.keys(json.captions).map(function(key, value) {
+				clusters = Object.keys(json.captions).map(function(key, value) {
 					return {[key] :{
 						caption : json.captions[key],
 						urlList: imageUrlList.filter(s => s.includes([key]))
 					}}
 				});
-				res.render(`canvas/${projectTitle}`, {imageUrlList, clusters, info:json})
-			}else{
-				res.render(`canvas/${projectTitle}`, {imageUrlList, info:json})
 			}
-
+			res.render(`canvas/${projectTitle}`, {imageUrlList, clusters, info:json})
 		})
 	})
 });
