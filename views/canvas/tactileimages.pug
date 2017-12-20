@@ -4,6 +4,7 @@ html
     meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no')
     link(rel='stylesheet', href='/styles/main.css')
     link(rel='stylesheet', href='/styles/project.css')
+    link(rel='stylesheet', href='/styles/cluster.css')
     link(rel='stylesheet', href='/styles/textContent.css')
     link(rel='stylesheet', href='/styles/mobile/project.css')
     link(rel='stylesheet', href='https://fonts.googleapis.com/icon?family=Material+Icons')
@@ -13,38 +14,38 @@ html
       i.mobile.material-icons.md-36#hamburger menu
     h1.category.mobile ~ Tactile Images ~
     include ../partials/nav.pug
-    section#content-wrapper
+
+    section.cluster-content(id=info.title)
       header
         h3 #{info.title} 
-      section#textBox
-        .tilde.top
-          object.svg-files.shadow(data="/vectors/squiggle_shadow_2-01.svg" type="image/svg+xml")
-            img(src="/vectors/squiggle_shadow_2-01.svg")
-        .text-content
-          .text-label Description
-          p #{info.description}
-        .tilde.bottom
-          object.svg-files.shadow(data="/vectors/squiggle_shadow_2-01.svg" type="image/svg+xml")
-            img(src="/vectors/squiggle_shadow_2-01.svg")
-      section.project-content(id=info.title)
-        each cluster in clusters
-          h1 #{cluster}
-          each imageUrl in imageUrlList
-            div.project-images.draggable
-              if imageUrl.indexOf(cluster.key) > -1
-                span.helper
-                img.mobile(src=imageUrl)
-                span.svg-helper
-                object.svg-files(data=imageUrl type="image/svg+xml")
-                  img(src="#{imageUrl}")
-              else
-                span.helper
-                img(src=imageUrl)
-              svg.cross
-                line(x1='0', y1='100%', x2='100%', y2='0')
-                line(x1='0', y1='0', x2='100%', y2='100%')
+      each cluster in clusters
+        .cluster
+          h3 #{Object.keys(cluster)}
+          section.caption-box
+            .tilde
+              object.svg-files.shadow(data="/vectors/squiggle_shadow_2-01.svg" type="image/svg+xml")
+                img(src="/vectors/squiggle_shadow_2-01.svg")
+            p.text-content #{cluster[Object.keys(cluster)].caption}
+            .tilde
+                object.svg-files.shadow(data="/vectors/squiggle_shadow_2-01.svg" type="image/svg+xml")
+                  img(src="/vectors/squiggle_shadow_2-01.svg")
+          section.image-pile
+            each imageUrl in cluster[Object.keys(cluster)[0]].urlList
+              div.cluster-image.draggable
+                if imageUrl.indexOf(cluster.key) > -1
+                  span.helper
+                  img.mobile(src=imageUrl)
+                  span.svg-helper
+                  object.svg-files(data=imageUrl type="image/svg+xml")
+                    img(src="#{imageUrl}")
+                else
+                  span.helper
+                  img(src=imageUrl)
+                svg.cross
+                  line(x1='0', y1='100%', x2='100%', y2='0')
+                  line(x1='0', y1='0', x2='100%', y2='100%')
       script(type='text/javascript', src='/scripts/infoCheck.js')
-      include ../partials/slideCtrl.pug
+
       .modal-layer
       section.text-overlay
         .text-content 

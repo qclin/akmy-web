@@ -71,66 +71,21 @@ app.get('/canvas/:project', function(req, res){
 	firebaseSDK.getProjInfo(projectTitle +'/').then(json => {
 		aws.getDirectoryFiles(projectTitle).then((imageUrlList) => {
 			imageUrlList = imageUrlList.filter(Boolean).sort(filter.urlByIndex)
-
-
-			// matchClusters(json.captions, imageUrlList).then((clusters) => {
-			// 	console.log("00000000 ", clusters)
-			// 	res.render(`canvas/${projectTitle}`, {clusters, info:json})
-			// });
-
-			// problem is async, filters needs time before rendering
-			var clusters= Object.keys(json.captions).map(function(key, value) {
-				return {[key] :{
-					caption : json.captions[key],
-					urlList: imageUrlList.filter(s => {
-						console.log(s, key, s.includes([key]));
-							return s.includes([key])
-					})
-				}}
-			});
-
-			// var clusters = [];
-			// for (const item in captions) {
-			// 	clusters[item] = {
-			// 		caption : captions[item],
-			// 		urlList :imageUrlList.filter(s => s.includes(key))
-			// 	}
-			// }
-			console.log("get clusters ---- ", clusters[0].urlList)
-
-			res.render(`canvas/${projectTitle}`, {imageUrlList, clusters, info:json})
+			if(json.captions){
+				var clusters= Object.keys(json.captions).map(function(key, value) {
+					return {[key] :{
+						caption : json.captions[key],
+						urlList: imageUrlList.filter(s => s.includes([key]))
+					}}
+				});
+				res.render(`canvas/${projectTitle}`, {imageUrlList, clusters, info:json})
+			}else{
+				res.render(`canvas/${projectTitle}`, {imageUrlList, info:json})
+			}
 
 		})
 	})
 });
-
-
-function matchClusters(captions, imageUrlList){
-	console.log("111111111111 ", imageUrlList)
-
-	var deferred =Q.defer();
-
-	// var clusters = [];
-	// for (const item in captions) {
-	// 	clusters[item] = {
-	// 		caption : captions[item],
-	// 		urlList : imageUrlList.filter(s => s.includes(item))
-	// 	}
-	// }
-
-	var clusters= Object.keys(captions).map(function(key, value) {
-		console.log("222222222 ", key)
-
-		return {[key] :{
-			caption : captions[key],
-			urlList: imageUrlList.filter(s => s.includes(key))
-		}}
-	});
-
-	deferred.resolve(clusters);
-
-	return deferred.promise
-}
 
 
 // app.get('/canvas/:project', function(req, res){

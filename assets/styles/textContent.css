@@ -13,7 +13,19 @@
   margin: none;
   font-size: 12px;
 }
-#textBox p{
+
+
+.caption-box{
+  max-width: 400px;
+  width: 80%;
+  background: white;
+  overflow-x: hidden;
+  margin: none;
+  font-size: 12px;
+}
+
+
+#textBox p, .caption-box p{
   color: #5C5C5C;
   margin-top: 0;
 }
@@ -24,13 +36,6 @@
   height: 100%;
 }
 .tilde{
-  /*
-  z-index: 3;
-  width: 20vw;
-  overflow: hidden;
-  line-height: 20px;
-  height: 20px;
-  font-size: 50px;*/
   left: 5vw;
   max-width: 300px;
   width: 16vw;
@@ -44,14 +49,9 @@
     -webkit-filter: drop-shadow( 0px 2px 4px #000; );
             filter: drop-shadow( 0px 2px 4px #000; ); /* Same syntax as box-shadow */
 }
-
-/*.tilde span{
-  width: 100%;
-}*/
 .tilde.top{
   top: 23vh;
 }
-
 .tilde.bottom{
   top: 65vh;
 }
@@ -60,6 +60,6 @@
 }*/
 
 
-#textBox svg path{
+#textBox svg path, .caption-box svg path{
   stroke-width: 10;
 }

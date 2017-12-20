@@ -1,5 +1,9 @@
+var topIndex = 10;
+
 
 $(document).ready(function(){
+  $('.project-images').eq(0).addClass('foreground');
+
   $('body').on('click', '.foreground', function(e){
     var orientation = "portrait";
     if(e.target.width > e.target.height){
@@ -33,6 +37,13 @@ $(document).ready(function(){
   });
 });
 
+
+$( ".draggable" ).draggable({
+    start: function(event, ui) {
+      $(this).addClass('reveal').css({"z-index" : topIndex});
+      topIndex++
+    }
+});
 
 var current = 0;
 var imgList = $('.project-images')
