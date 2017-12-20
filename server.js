@@ -37,6 +37,9 @@ app.get('/threejs-test', function(req, res){
 
 
 app.get('/canvas/blindSpot', function(req, res){
+
+	var dynamic = req.query.sight
+
 	aws.getDirectoryFiles('blindSpot/').then((urlList) =>{
 		urlList = urlList.filter(Boolean).sort(filter.urlByIndex);
 		var Panels = urlList.filter(filter.findPanels);
@@ -44,11 +47,13 @@ app.get('/canvas/blindSpot', function(req, res){
 		var Wallpaper = urlList.filter(filter.findWallpaper);
 		var Existings = urlList.filter(filter.findExistings);
 		var Iterations = urlList.filter(filter.findIterations);
-		res.render('canvas/blindSpot', {Panels, SVGs, Wallpaper, Existings, Iterations})
+		res.render('canvas/blindSpot', {Panels, SVGs, Wallpaper, Existings, Iterations, dynamic})
 	});
 });
 
 app.get('/canvas/blindSpot2', function(req, res){
+	var dynamic = req.query.sight
+
 	aws.getDirectoryFiles('blindSpot2/').then((urlList) =>{
 		urlList = urlList.filter(Boolean).sort(filter.urlByIndex);
 		var Panels = urlList.filter(filter.findPanels);
@@ -57,10 +62,9 @@ app.get('/canvas/blindSpot2', function(req, res){
 		var Overlays = urlList.filter(filter.findOverlays);
 		var SVGs = urlList.filter(filter.findSVGs);
 		var Wallpaper = urlList.filter(filter.findWallpaper);
-		res.render('canvas/blindSpot2', {Panels, Bitmaps, Diagrams, Overlays, SVGs, Wallpaper})
+		res.render('canvas/blindSpot2', {Panels, Bitmaps, Diagrams, Overlays, SVGs, Wallpaper, dynamic})
 	})
 });
-
 
 app.get('/canvas/:project', function(req, res){
 	var projectTitle = req.params.project
@@ -93,6 +97,7 @@ app.get('/canvas/:project', function(req, res){
 			// 	}
 			// }
 			console.log("get clusters ---- ", clusters[0].urlList)
+
 			res.render(`canvas/${projectTitle}`, {imageUrlList, clusters, info:json})
 
 		})

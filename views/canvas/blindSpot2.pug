@@ -8,9 +8,10 @@ html
     link(rel='stylesheet', href='https://fonts.googleapis.com/icon?family=Material+Icons')
     include ../partials/infoPanel.pug
     h1.category.mobile ~ Blind Spot #2 ~
-    .navMenu
-      i.mobile.material-icons.md-36#hamburger menu
-    include ../partials/nav.pug
+    if !dynamic
+      .navMenu
+        i.mobile.material-icons.md-36#hamburger menu
+      include ../partials/nav.pug
     section#content-wrapper
     section#scroll-content
       section#textZone4.snippets

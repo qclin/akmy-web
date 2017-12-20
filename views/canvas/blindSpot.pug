@@ -7,10 +7,11 @@ html
     link(rel='stylesheet', href='/styles/mobile/scrollPage.css')
     link(rel='stylesheet', href='https://fonts.googleapis.com/icon?family=Material+Icons')
     include ../partials/infoPanel.pug
-    h1.category.mobile ~ 3d ~
-    .navMenu
-      i.mobile.material-icons.md-36#hamburger menu
-    include ../partials/nav.pug
+    h1.category.mobile ~ Blind Spot ~
+    if !dynamic
+      .navMenu
+        i.mobile.material-icons.md-36#hamburger menu
+      include ../partials/nav.pug
     section#content-wrapper
     section#scroll-content
       span#RenderAxon.wallpaper

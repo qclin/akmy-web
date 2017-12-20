@@ -219,7 +219,8 @@ span#Overlayed img{
   text-align: center;
 }
 #PanelCluster div img{
-  width: 50%;
+  max-width: 640px;
+  width: 90%;
   box-sizing: border-box;
   padding: .5em;
 }

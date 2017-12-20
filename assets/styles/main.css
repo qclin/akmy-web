@@ -1,3 +1,13 @@
+.ui-loader {
+  display:none !important;
+}
+.ui-focus {
+ -moz-box-shadow: none !important;
+ -webkit-box-shadow: none !important;
+ box-shadow: none !important;
+}
+
+
 #content.project-wrapper{
   position: relative;
 }
