@@ -1,3 +1,7 @@
+body{
+  overflow-x: hidden;
+}
+
 .ui-loader {
   display:none !important;
 }
