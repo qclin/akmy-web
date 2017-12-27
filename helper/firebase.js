@@ -9,7 +9,6 @@ admin.initializeApp({
 var db = admin.database();
 var dbRef = db.ref("test");
 dbRef.once("value", function(snapshot) {
-  console.log(snapshot.val());
 });
 
 

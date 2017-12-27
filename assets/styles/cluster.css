@@ -23,6 +23,7 @@ div.cluster-image{
   width:80%;
   max-width: 640px;
 }
+
 .cluster-image:first-of-type{
   z-index: 10;
 }
