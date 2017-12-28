@@ -2,26 +2,35 @@ var topIndex = 10;
 
 
 $(document).ready(function(){
-  $('.project-images').eq(0).addClass('foreground');
+  $('.project-images').eq(0).addClass('reveal');
 
-  $('body').on('click', '.foreground', function(e){
-    var orientation = "portrait";
-    if(e.target.width > e.target.height){
-      orientation = "landscape"
-    }
-    $('.img-modal').addClass(orientation);
+  $('.cluster').click(function(e){
+    if($(e.target).parent().hasClass("reveal")){
 
-    var isSVG = $(this).children('object').length > 0
-    if($(e.target).hasClass('mobile')){
-      var svgSource = $(e.target).attr('src')
-      $(`<object data=${svgSource}>`, {"data": svgSource, type: "image/svg+xml"}).prependTo('.img-modal');
-    }
-    if(isSVG){
-      $('.img-modal').css({'top': 0, 'overflow':'scroll'});
-      return $(this).children('object').clone().prependTo('.img-modal');
+
+      var orientation = "portrait";
+      if(e.target.width > e.target.height){
+        orientation = "landscape"
+      }
+      $('.img-modal').addClass(orientation);
+
+      var isSVG = $(this).children('object').length > 0
+      if($(e.target).hasClass('mobile')){
+        var svgSource = $(e.target).attr('src')
+        $(`<object data=${svgSource}>`, {"data": svgSource, type: "image/svg+xml"}).prependTo('.img-modal');
+      }
+      if(isSVG){
+        $('.img-modal').css({'top': 0, 'overflow':'scroll'});
+        return $(this).children('object').clone().prependTo('.img-modal');
+      }else{
+        $('.img-modal').css('top', 0);
+        $(e.target).clone().prependTo('.img-modal');
+      }
+
+
     }else{
-      $('.img-modal').css('top', 0);
-      $(e.target).clone().prependTo('.img-modal');
+      $(e.target).parent().addClass('reveal').css({"z-index" : topIndex});
+      topIndex++
     }
   });
 
@@ -44,6 +53,21 @@ $( ".draggable" ).draggable({
       topIndex++
     }
 });
+
+
+  var numOfPile = $('.image-pile').length;
+
+  for (var i = 0; i< numOfPile; i++){
+    var numOfImages = $('.image-pile').eq(i).children().length;
+
+
+    for(var j = 0; j< numOfImages; j++ ){
+      console.log("hellloooo ----------", $('.image-pile').eq(i).children().eq(j));
+      var topPixel = j*20+'px';
+      var leftPixel = j*50 +'px';
+      $('.image-pile').eq(i).children().eq(j).css({'top': topPixel, 'left': leftPixel});
+    }
+  }
 
 var current = 0;
 var imgList = $('.project-images')
@@ -72,4 +96,7 @@ if(window.innerWidth <= 768){
     }
     $(imgList).eq(current).addClass('foreground')
   });
+
+
+
 }

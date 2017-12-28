@@ -219,8 +219,8 @@ span#Overlayed img{
   text-align: center;
 }
 #PanelCluster div img{
-  max-width: 640px;
-  width: 90%;
+  min-width: 400px;
+  width: 58%;
   box-sizing: border-box;
   padding: .5em;
 }
@@ -353,13 +353,11 @@ section#iterationCluster{
 .alignRight{
   position: absolute;
   bottom: 0;
-  margin-left: 12em;
+  right: 0;
   z-index: -10;
+  margin-right: -16em;
 }
-.alignRight img{
-  padding-top: 5em !important;
-  width: 55% !important;
-}
+
 .diagrams{
   width: 35vw;
 }
