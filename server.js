@@ -76,6 +76,7 @@ app.get('/canvas/:project', function(req, res){
 				clusters = Object.keys(json.captions).map(function(key, value) {
 					return {[key] :{
 						caption : json.captions[key].title,
+						info : json.captions[key].info,
 						urlList: imageUrlList.filter(s => s.includes([key])),
 						links: json.captions[key].links
 					}}

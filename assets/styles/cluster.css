@@ -1,7 +1,7 @@
 .cluster-content{
   width: 100%;
   position: relative;
-  margin-top: 8em;
+  margin-top: 5em;
   padding: 2em;
 }
 
@@ -19,7 +19,7 @@ div.cluster-image{
   margin: auto;
   border: 1px dotted grey;
   width:80%;
-  max-width: 640px;
+  max-width: 400px;
 }
 
 .cluster-image:first-of-type{
@@ -72,7 +72,13 @@ section.image-pile{
   right:0;
   position: relative;
   width: 80%;
-  margin-left: 30%;
+  margin-left: 35%;
+  top: -17em;
+}
+
+
+#imageObject section.image-pile{
+  top: -10em;
 }
 
 section.image-pile:nth-of-type(2){

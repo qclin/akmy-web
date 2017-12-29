@@ -1,8 +1,17 @@
+#rebirth #left-arrow{
+    left: 34vw;
+}
+
+#rebirth #right-arrow{
+    right: 10vw;
+}
+
+
 #left-arrow{
-  left: 34vw;
+  left: -60px;
 }
 #right-arrow{
-  right: 10vw;
+  left: 10em;
 }
 #img-Slider{
   bottom: 10vh;
@@ -17,12 +26,17 @@
 }
 
 @media(min-width:769px){
+  #rebirth .img-Ctrl{
+      font-size: 60px;
+      position: fixed;
+    }
+
   .img-Ctrl{
     color: blue;
     font-size: 60px;
     cursor: pointer;
     z-index: 1000;
-    position: fixed;
+    position: absolute;
     top: 50%;
   }
 }

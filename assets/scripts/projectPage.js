@@ -1,11 +1,44 @@
 var topIndex = 10;
 
 
+///// cluster ctrl code
+var clcurrent = 0;
+var isMobile = (window.innerWidth <= 768)
+var clusterImgList = $('.cluster-image')
+var clmaxIndex = clusterImgList.length-1
+////
+
+
 $(document).ready(function(){
   $('.project-images').eq(0).addClass('reveal');
 
   $('.cluster').click(function(e){
-    if($(e.target).parent().hasClass("reveal")){
+    if($(e.target).hasClass('img-Ctrl')){
+      var direction = e.target.dataset.value
+
+      console.log("img-Ctrl", numOfClusters, currentIndex, clmaxIndex, clcurrent, numOfImages)
+
+      $(clusterImgList).eq(clcurrent).removeClass('foreground')
+      if(direction=="left"){
+        if(clcurrent == 0){
+          clcurrent = clmaxIndex
+        }else{
+          clcurrent -= 1
+        }
+      }
+      if(direction=="right"){
+        if(clcurrent == clmaxIndex){
+          clcurrent = 0
+        }else{
+          clcurrent += 1
+        }
+      }
+      if(isMobile) return $(clusterImgList).eq(clcurrent).addClass('foreground')
+      console.log('what is clcurrent classs ', $(clusterImgList).eq(clcurrent), clcurrent, clusterImgList);
+      $(clusterImgList).eq(clcurrent).addClass('reveal').css({"z-index" : topIndex})
+      topIndex++
+
+    }else if($(e.target).parent().hasClass("reveal")){
 
 
       var orientation = "portrait";

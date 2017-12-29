@@ -18,7 +18,7 @@ html
     section.cluster-content(id=info.title)
       header
         //- h3 #{info.title} 
-      each cluster in clusters
+      each cluster,index in clusters
         .cluster
           //- h3 #{Object.keys(cluster)}
           section.caption-box
@@ -26,14 +26,14 @@ html
               object.svg-files.shadow(data="/vectors/squiggle_shadow_2-01.svg" type="image/svg+xml")
                 img(src="/vectors/squiggle_shadow_2-01.svg")
             p.text-content #{cluster[Object.keys(cluster)].caption}
-            each key in Object.keys(cluster[Object.keys(cluster)].links)
-              p.links
-                marquee(behavior="alternate")
-                  a(href=cluster[Object.keys(cluster)].links[key] target="_blank")  #{key.replace(/"/g,"")} 
+            p.text-content #{cluster[Object.keys(cluster)].info}
             .tilde
                 object.svg-files.shadow(data="/vectors/squiggle_shadow_2-01.svg" type="image/svg+xml")
                   img(src="/vectors/squiggle_shadow_2-01.svg")
-          section.image-pile
+            each key in Object.keys(cluster[Object.keys(cluster)].links)
+              p.links
+                a(href=cluster[Object.keys(cluster)].links[key] target="_blank")  #{key.replace(/"/g,"")} 
+          section.image-pile(id="pile"+index)
             each imageUrl in cluster[Object.keys(cluster)[0]].urlList
               div.cluster-image.draggable
                 if imageUrl.indexOf(cluster.key) > -1
@@ -48,8 +48,11 @@ html
                 svg.cross
                   line(x1='0', y1='100%', x2='100%', y2='0')
                   line(x1='0', y1='0', x2='100%', y2='100%')
-      script(type='text/javascript', src='/scripts/infoCheck.js')
-
+            script.                                                 
+              var numOfClusters =!{JSON.stringify(clusters.length)}; 
+              var currentIndex = !{index}
+              var numOfImages = !{JSON.stringify(cluster[Object.keys(cluster)[0]].urlList.length)}
+            include ../partials/clusterCtrl.pug
       .modal-layer
       section.text-overlay
         .text-content 

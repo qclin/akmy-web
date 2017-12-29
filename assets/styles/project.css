@@ -123,6 +123,7 @@ h1{
   }
   .cross{
     height: 400px;
+    cursor: pointer;
   }
   .project-content{
     height: 80vh;

@@ -15,7 +15,7 @@ html
     h1.category.mobile ~ Tactile Images ~
     include ../partials/nav.pug
 
-    section.cluster-content(id=info.title)
+    section.cluster-content(id="imageObject")
       header
         //- h3 #{info.title} 
       each cluster in clusters
@@ -26,6 +26,7 @@ html
               object.svg-files.shadow(data="/vectors/squiggle_shadow_2-01.svg" type="image/svg+xml")
                 img(src="/vectors/squiggle_shadow_2-01.svg")
             p.text-content #{cluster[Object.keys(cluster)].caption}
+            p.text-content #{cluster[Object.keys(cluster)].info}
             .tilde
                 object.svg-files.shadow(data="/vectors/squiggle_shadow_2-01.svg" type="image/svg+xml")
                   img(src="/vectors/squiggle_shadow_2-01.svg")
