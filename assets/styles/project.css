@@ -13,8 +13,39 @@
 header{
   margin-left: 1em;
 }
+
+.storyTime header{
+  margin-top: 3em;
+}
 h1{
   text-decoration: underline;
+}
+
+
+.sketch-link{
+  left: 2em;
+  font-family: "Times New Roman", TimesNewRomanBoldItalic , Serif;
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: 3px;
+  text-decoration: none;
+  cursor: pointer;
+  position: relative;
+  color: grey;
+
+}
+.sketch-link:hover{
+  color: #0000FF;
+  text-shadow: 0px 2px 4px rgba(190,190,190,1);
+}
+
+.selected{
+  color: #0000FF;
+  text-shadow: 0px 2px 4px rgba(190,190,190,1);
+}
+
+.sketch-link h2{
+  margin: 5px;
 }
 .md-portrait{
   width: 375px;
@@ -33,7 +64,7 @@ h1{
   height: 400px;
 }
 
-.project-content div{
+.project-content div.project-images{
   position: absolute;
   background: white;
   right: 0;
@@ -86,38 +117,41 @@ h1{
     position: fixed;
   }
 
-  .project-content div{
+  div.project-images{
     width: 50%;
     left: 15vw;
+  }
+  .storyTime .project-content{
+    top: -7em;
   }
   .project-content#BOFFO div{
     width: 35%;
   }
-  .project-content div:nth-of-type(6n+1){
+  div.project-images:nth-of-type(6n+1){
     top: 5%;
     right: 8%;
   }
-  .project-content div:nth-of-type(6n+2){
+  div.project-images:nth-of-type(6n+2){
     top: 6%;
     left: 5%;
   }
-  .project-content div:nth-of-type(6n+3){
+  div.project-images:nth-of-type(6n+3){
     top: 10%;
     left: 13%;
   }
-  .project-content div:nth-of-type(6n+4){
+  div.project-images:nth-of-type(6n+4){
     top: 2%;
     left: 3%;
   }
-  .project-content div:nth-of-type(6n+5){
+  div.project-images:nth-of-type(6n+5){
     top: 3%;
     right: 12%;
   }
-  .project-content div:nth-of-type(7n){
+  div.project-images:nth-of-type(7n){
     top: 8%;
     right: 9%;
   }
-  .project-content div:last-of-type{
+  div.project-images:last-of-type{
     left: 7%;
     top: 6%;
   }

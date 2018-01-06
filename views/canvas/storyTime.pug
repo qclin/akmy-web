@@ -1,0 +1,80 @@
+doctype html 
+html 
+  head 
+    meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no')
+    link(rel='stylesheet', href='/styles/main.css')
+    link(rel='stylesheet', href='/styles/project.css')
+    link(rel='stylesheet', href='/styles/textContent.css')
+    link(rel='stylesheet', href='/styles/mobile/project.css')
+    link(rel='stylesheet', href='https://fonts.googleapis.com/icon?family=Material+Icons')
+    script var isHoge = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
+    include ../partials/infoPanel.pug
+    .navMenu
+      i.mobile.material-icons.md-36#hamburger menu
+    h1.category.mobile ~ Story Time ~
+    include ../partials/nav.pug
+    section.cluster-content(id=info.title).storyTime
+      header
+        each cluster in clusters
+          - var key = Object.keys(cluster)[0]
+          a.sketch-link(href="#"+key data-ajax="false" data-key=key) 
+            h2 #{cluster[key].caption}
+        - var currenInfo = clusters[0][Object.keys(clusters[0])].info
+        
+      section.caption-box
+        .tilde
+          object.svg-files.shadow(data="/vectors/squiggle_shadow_2-01.svg" type="image/svg+xml")
+            img(src="/vectors/squiggle_shadow_2-01.svg")
+        each cluster in clusters
+          - var key = Object.keys(cluster)[0] 
+          p.switch.text-content(id=key) #{cluster[key].info}
+        .tilde
+          object.svg-files.shadow(data="/vectors/squiggle_shadow_2-01.svg" type="image/svg+xml")
+            img(src="/vectors/squiggle_shadow_2-01.svg")
+      
+      
+              
+              
+      section.project-content(id=info.name)
+        each cluster in clusters
+          - var key = Object.keys(cluster)[0]  
+          div.sketch-pile.switch(id=key+"-images")
+            each url in cluster[key].urlList
+              div.project-images.draggable
+                if url.indexOf(".svg") > -1
+                  span.helper
+                  img.mobile(src=url)
+                  span.svg-helper
+                  object.svg-files(data=url type="image/svg+xml")
+                    img(src="#{url}")
+                else
+                  span.helper
+                  img(src=url)
+                svg.cross
+                  line(x1='0', y1='100%', x2='100%', y2='0')
+                  line(x1='0', y1='0', x2='100%', y2='100%')
+      include ../partials/slideCtrl.pug
+      .modal-layer
+      section.text-overlay
+        .text-content 
+          .text-italic #{info.title};
+          .text-info #{info.description}
+    if info.links
+      footer
+        marquee(behavior="alternate")
+          each link in info.links
+            a(target="_blank" href=link).ext-links #{link}
+      div.sideLinkPanel 
+          each link in info.links
+            a(target="_blank" href=link).ext-links
+              i.material-icons share
+  section.img-modal
+    i.material-icons.closeModal close
+  script(src='http://code.jquery.com/jquery-1.10.2.min.js')
+  script(src='https://code.jquery.com/ui/1.12.1/jquery-ui.js')
+  script(src='http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js')
+  script(type='text/javascript', src='/scripts/mobileMain.js')
+  script(type='text/javascript', src='/scripts/projectPage.js')
+
+
+  

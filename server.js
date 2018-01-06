@@ -72,6 +72,7 @@ app.get('/canvas/:project', function(req, res){
 		aws.getDirectoryFiles(projectTitle).then((imageUrlList) => {
 			imageUrlList = imageUrlList.filter(Boolean).sort(filter.urlByIndex)
 			var clusters;
+			var selected;
 			if(json.captions){
 				clusters = Object.keys(json.captions).map(function(key, value) {
 					return {[key] :{
@@ -82,7 +83,7 @@ app.get('/canvas/:project', function(req, res){
 					}}
 				});
 			}
-			res.render(`canvas/${projectTitle}`, {imageUrlList, clusters, info:json})
+			res.render(`canvas/${projectTitle}`, {imageUrlList, clusters, selected, info:json})
 		})
 	})
 });

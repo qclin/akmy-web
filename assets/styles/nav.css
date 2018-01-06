@@ -140,7 +140,7 @@ li:hover{
   ul:last-of-type{
     margin-right: 0;
   }
-  .selectedTopic .label{
-    background: -webkit-linear-gradient(white, #D3D3D3);
+  .selectedTopic{
+    background: -webkit-linear-gradient(white, #D3D3D3) !important;
   }
 }

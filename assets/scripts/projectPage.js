@@ -10,6 +10,7 @@ var clmaxIndex = clusterImgList.length-1
 
 
 $(document).ready(function(){
+
   $('.project-images').eq(0).addClass('reveal');
 
   $('.cluster').click(function(e){
@@ -133,3 +134,20 @@ if(window.innerWidth <= 768){
 
 
 }
+
+$('.sketch-link').click(function(e){
+  $('.selected').toggleClass('selected');
+  $(this).addClass('selected');
+  var dataKey = $(this).data('key')
+  $('.reveal-text').toggleClass('reveal-text');
+  $('.reveal-images').toggleClass('reveal-images');
+
+  $(`.text-content#${dataKey}`).addClass('reveal-text');
+
+  $(`.sketch-pile#${dataKey}-images`).addClass('reveal-images');
+
+  $(`.sketch-pile#${dataKey}-images`).find('.project-images').eq(0).addClass('reveal').css({"z-index" : topIndex});
+
+  selected = dataKey;
+  console.log(selected);
+})

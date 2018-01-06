@@ -3,14 +3,14 @@ $( document ).on( "mobileinit", function() {
   $.mobile.hidePageLoadingMsg()
 });
 
-var projectType = location.pathname.split('/')[1]
 var projectName = location.pathname.split('/')[2]
-var projectTypeList = ["2d", "3d", "fabrication", "model"]
+var projectList = ["rebirth", "blindSpot", "blindSpot2", "tactileImages", "imageObject", "storyTime", "fabrication"]
 
 
 if(window.innerWidth > 768){
-  if(projectTypeList.indexOf(projectType) > -1 ){
-    $('#'+projectType).addClass('selectedTopic')
+  console.log("heeeee", projectName)
+  if(projectList.indexOf(projectName) > -1 ){
+    $('#'+projectName).addClass('selectedTopic')
   }
 }
 $('.label').hover(function(e){
