@@ -8,7 +8,6 @@ var projectList = ["rebirth", "blindSpot", "blindSpot2", "tactileImages", "image
 
 
 if(window.innerWidth > 768){
-  console.log("heeeee", projectName)
   if(projectList.indexOf(projectName) > -1 ){
     $('#'+projectName).addClass('selectedTopic')
   }

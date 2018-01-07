@@ -93,7 +93,6 @@ section.image-pile:nth-of-type(2){
 }
 .caption-box .tilde{
   position: relative;
-  left: 0;
 }
 
 .caption-box .text-content{
@@ -102,4 +101,8 @@ section.image-pile:nth-of-type(2){
 
 .caption-box p{
   width: 80%;
+}
+
+a{
+  text-decoration: none;
 }

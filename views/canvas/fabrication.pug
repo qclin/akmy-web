@@ -20,12 +20,11 @@ html
         //- h3 #{info.title} 
       each cluster,index in clusters
         .cluster
-          //- h3 #{Object.keys(cluster)}
+          h3.title #{cluster[Object.keys(cluster)].caption}
           section.caption-box
             .tilde
               object.svg-files.shadow(data="/vectors/squiggle_shadow_2-01.svg" type="image/svg+xml")
                 img(src="/vectors/squiggle_shadow_2-01.svg")
-            p.text-content #{cluster[Object.keys(cluster)].caption}
             p.text-content #{cluster[Object.keys(cluster)].info}
             .tilde
                 object.svg-files.shadow(data="/vectors/squiggle_shadow_2-01.svg" type="image/svg+xml")

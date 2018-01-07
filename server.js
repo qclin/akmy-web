@@ -116,7 +116,7 @@ app.get('/model/:project', function( req, res){
 	res.render('models/iframe.jade', {payload})
 });
 app.get('/who', function(req, res){
-	res.render('who/about.jade')
+	res.render('who/about.pug')
 });
 // app.get('/model/fruits', function(req, res){
 // 		var payload = {

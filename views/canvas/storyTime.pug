@@ -13,12 +13,11 @@ html
       i.mobile.material-icons.md-36#hamburger menu
     h1.category.mobile ~ Story Time ~
     include ../partials/nav.pug
-    section.cluster-content(id=info.title).storyTime
+    section.cluster-content.storyTime
       header
         each cluster in clusters
           - var key = Object.keys(cluster)[0]
-          a.sketch-link(href="#"+key data-ajax="false" data-key=key) 
-            h2 #{cluster[key].caption}
+          a.sketch-link(href="#"+key data-ajax="false" data-key=key) #{cluster[key].caption}
         - var currenInfo = clusters[0][Object.keys(clusters[0])].info
         
       section.caption-box
@@ -27,13 +26,15 @@ html
             img(src="/vectors/squiggle_shadow_2-01.svg")
         each cluster in clusters
           - var key = Object.keys(cluster)[0] 
-          p.switch.text-content(id=key) #{cluster[key].info}
+          p.switch.text-content(id=key+'-text') #{cluster[key].info}
         .tilde
           object.svg-files.shadow(data="/vectors/squiggle_shadow_2-01.svg" type="image/svg+xml")
             img(src="/vectors/squiggle_shadow_2-01.svg")
-      
-      
-              
+        .counter
+          span#currentIndex 1
+          span /
+          span#maxIndex  1
+            
               
       section.project-content(id=info.name)
         each cluster in clusters

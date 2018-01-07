@@ -21,7 +21,15 @@ h1{
   text-decoration: underline;
 }
 
-
+.title{
+  left: 2em;
+  font-family: "Times New Roman", TimesNewRomanBoldItalic , Serif;
+  font-weight: 400;
+  font-size: 12px;
+  letter-spacing: 3px;
+  position: relative;
+  color: #663399;
+}
 .sketch-link{
   left: 2em;
   font-family: "Times New Roman", TimesNewRomanBoldItalic , Serif;
@@ -32,7 +40,8 @@ h1{
   cursor: pointer;
   position: relative;
   color: grey;
-
+  margin: 5px;
+  display: block;
 }
 .sketch-link:hover{
   color: #0000FF;
@@ -40,13 +49,9 @@ h1{
 }
 
 .selected{
-  color: #0000FF;
-  text-shadow: 0px 2px 4px rgba(190,190,190,1);
+  color: #663399;
 }
 
-.sketch-link h2{
-  margin: 5px;
-}
 .md-portrait{
   width: 375px;
   height: 280px;
@@ -122,7 +127,7 @@ h1{
     left: 15vw;
   }
   .storyTime .project-content{
-    top: -7em;
+    top: -24em;
   }
   .project-content#BOFFO div{
     width: 35%;
@@ -261,9 +266,7 @@ body{
   margin: 0;
   font-family: "Times New Roman", TimesNewRoman , Serif;
 }
-a{
-  font-size: 11px;
-}
+
 .img-modal{
   display:block;
   position: fixed;
@@ -272,7 +275,7 @@ a{
   bottom: 0;
   right: 0;
   left: 0;
-  z-index: 200;
+  z-index: 2000;
   width: 100vw;
   background-image: linear-gradient(rgba(216,216,216,.3),rgba(216,216,216,1) 100%);
   background: rgba(255,255, 255, .8);

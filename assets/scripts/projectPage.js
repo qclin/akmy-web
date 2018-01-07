@@ -10,15 +10,15 @@ var clmaxIndex = clusterImgList.length-1
 
 
 $(document).ready(function(){
-
   $('.project-images').eq(0).addClass('reveal');
+
+
+  /// cluster image gallery should be moved to slideshow.js
 
   $('.cluster').click(function(e){
     if($(e.target).hasClass('img-Ctrl')){
       var direction = e.target.dataset.value
-
       console.log("img-Ctrl", numOfClusters, currentIndex, clmaxIndex, clcurrent, numOfImages)
-
       $(clusterImgList).eq(clcurrent).removeClass('foreground')
       if(direction=="left"){
         if(clcurrent == 0){
@@ -39,7 +39,11 @@ $(document).ready(function(){
       $(clusterImgList).eq(clcurrent).addClass('reveal').css({"z-index" : topIndex})
       topIndex++
 
-    }else if($(e.target).parent().hasClass("reveal")){
+    }
+  });
+
+  $('.project-content').click(function(e){
+    if($(e.target).parent().hasClass("reveal")){
 
 
       var orientation = "portrait";
@@ -67,6 +71,7 @@ $(document).ready(function(){
       topIndex++
     }
   });
+
 
   $('.img-modal').click(function(e){
     if(e.target.tagName != "IMG"){
@@ -96,7 +101,6 @@ $( ".draggable" ).draggable({
 
 
     for(var j = 0; j< numOfImages; j++ ){
-      console.log("hellloooo ----------", $('.image-pile').eq(i).children().eq(j));
       var topPixel = j*20+'px';
       var leftPixel = j*50 +'px';
       $('.image-pile').eq(i).children().eq(j).css({'top': topPixel, 'left': leftPixel});
@@ -130,24 +134,4 @@ if(window.innerWidth <= 768){
     }
     $(imgList).eq(current).addClass('foreground')
   });
-
-
-
 }
-
-$('.sketch-link').click(function(e){
-  $('.selected').toggleClass('selected');
-  $(this).addClass('selected');
-  var dataKey = $(this).data('key')
-  $('.reveal-text').toggleClass('reveal-text');
-  $('.reveal-images').toggleClass('reveal-images');
-
-  $(`.text-content#${dataKey}`).addClass('reveal-text');
-
-  $(`.sketch-pile#${dataKey}-images`).addClass('reveal-images');
-
-  $(`.sketch-pile#${dataKey}-images`).find('.project-images').eq(0).addClass('reveal').css({"z-index" : topIndex});
-
-  selected = dataKey;
-  console.log(selected);
-})
