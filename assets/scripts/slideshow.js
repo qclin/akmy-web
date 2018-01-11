@@ -10,7 +10,7 @@ var projectName = location.pathname.split('/')[2]
 $('span.img-Ctrl').click(function(e) {
 
 
-  if(projectName.indexOf("storyTime") > -1){
+  if(projectName.indexOf("storyTime") > -1 || projectName.indexOf("fabrication") > -1){
     imgList = $('.reveal-images .project-images');
   }
 
@@ -75,7 +75,7 @@ $('input[type=range]').change(function(e){
 $(document).ready(function(){
   $('.project-images').eq(0).addClass('foreground');
 
-  if(projectName.indexOf("storyTime") > -1){
+  if(projectName.indexOf("storyTime") > -1 || projectName.indexOf("fabrication") > -1  ){
     var hashLink = location.hash
     if (hashLink){
       var folder = hashLink.substring(1);

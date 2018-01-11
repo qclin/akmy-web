@@ -4,6 +4,7 @@ html
     meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no')
     link(rel='stylesheet', href='/styles/main.css')
     link(rel='stylesheet', href='/styles/project.css')
+    link(rel='stylesheet', href='/styles/cluster.css')
     link(rel='stylesheet', href='/styles/textContent.css')
     link(rel='stylesheet', href='/styles/mobile/project.css')
     link(rel='stylesheet', href='https://fonts.googleapis.com/icon?family=Material+Icons')
@@ -11,50 +12,46 @@ html
     include ../partials/infoPanel.pug
     .navMenu
       i.mobile.material-icons.md-36#hamburger menu
-    h1.category.mobile ~ Fabrications ~
+    h1.category.mobile ~ Tactile Images ~
     include ../partials/nav.pug
-    section.cluster-content.fabrications
+
+    section.cluster-content(id=info.title)
       header
-        each cluster in clusters
-          - var key = Object.keys(cluster)[0]
-          a.sketch-link(href="#"+key data-ajax="false" data-key=key) #{cluster[key].caption}
-        - var currenInfo = clusters[0][Object.keys(clusters[0])].info
-        
-      section.caption-box
-        .tilde
-          object.svg-files.shadow(data="/vectors/squiggle_shadow_2-01.svg" type="image/svg+xml")
-            img(src="/vectors/squiggle_shadow_2-01.svg")
-        each cluster in clusters
-          - var key = Object.keys(cluster)[0] 
-          p.switch.text-content(id=key+'-text') #{cluster[key].info}
-        .tilde
-          object.svg-files.shadow(data="/vectors/squiggle_shadow_2-01.svg" type="image/svg+xml")
-            img(src="/vectors/squiggle_shadow_2-01.svg")
-        .counter
-          span#currentIndex 1
-          span /
-          span#maxIndex  1
-            
-              
-      section.project-content(id=info.name)
-        each cluster in clusters
-          - var key = Object.keys(cluster)[0]  
-          div.sketch-pile.switch(id=key+"-images")
-            each url in cluster[key].urlList
-              div.project-images.draggable
-                if url.indexOf(".svg") > -1
+        //- h3 #{info.title} 
+      each cluster,index in clusters
+        .cluster
+          h3.title #{cluster[Object.keys(cluster)].caption}
+          section.caption-box
+            .tilde
+              object.svg-files.shadow(data="/vectors/squiggle_shadow_2-01.svg" type="image/svg+xml")
+                img(src="/vectors/squiggle_shadow_2-01.svg")
+            p.text-content #{cluster[Object.keys(cluster)].info}
+            .tilde
+                object.svg-files.shadow(data="/vectors/squiggle_shadow_2-01.svg" type="image/svg+xml")
+                  img(src="/vectors/squiggle_shadow_2-01.svg")
+            each key in Object.keys(cluster[Object.keys(cluster)].links)
+              p.links
+                a(href=cluster[Object.keys(cluster)].links[key] target="_blank")  #{key.replace(/"/g,"")} 
+          section.image-pile(id="pile"+index)
+            each imageUrl in cluster[Object.keys(cluster)[0]].urlList
+              div.cluster-image.draggable
+                if imageUrl.indexOf(cluster.key) > -1
                   span.helper
-                  img.mobile(src=url)
+                  img.mobile(src=imageUrl)
                   span.svg-helper
-                  object.svg-files(data=url type="image/svg+xml")
-                    img(src="#{url}")
+                  object.svg-files(data=imageUrl type="image/svg+xml")
+                    img(src="#{imageUrl}")
                 else
                   span.helper
-                  img(src=url)
+                  img(src=imageUrl)
                 svg.cross
                   line(x1='0', y1='100%', x2='100%', y2='0')
                   line(x1='0', y1='0', x2='100%', y2='100%')
-      include ../partials/slideCtrl.pug
+            script.                                                 
+              var numOfClusters =!{JSON.stringify(clusters.length)}; 
+              var currentIndex = !{index}
+              var numOfImages = !{JSON.stringify(cluster[Object.keys(cluster)[0]].urlList.length)}
+            include ../partials/clusterCtrl.pug
       .modal-layer
       section.text-overlay
         .text-content 

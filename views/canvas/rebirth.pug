@@ -17,16 +17,14 @@ html
       header
         h3 #{info.title} 
       section#textBox
-        .tilde.top
+        .tilde
           object.svg-files.shadow(data="/vectors/squiggle_shadow_2-01.svg" type="image/svg+xml")
             img(src="/vectors/squiggle_shadow_2-01.svg")
-        .text-content
-          .text-label Description
-          p #{info.description}
-        .tilde.bottom
+        p.text-content #{info.description}
+        .tilde
           object.svg-files.shadow(data="/vectors/squiggle_shadow_2-01.svg" type="image/svg+xml")
             img(src="/vectors/squiggle_shadow_2-01.svg")
-      section.project-content(id=info.name)
+      section.project-content#rebirth
         each imageUrl in imageUrlList
           div.project-images.draggable
             if imageUrl.indexOf(".svg") > -1

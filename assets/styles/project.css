@@ -14,8 +14,8 @@ header{
   margin-left: 1em;
 }
 
-.storyTime header{
-  margin-top: 3em;
+.storyTime header, .fabrications header{
+  margin-top: 5em;
 }
 h1{
   text-decoration: underline;
@@ -126,12 +126,7 @@ h1{
     width: 50%;
     left: 15vw;
   }
-  .storyTime .project-content{
-    top: -24em;
-  }
-  .project-content#BOFFO div{
-    width: 35%;
-  }
+
   div.project-images:nth-of-type(6n+1){
     top: 5%;
     right: 8%;
@@ -164,12 +159,17 @@ h1{
     height: 400px;
     cursor: pointer;
   }
+  #rebirth {
+    top:0;
+  }
   .project-content{
     height: 80vh;
     width: 70vw;
-    left: 25vw;
-    position: relative;
+    left: 30vw;
     overflow: hidden;
+    display: inline-block;
+    position: absolute;
+    top: 20vh;
   }
   .model-content{
     height: 70vh;
