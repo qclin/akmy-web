@@ -61,7 +61,7 @@ html
           .text-italic #{info.title};
           .text-info #{info.description}
       footer
-        marquee(behavior="alternate")
+        marquee(behavior="alternate" scrollamount="3")
           each cluster in clusters
             - var key = Object.keys(cluster)[0]
             .link-group.switch(id=key+'-link')
