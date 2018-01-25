@@ -95,8 +95,12 @@ $('.sketch-link').click(function(e){
   var dataKey = $(this).data('key')
   $('.reveal-text').toggleClass('reveal-text');
   $('.reveal-images').toggleClass('reveal-images');
+  $('.reveal-links').toggleClass('reveal-links');
+
   $(`.text-content#${dataKey}-text`).addClass('reveal-text');
   $(`.sketch-pile#${dataKey}-images`).addClass('reveal-images');
+  $(`.link-group#${dataKey}-link`).addClass('reveal-links');
+
   $(`.sketch-pile#${dataKey}-images`).find('.project-images').eq(0).addClass('reveal').css({"z-index" : topIndex});
 
   imgList = $('.reveal-images .project-images');

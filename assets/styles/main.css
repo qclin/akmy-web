@@ -70,13 +70,16 @@ header h1{
   text-decoration: underline;
 }
 header h3{
-  font-weight: lighter;
   position: fixed;
   top: 20vh;
   left: 3vw;
-  letter-spacing: 1px;
   margin: 0 auto 1em auto;
   font-size: 16px;
+
+  font-family: "Times New Roman", TimesNewRomanBoldItalic , Serif;
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: 3px;
 }
 .navMenu{
   color: rgb(0,0,255);
@@ -87,6 +90,7 @@ header h3{
   font-size: 36px !important;
 }
 footer{
+  z-index: 10000;
   width: 100vw;
   position: fixed;
   bottom: 0;
@@ -96,6 +100,7 @@ footer{
 }
 
 footer a{
+  font-size: 9px;
   margin: 2em;
   top: 30%;
   position: relative;

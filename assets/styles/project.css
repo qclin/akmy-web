@@ -105,8 +105,7 @@ h1{
     letter-spacing: 1px;
     font-size: 16px;
   }
-  form,
-  header h3{
+  form {
     font-family: "Times New Roman", TimesNewRoman , Serif;
     font-size: 14px;
   }

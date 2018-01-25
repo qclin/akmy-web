@@ -5,11 +5,12 @@
   background: white;
   /*left: 3vw;
   top: 25vh;*/
-  position: relative;
+  /* position: relative;
   overflow: scroll;
-  overflow-x: hidden;
-  padding-top: 20px
-  margin: none;
+  overflow-x: hidden; */
+  padding-top: 20px;
+  /* margin: none; */
+  margin-left: 3em;
   font-size: 12px;
   display: inline-block;
 }
@@ -22,6 +23,12 @@
   overflow-x: hidden;
   margin: none;
   font-size: 14px;
+  margin-left: 3em;
+}
+
+.caption-box .tilde{
+  transform:scale(1,.8);
+
 }
 
 #textBox p, .caption-box p{
@@ -29,18 +36,18 @@
 }
 .text-content{
   position: relative;
-  line-height: 20px;
+  line-height: 18px;
   height: 100%;
-  width: 80%;
+  width: 90%;
   margin: 1em auto;
 }
 .tilde{
-  left: 5vw;
-  max-width: 300px;
-  width: 16vw;
-  position: relative;
+  /* left: 5vw; */
+  /* max-width: 300px; */
+  /* width: 16vw; */
+  /* position: relative; */
   text-shadow: 0px 2px 4px rgba(0,0,0,.2);
-  transform:scale(1.25,1);
+  /* transform:scale(1.25,1); */
   color: rgba(190,190,190,1);
 }
 
@@ -73,6 +80,10 @@
 }
 
 .reveal-images{
+  display: inherit;
+}
+
+.reveal-links{
   display: inherit;
 }
 .counter{

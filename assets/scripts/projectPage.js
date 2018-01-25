@@ -18,7 +18,7 @@ $(document).ready(function(){
   $('.cluster').click(function(e){
     if($(e.target).hasClass('img-Ctrl')){
       var direction = e.target.dataset.value
-      console.log("img-Ctrl", numOfClusters, currentIndex, clmaxIndex, clcurrent, numOfImages)
+      // console.log("img-Ctrl", numOfClusters, currentIndex, clmaxIndex, clcurrent, numOfImages)
       $(clusterImgList).eq(clcurrent).removeClass('foreground')
       if(direction=="left"){
         if(clcurrent == 0){
@@ -35,7 +35,7 @@ $(document).ready(function(){
         }
       }
       if(isMobile) return $(clusterImgList).eq(clcurrent).addClass('foreground')
-      console.log('what is clcurrent classs ', $(clusterImgList).eq(clcurrent), clcurrent, clusterImgList);
+      // console.log('what is clcurrent classs ', $(clusterImgList).eq(clcurrent), clcurrent, clusterImgList);
       $(clusterImgList).eq(clcurrent).addClass('reveal').css({"z-index" : topIndex})
       topIndex++
 

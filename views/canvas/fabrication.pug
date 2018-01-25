@@ -60,15 +60,17 @@ html
         .text-content 
           .text-italic #{info.title};
           .text-info #{info.description}
-    if info.links
       footer
         marquee(behavior="alternate")
-          each link in info.links
-            a(target="_blank" href=link).ext-links #{link}
-      div.sideLinkPanel 
-          each link in info.links
-            a(target="_blank" href=link).ext-links
-              i.material-icons share
+          each cluster in clusters
+            - var key = Object.keys(cluster)[0]
+            .link-group.switch(id=key+'-link')
+              each link in cluster[key].links
+                a(target="_blank" href=link).ext-links #{link}
+      //- div.sideLinkPanel 
+      //-     each link in info.links
+      //-       a(target="_blank" href=link).ext-links
+      //-         i.material-icons share
   section.img-modal
     i.material-icons.closeModal close
   script(src='http://code.jquery.com/jquery-1.10.2.min.js')
