@@ -31,6 +31,7 @@ h1{
   color: #663399;
 }
 .sketch-link{
+  font-size: 14px;
   left: 2em;
   font-family: "Times New Roman", TimesNewRomanBoldItalic , Serif;
   font-style: italic;
@@ -121,8 +122,11 @@ h1{
     position: fixed;
   }
 
+  /* div.project-images{
+    width: 40%;
+  } */
   div.project-images{
-    width: 50%;
+    width: 40%;
     left: 15vw;
   }
 
