@@ -74,6 +74,18 @@ body#home{
   }
 
 }
+#cv{
+  color: #fff;
+  bottom: 1em;
+  position: fixed;
+  right: 70px;
+  text-transform: uppercase;
+  font-family: 'BentonSans-Light', 'PT Sans', sans-serif;
+  font-size: 9pt;
+  line-height: 12pt;
+  letter-spacing: 1pt;
+  text-decoration: none;
+}
 #catepillar{
   width: 50px;
   bottom: 0;
