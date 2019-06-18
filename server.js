@@ -35,7 +35,6 @@ app.listen(443);
 console.log('Listening on port 80');
 
 
-
 function getWorkPDFS(category){
 	var bucketInfo = {
 			 endpoint: 's3-eu-central-1.amazonaws.com',
