@@ -1,0 +1,61 @@
+@font-face {
+  font-family: 'BentonSans-Medium';
+  src: url('assets/fonts/BentonSans/BentonSans Medium.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'BentonSans-Light';
+  src: url('assets/fonts/BentonSans/BentonSans Light.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body{
+  background: #000;
+}
+.name{
+
+  position: fixed;
+  left: 2em;
+  color: #fff;
+  font-size: 9pt;
+  line-height: 12pt;
+  letter-spacing: 1pt;
+  text-transform: uppercase;
+  font-family: 'BentonSans-Light', 'PT Sans', sans-serif;
+}
+.projectLinks{
+  position: relative;
+  top: 35%;
+  font-size: 11pt;
+  margin: auto;
+  width: 50%;
+}
+
+.projectLinks a{
+  display: inline-block;
+  margin-top: 5em;
+  width: 50%;
+  text-decoration: none;
+  color: #fff;
+  font-family: 'BentonSans-Medium', 'PT Sans', sans-serif;
+}
+
+.projectLinks a:hover{
+  text-decoration: underline;
+}
+
+.projectPage{
+  text-align: center;
+}
+.projectPage img{
+  margin: auto;
+  max-width: 100%;
+  height: 100vh;
+}
+
+#home{
+  text-decoration: none;
+}
