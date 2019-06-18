@@ -30,8 +30,8 @@ app.get('/projects/:projectType', function(req,res){
   })
 })
 
-app.listen(8080);
-// app.listen(443);
+app.listen(80);
+app.listen(443);
 console.log('Listening on port 80');
 
 
