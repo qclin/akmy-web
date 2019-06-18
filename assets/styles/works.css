@@ -15,6 +15,9 @@
 body{
   background: #000;
 }
+body#home{
+  /* animation: fadeToBlack 10s ease infinite alternate; */
+}
 .name{
 
   position: fixed;
@@ -71,7 +74,50 @@ body{
   }
 
 }
+#catepillar{
+  width: 50px;
+  bottom: 0;
+  position: fixed;
+  right: 20px;
+  animation:
+    pulse 3s ease infinite alternate,
+    nudge 10s ease infinite alternate;
+}
 
+@keyframes fadeToBlack {
+  0%, 100% {
+    background-color: #000;
+  }
+  50% {
+    background-color: #333;
+    /* #8f8f8f; */
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: .5;
+  }
+}
+
+@keyframes nudge {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(10px, 0);
+  }
+
+  80% {
+    transform: translate(-20px, 0);
+  }
+}
+
+/* #ff912d */
 #home{
   text-decoration: none;
 }
