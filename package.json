@@ -24,7 +24,7 @@
     "gulp-livereload": "^4.0.1"
   },
   "dependencies": {
-    "aws-sdk": "^2.6.12",
+    "aws-sdk": "^2.814.0",
     "body-parser": "^1.15.2",
     "cors": "^2.8.1",
     "express": "^4.14.0",
